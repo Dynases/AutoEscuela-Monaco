@@ -296,7 +296,7 @@ Public Class F0_Asistencia
 
     Private Sub F0_Asistencia_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         _prIniciarTodo()
-
+        '' prueba
     End Sub
 
     Private Sub Eliminarms_Click(sender As Object, e As EventArgs) Handles Eliminarms.Click
