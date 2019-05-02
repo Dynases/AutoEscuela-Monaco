@@ -1296,29 +1296,29 @@ Public Class F0_NControlLavadero
     End Sub
     
     Private Sub btnTamanoVehiculo_Click(sender As Object, e As EventArgs) Handles btnTamanoVehiculo.Click
-        Dim frmAyuda As Efecto = New Efecto
-        frmAyuda.tipo = 1
+        'Dim frmAyuda As Efecto = New Efecto
+        'frmAyuda.tipo = 1
 
-        frmAyuda.ShowDialog()
-        Dim posicionData As Integer = -1
-        posicionData = frmAyuda.PosicionData
-        If (posicionData >= 0) Then
-            cbTamano.SelectedIndex = posicionData
+        'frmAyuda.ShowDialog()
+        'Dim posicionData As Integer = -1
+        'posicionData = frmAyuda.PosicionData
+        'If (posicionData >= 0) Then
+        '    cbTamano.SelectedIndex = posicionData
 
-        End If
+        'End If
     End Sub
 
     Private Sub btnTipoVehiculo_Click(sender As Object, e As EventArgs) Handles btnTipoVehiculo.Click
-        Dim frmAyuda As Efecto = New Efecto
-        frmAyuda.tipo = 2
+        'Dim frmAyuda As Efecto = New Efecto
+        'frmAyuda.tipo = 2
 
-        frmAyuda.ShowDialog()
-        Dim posicionData As Integer = -1
-        posicionData = frmAyuda.PosicionData
-        If (posicionData >= 0) Then
-            cbTipoVehiculo.SelectedIndex = posicionData
+        'frmAyuda.ShowDialog()
+        'Dim posicionData As Integer = -1
+        'posicionData = frmAyuda.PosicionData
+        'If (posicionData >= 0) Then
+        '    cbTipoVehiculo.SelectedIndex = posicionData
 
-        End If
+        'End If
     End Sub
 
     Private Sub btnAnadir_Click(sender As Object, e As EventArgs) Handles btnAnadir.Click

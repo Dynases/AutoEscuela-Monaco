@@ -699,4 +699,20 @@ Public Class P_Principal
         Dim frm As New Pr_Caja
         frm.Show()
     End Sub
+
+    Private Sub btVentaPagos_Click(sender As Object, e As EventArgs) Handles btVentaPagos.Click
+        Dim frm As New F0_PagoCliente
+        frm._nameButton = btVentas.Name
+        frm.Show()
+    End Sub
+
+    Private Sub btVentaEstadoCuenta_Click(sender As Object, e As EventArgs) Handles btVentaEstadoCuenta.Click
+        Dim frm As New FR_EstadoCuentas
+        frm.Show()
+    End Sub
+
+    Private Sub btVentaMorosidad_Click(sender As Object, e As EventArgs) Handles btVentaMorosidad.Click
+        Dim frm As New Fr_Morosidad
+        frm.Show()
+    End Sub
 End Class

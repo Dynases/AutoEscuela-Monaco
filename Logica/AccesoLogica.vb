@@ -6367,7 +6367,121 @@ Public Class AccesoLogica
         Return _Tabla
     End Function
 
+    Public Shared Function L_fnCobranzasObtenerLosPagos(_numi As Integer) As DataTable
+        Dim _Tabla As DataTable
 
+        Dim _listParam As New List(Of Datos.DParametro)
+
+        _listParam.Add(New Datos.DParametro("@tipo", 7))
+        _listParam.Add(New Datos.DParametro("@teuact", L_Usuario))
+        _listParam.Add(New Datos.DParametro("@tdnumi", _numi))
+        _Tabla = D_ProcedimientoConParam("sp_Mam_TV00121Cheque", _listParam)
+
+        Return _Tabla
+    End Function
+
+    Public Shared Function L_fnGrabarCobranza2(_tenumi As String, _tefdoc As String, _tety4vend As Integer, _teobs As String, detalle As DataTable) As Boolean
+        Dim _Tabla As DataTable
+        Dim _resultado As Boolean
+        Dim _listParam As New List(Of Datos.DParametro)
+        '   @canumi ,@caalm,@cafdoc ,@caty4prov  ,@catven,
+        '@cafvcr,@camon ,@caest  ,@caobs ,@cadesc ,@newFecha,@newHora,@cauact
+        _listParam.Add(New Datos.DParametro("@tipo", 10))
+        _listParam.Add(New Datos.DParametro("@tenumi", _tenumi))
+        _listParam.Add(New Datos.DParametro("@tefdoc", _tefdoc))
+        _listParam.Add(New Datos.DParametro("@tety4vend", _tety4vend))
+        _listParam.Add(New Datos.DParametro("@teobs", _teobs))
+        _listParam.Add(New Datos.DParametro("@teuact", L_Usuario))
+        _listParam.Add(New Datos.DParametro("@TV00121", "", detalle))
+        _Tabla = D_ProcedimientoConParam("sp_Mam_TV00121Cheque", _listParam)
+
+
+        If _Tabla.Rows.Count > 0 Then
+            _tenumi = _Tabla.Rows(0).Item(0)
+            _resultado = True
+        Else
+            _resultado = False
+        End If
+
+        Return _resultado
+    End Function
+
+    Public Shared Function L_fnObtenerLasVentasCreditoPorCliente(_numi As Integer, _sector As Integer) As DataTable
+        Dim _Tabla As DataTable
+
+        Dim _listParam As New List(Of Datos.DParametro)
+
+        _listParam.Add(New Datos.DParametro("@tipo", 9))
+        '_listParam.Add(New Datos.DParametro("@tduact", L_Usuario))
+        _listParam.Add(New Datos.DParametro("@tenumi", _numi))
+        _listParam.Add(New Datos.DParametro("@sector", _sector))
+        _Tabla = D_ProcedimientoConParam("sp_Mam_TV00121Cheque", _listParam)
+
+        Return _Tabla
+    End Function
+    Public Shared Function L_fnReporteMorosidadTodosAlmacenVendedor() As DataTable
+        Dim _Tabla As DataTable
+
+        Dim _listParam As New List(Of Datos.DParametro)
+        _listParam.Add(New Datos.DParametro("@tipo", 10))
+        _Tabla = D_ProcedimientoConParam("sp_Mam_VentasCredito", _listParam)
+
+        Return _Tabla
+    End Function
+    Public Shared Function L_prReporteCreditoGeneral(fechaI As String, fechaF As String) As DataTable
+        Dim _Tabla As DataTable
+
+        Dim _listParam As New List(Of Datos.DParametro)
+
+        _listParam.Add(New Datos.DParametro("@tipo", 1))
+        _listParam.Add(New Datos.DParametro("@fechaI", fechaI))
+        _listParam.Add(New Datos.DParametro("@fechaF", fechaF))
+        _listParam.Add(New Datos.DParametro("@yduact", L_Usuario))
+
+        _Tabla = D_ProcedimientoConParam("sp_Mam_VentasCredito", _listParam)
+
+        Return _Tabla
+    End Function
+    Public Shared Function L_prReporteCreditoClienteUnaCuentas(_numiCredito As String) As DataTable
+        Dim _Tabla As DataTable
+
+        Dim _listParam As New List(Of Datos.DParametro)
+
+        _listParam.Add(New Datos.DParametro("@tipo", 5))
+        _listParam.Add(New Datos.DParametro("@yduact", L_Usuario))
+        _listParam.Add(New Datos.DParametro("@codCredito", _numiCredito))
+        _Tabla = D_ProcedimientoConParam("sp_Mam_VentasCredito", _listParam)
+
+        Return _Tabla
+    End Function
+
+    Public Shared Function L_prReporteCreditoListarCuentasPorCliente(_numiCliente As String) As DataTable
+        Dim _Tabla As DataTable
+
+        Dim _listParam As New List(Of Datos.DParametro)
+
+        _listParam.Add(New Datos.DParametro("@tipo", 4))
+        _listParam.Add(New Datos.DParametro("@yduact", L_Usuario))
+        _listParam.Add(New Datos.DParametro("@cliente", _numiCliente))
+        _Tabla = D_ProcedimientoConParam("sp_Mam_VentasCredito", _listParam)
+
+        Return _Tabla
+    End Function
+
+    Public Shared Function L_prReporteCreditoClienteTodosCuentas(fechaI As String, fechaF As String, _numiCliente As String) As DataTable
+        Dim _Tabla As DataTable
+
+        Dim _listParam As New List(Of Datos.DParametro)
+
+        _listParam.Add(New Datos.DParametro("@tipo", 3))
+        _listParam.Add(New Datos.DParametro("@fechaI", fechaI))
+        _listParam.Add(New Datos.DParametro("@fechaF", fechaF))
+        _listParam.Add(New Datos.DParametro("@yduact", L_Usuario))
+        _listParam.Add(New Datos.DParametro("@cliente", _numiCliente))
+        _Tabla = D_ProcedimientoConParam("sp_Mam_VentasCredito", _listParam)
+
+        Return _Tabla
+    End Function
     Public Shared Function L_prServicioVentaGeneralEscuela() As DataTable
         Dim _Tabla As DataTable
 
@@ -6616,13 +6730,19 @@ Public Class AccesoLogica
 
         Return _Tabla
     End Function
-
+    Public Shared Function _fnSumarTotal(dt As DataTable) As Decimal
+        Dim sum As Decimal = 0
+        For i As Integer = 0 To dt.Rows.Count - 1
+            sum += dt.Rows(i).Item("vdtotdesc")
+        Next
+        Return sum
+    End Function
     Public Shared Function L_fnGrabarVentaAlumno(ByRef _vcnumi As String, _vcsector As Integer, _vcalm As Integer, _vcfdoc As String, _vcclie As Integer, _vcfvcr As String, _vctipo As Integer, _vcest As Integer, _vcobs As String, _vcdesc As Double, _vctotal As Decimal, _detalle As DataTable,
                                         _vcmoneda As Integer, _vcbanco As Integer) As Boolean
         Dim _resultado As Boolean
         ' @vcnumi  ,@vcsector ,@vcalm ,@vcfdoc ,@vcclie ,@vcfvcr ,@vctipo ,
         '@vcest ,@vcobs ,@vcdesc ,@vctotal ,@vcmoneda,@vcbanco 
-
+        _vctotal = _fnSumarTotal(_detalle)
         Dim _Tabla As DataTable
         Dim _listParam As New List(Of Datos.DParametro)
 
@@ -6669,7 +6789,7 @@ Public Class AccesoLogica
         Dim _Tabla As DataTable
         Dim _listParam As New List(Of Datos.DParametro)
 
-
+        _vctotal = _fnSumarTotal(_detalle)
         _listParam.Add(New Datos.DParametro("@tipo", 2))
 
         _listParam.Add(New Datos.DParametro("@vcnumi", _vcnumi))

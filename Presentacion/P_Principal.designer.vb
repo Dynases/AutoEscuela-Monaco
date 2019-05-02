@@ -28,33 +28,9 @@ Partial Class P_Principal
         Me.SideNavPanel1 = New DevComponents.DotNetBar.Controls.SideNavPanel()
         Me.MetroTilePanel2 = New DevComponents.DotNetBar.Metro.MetroTilePanel()
         Me.btVentas = New DevComponents.DotNetBar.Metro.MetroTileItem()
-        Me.SideNavPanel3 = New DevComponents.DotNetBar.Controls.SideNavPanel()
-        Me.MetroTilePanel5 = New DevComponents.DotNetBar.Metro.MetroTilePanel()
-        Me.btCertiAlumnos = New DevComponents.DotNetBar.Metro.MetroTileItem()
-        Me.btCertiAlumTeorico = New DevComponents.DotNetBar.Metro.MetroTileItem()
-        Me.btCertiAlumNotasTeorico = New DevComponents.DotNetBar.Metro.MetroTileItem()
-        Me.btCertiAlumPractico = New DevComponents.DotNetBar.Metro.MetroTileItem()
-        Me.btCertiPreguntas = New DevComponents.DotNetBar.Metro.MetroTileItem()
-        Me.btCertiCertificacionAlumnos = New DevComponents.DotNetBar.Metro.MetroTileItem()
-        Me.btCertiCertificacionPerfecc = New DevComponents.DotNetBar.Metro.MetroTileItem()
-        Me.ItemContainer3 = New DevComponents.DotNetBar.ItemContainer()
-        Me.btCertiRepDatosAlum = New DevComponents.DotNetBar.Metro.MetroTileItem()
-        Me.btCertiRepAlumAproRepro = New DevComponents.DotNetBar.Metro.MetroTileItem()
-        Me.btCertiRepCertiFormularios = New DevComponents.DotNetBar.Metro.MetroTileItem()
-        Me.btCertiRepCronoPerfeccion = New DevComponents.DotNetBar.Metro.MetroTileItem()
-        Me.btCertiRepAlumEscAprob = New DevComponents.DotNetBar.Metro.MetroTileItem()
-        Me.btCertiRepAlumFiltrados = New DevComponents.DotNetBar.Metro.MetroTileItem()
-        Me.PictureBox5 = New System.Windows.Forms.PictureBox()
-        Me.SideNav_Conf = New DevComponents.DotNetBar.Controls.SideNavPanel()
-        Me.MetroTilePanel1 = New DevComponents.DotNetBar.Metro.MetroTilePanel()
-        Me.btConfServicios = New DevComponents.DotNetBar.Metro.MetroTileItem()
-        Me.btConfRoles = New DevComponents.DotNetBar.Metro.MetroTileItem()
-        Me.btConfUsuarios = New DevComponents.DotNetBar.Metro.MetroTileItem()
-        Me.btConfSucursales = New DevComponents.DotNetBar.Metro.MetroTileItem()
-        Me.btConfHorarios = New DevComponents.DotNetBar.Metro.MetroTileItem()
-        Me.btConfPolitica = New DevComponents.DotNetBar.Metro.MetroTileItem()
-        Me.btconfbanco = New DevComponents.DotNetBar.Metro.MetroTileItem()
-        Me.PictureBox4 = New System.Windows.Forms.PictureBox()
+        Me.btVentaCierreCaja = New DevComponents.DotNetBar.Metro.MetroTileItem()
+        Me.btVentaPagos = New DevComponents.DotNetBar.Metro.MetroTileItem()
+        Me.btVentaEstadoCuenta = New DevComponents.DotNetBar.Metro.MetroTileItem()
         Me.SideNavPanel2 = New DevComponents.DotNetBar.Controls.SideNavPanel()
         Me.MetroTilePanel3 = New DevComponents.DotNetBar.Metro.MetroTilePanel()
         Me.btEscVehiculo = New DevComponents.DotNetBar.Metro.MetroTileItem()
@@ -73,6 +49,33 @@ Partial Class P_Principal
         Me.btEscRepHorasTrabajadas = New DevComponents.DotNetBar.Metro.MetroTileItem()
         Me.btEscRepEscCertificado = New DevComponents.DotNetBar.Metro.MetroTileItem()
         Me.PictureBox2 = New System.Windows.Forms.PictureBox()
+        Me.SideNav_Conf = New DevComponents.DotNetBar.Controls.SideNavPanel()
+        Me.MetroTilePanel1 = New DevComponents.DotNetBar.Metro.MetroTilePanel()
+        Me.btConfServicios = New DevComponents.DotNetBar.Metro.MetroTileItem()
+        Me.btConfRoles = New DevComponents.DotNetBar.Metro.MetroTileItem()
+        Me.btConfUsuarios = New DevComponents.DotNetBar.Metro.MetroTileItem()
+        Me.btConfSucursales = New DevComponents.DotNetBar.Metro.MetroTileItem()
+        Me.btConfHorarios = New DevComponents.DotNetBar.Metro.MetroTileItem()
+        Me.btConfPolitica = New DevComponents.DotNetBar.Metro.MetroTileItem()
+        Me.btconfbanco = New DevComponents.DotNetBar.Metro.MetroTileItem()
+        Me.PictureBox4 = New System.Windows.Forms.PictureBox()
+        Me.SideNavPanel3 = New DevComponents.DotNetBar.Controls.SideNavPanel()
+        Me.MetroTilePanel5 = New DevComponents.DotNetBar.Metro.MetroTilePanel()
+        Me.btCertiAlumnos = New DevComponents.DotNetBar.Metro.MetroTileItem()
+        Me.btCertiAlumTeorico = New DevComponents.DotNetBar.Metro.MetroTileItem()
+        Me.btCertiAlumNotasTeorico = New DevComponents.DotNetBar.Metro.MetroTileItem()
+        Me.btCertiAlumPractico = New DevComponents.DotNetBar.Metro.MetroTileItem()
+        Me.btCertiPreguntas = New DevComponents.DotNetBar.Metro.MetroTileItem()
+        Me.btCertiCertificacionAlumnos = New DevComponents.DotNetBar.Metro.MetroTileItem()
+        Me.btCertiCertificacionPerfecc = New DevComponents.DotNetBar.Metro.MetroTileItem()
+        Me.ItemContainer3 = New DevComponents.DotNetBar.ItemContainer()
+        Me.btCertiRepDatosAlum = New DevComponents.DotNetBar.Metro.MetroTileItem()
+        Me.btCertiRepAlumAproRepro = New DevComponents.DotNetBar.Metro.MetroTileItem()
+        Me.btCertiRepCertiFormularios = New DevComponents.DotNetBar.Metro.MetroTileItem()
+        Me.btCertiRepCronoPerfeccion = New DevComponents.DotNetBar.Metro.MetroTileItem()
+        Me.btCertiRepAlumEscAprob = New DevComponents.DotNetBar.Metro.MetroTileItem()
+        Me.btCertiRepAlumFiltrados = New DevComponents.DotNetBar.Metro.MetroTileItem()
+        Me.PictureBox5 = New System.Windows.Forms.PictureBox()
         Me.SideNavItem1 = New DevComponents.DotNetBar.Controls.SideNavItem()
         Me.Separator1 = New DevComponents.DotNetBar.Separator()
         Me.FP_Configuracion = New DevComponents.DotNetBar.Controls.SideNavItem()
@@ -94,17 +97,17 @@ Partial Class P_Principal
         Me.MetroTileItem2 = New DevComponents.DotNetBar.Metro.MetroTileItem()
         Me.MetroTileItem3 = New DevComponents.DotNetBar.Metro.MetroTileItem()
         Me.tbDecimal = New DevComponents.Editors.DoubleInput()
-        Me.btVentaCierreCaja = New DevComponents.DotNetBar.Metro.MetroTileItem()
+        Me.btVentaMorosidad = New DevComponents.DotNetBar.Metro.MetroTileItem()
         MetroTileFrame1 = New DevComponents.DotNetBar.Metro.MetroTileFrame()
         MetroTileFrame2 = New DevComponents.DotNetBar.Metro.MetroTileFrame()
         Me.ModVenta.SuspendLayout()
         Me.SideNavPanel1.SuspendLayout()
-        Me.SideNavPanel3.SuspendLayout()
-        CType(Me.PictureBox5, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.SideNav_Conf.SuspendLayout()
-        CType(Me.PictureBox4, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SideNavPanel2.SuspendLayout()
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.SideNav_Conf.SuspendLayout()
+        CType(Me.PictureBox4, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.SideNavPanel3.SuspendLayout()
+        CType(Me.PictureBox5, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.tbDecimal, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -135,10 +138,10 @@ Partial Class P_Principal
         'ModVenta
         '
         Me.ModVenta.BackColor = System.Drawing.SystemColors.ActiveCaption
+        Me.ModVenta.Controls.Add(Me.SideNavPanel1)
         Me.ModVenta.Controls.Add(Me.SideNavPanel2)
         Me.ModVenta.Controls.Add(Me.SideNav_Conf)
         Me.ModVenta.Controls.Add(Me.SideNavPanel3)
-        Me.ModVenta.Controls.Add(Me.SideNavPanel1)
         Me.ModVenta.Dock = System.Windows.Forms.DockStyle.Fill
         Me.ModVenta.Items.AddRange(New DevComponents.DotNetBar.BaseItem() {Me.SideNavItem1, Me.Separator1, Me.FP_Configuracion, Me.FP_Escuela, Me.FP_Certificacion, Me.Separator2, Me.FP_Venta})
         Me.ModVenta.Location = New System.Drawing.Point(0, 0)
@@ -157,7 +160,6 @@ Partial Class P_Principal
         Me.SideNavPanel1.Name = "SideNavPanel1"
         Me.SideNavPanel1.Size = New System.Drawing.Size(1186, 649)
         Me.SideNavPanel1.TabIndex = 83
-        Me.SideNavPanel1.Visible = False
         '
         'MetroTilePanel2
         '
@@ -173,7 +175,7 @@ Partial Class P_Principal
         Me.MetroTilePanel2.ContainerControlProcessDialogKey = True
         Me.MetroTilePanel2.Dock = System.Windows.Forms.DockStyle.Fill
         Me.MetroTilePanel2.DragDropSupport = True
-        Me.MetroTilePanel2.Items.AddRange(New DevComponents.DotNetBar.BaseItem() {Me.btVentas, Me.btVentaCierreCaja})
+        Me.MetroTilePanel2.Items.AddRange(New DevComponents.DotNetBar.BaseItem() {Me.btVentas, Me.btVentaCierreCaja, Me.btVentaPagos, Me.btVentaEstadoCuenta, Me.btVentaMorosidad})
         Me.MetroTilePanel2.ItemSpacing = 10
         Me.MetroTilePanel2.Location = New System.Drawing.Point(0, 0)
         Me.MetroTilePanel2.Margin = New System.Windows.Forms.Padding(4)
@@ -199,453 +201,55 @@ Partial Class P_Principal
         Me.btVentas.TileStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square
         Me.btVentas.TitleText = "VENTAS"
         '
-        'SideNavPanel3
+        'btVentaCierreCaja
         '
-        Me.SideNavPanel3.Controls.Add(Me.MetroTilePanel5)
-        Me.SideNavPanel3.Controls.Add(Me.PictureBox5)
-        Me.SideNavPanel3.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.SideNavPanel3.Location = New System.Drawing.Point(165, 40)
-        Me.SideNavPanel3.Margin = New System.Windows.Forms.Padding(4)
-        Me.SideNavPanel3.Name = "SideNavPanel3"
-        Me.SideNavPanel3.Size = New System.Drawing.Size(1186, 649)
-        Me.SideNavPanel3.TabIndex = 73
-        Me.SideNavPanel3.Visible = False
+        Me.btVentaCierreCaja.Frames.Add(MetroTileFrame2)
+        Me.btVentaCierreCaja.Image = Global.Presentacion.My.Resources.Resources.INSCRIPCION
+        Me.btVentaCierreCaja.ImageTextAlignment = System.Drawing.ContentAlignment.MiddleCenter
+        Me.btVentaCierreCaja.Name = "btVentaCierreCaja"
+        Me.btVentaCierreCaja.SymbolColor = System.Drawing.Color.Empty
+        Me.btVentaCierreCaja.TileColor = DevComponents.DotNetBar.Metro.eMetroTileColor.Azure
+        Me.btVentaCierreCaja.TileSize = New System.Drawing.Size(250, 135)
         '
-        'MetroTilePanel5
         '
-        Me.MetroTilePanel5.BackColor = System.Drawing.Color.Transparent
-        Me.MetroTilePanel5.BackgroundImage = Global.Presentacion.My.Resources.Resources.fondomonaco03
-        Me.MetroTilePanel5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         '
+        Me.btVentaCierreCaja.TileStyle.BackColor = System.Drawing.SystemColors.Highlight
+        Me.btVentaCierreCaja.TileStyle.BackColor2 = System.Drawing.Color.FromArgb(CType(CType(165, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer))
+        Me.btVentaCierreCaja.TileStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square
+        Me.btVentaCierreCaja.TitleText = "CIERRE CAJA"
         '
+        'btVentaPagos
         '
-        Me.MetroTilePanel5.BackgroundStyle.BackColor = System.Drawing.Color.Transparent
-        Me.MetroTilePanel5.BackgroundStyle.Class = "MetroTilePanel"
-        Me.MetroTilePanel5.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square
-        Me.MetroTilePanel5.ContainerControlProcessDialogKey = True
-        Me.MetroTilePanel5.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.MetroTilePanel5.DragDropSupport = True
-        Me.MetroTilePanel5.Items.AddRange(New DevComponents.DotNetBar.BaseItem() {Me.btCertiAlumnos, Me.btCertiAlumTeorico, Me.btCertiAlumNotasTeorico, Me.btCertiAlumPractico, Me.btCertiPreguntas, Me.btCertiCertificacionAlumnos, Me.btCertiCertificacionPerfecc, Me.ItemContainer3})
-        Me.MetroTilePanel5.ItemSpacing = 10
-        Me.MetroTilePanel5.Location = New System.Drawing.Point(0, 0)
-        Me.MetroTilePanel5.Margin = New System.Windows.Forms.Padding(4)
-        Me.MetroTilePanel5.MultiLine = True
-        Me.MetroTilePanel5.Name = "MetroTilePanel5"
-        Me.MetroTilePanel5.Size = New System.Drawing.Size(1186, 509)
-        Me.MetroTilePanel5.TabIndex = 3
-        Me.MetroTilePanel5.Text = "mtp3Pedidos"
+        Me.btVentaPagos.Image = Global.Presentacion.My.Resources.Resources.HOT_CABANA
+        Me.btVentaPagos.ImageTextAlignment = System.Drawing.ContentAlignment.MiddleCenter
+        Me.btVentaPagos.Name = "btVentaPagos"
+        Me.btVentaPagos.SymbolColor = System.Drawing.Color.Empty
+        Me.btVentaPagos.TileColor = DevComponents.DotNetBar.Metro.eMetroTileColor.DarkBlue
+        Me.btVentaPagos.TileSize = New System.Drawing.Size(250, 135)
         '
-        'btCertiAlumnos
         '
-        Me.btCertiAlumnos.Frames.Add(MetroTileFrame2)
-        Me.btCertiAlumnos.Image = Global.Presentacion.My.Resources.Resources.ALUMNO
-        Me.btCertiAlumnos.ImageTextAlignment = System.Drawing.ContentAlignment.MiddleCenter
-        Me.btCertiAlumnos.Name = "btCertiAlumnos"
-        Me.btCertiAlumnos.SymbolColor = System.Drawing.Color.Empty
-        Me.btCertiAlumnos.TileColor = DevComponents.DotNetBar.Metro.eMetroTileColor.RedOrange
-        Me.btCertiAlumnos.TileSize = New System.Drawing.Size(250, 135)
         '
+        Me.btVentaPagos.TileStyle.BackColor = System.Drawing.Color.DarkMagenta
+        Me.btVentaPagos.TileStyle.BackColor2 = System.Drawing.Color.FromArgb(CType(CType(158, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.btVentaPagos.TileStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square
+        Me.btVentaPagos.TitleText = "PAGOS CREDITO"
         '
+        'btVentaEstadoCuenta
         '
-        Me.btCertiAlumnos.TileStyle.BackColor = System.Drawing.SystemColors.Highlight
-        Me.btCertiAlumnos.TileStyle.BackColor2 = System.Drawing.Color.FromArgb(CType(CType(173, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.btCertiAlumnos.TileStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square
-        Me.btCertiAlumnos.TitleText = "VEHICULO"
+        Me.btVentaEstadoCuenta.Frames.Add(MetroTileFrame2)
+        Me.btVentaEstadoCuenta.Image = Global.Presentacion.My.Resources.Resources.INSCRIPCION
+        Me.btVentaEstadoCuenta.ImageTextAlignment = System.Drawing.ContentAlignment.MiddleCenter
+        Me.btVentaEstadoCuenta.Name = "btVentaEstadoCuenta"
+        Me.btVentaEstadoCuenta.SymbolColor = System.Drawing.Color.Empty
+        Me.btVentaEstadoCuenta.TileColor = DevComponents.DotNetBar.Metro.eMetroTileColor.Azure
+        Me.btVentaEstadoCuenta.TileSize = New System.Drawing.Size(250, 135)
         '
-        'btCertiAlumTeorico
         '
-        Me.btCertiAlumTeorico.Frames.Add(MetroTileFrame2)
-        Me.btCertiAlumTeorico.Image = Global.Presentacion.My.Resources.Resources.LISTA_ALUM_TEO
-        Me.btCertiAlumTeorico.ImageTextAlignment = System.Drawing.ContentAlignment.MiddleCenter
-        Me.btCertiAlumTeorico.Name = "btCertiAlumTeorico"
-        Me.btCertiAlumTeorico.SymbolColor = System.Drawing.Color.Empty
-        Me.btCertiAlumTeorico.TileColor = DevComponents.DotNetBar.Metro.eMetroTileColor.Green
-        Me.btCertiAlumTeorico.TileSize = New System.Drawing.Size(250, 135)
         '
-        '
-        '
-        Me.btCertiAlumTeorico.TileStyle.BackColor = System.Drawing.Color.DarkCyan
-        Me.btCertiAlumTeorico.TileStyle.BackColor2 = System.Drawing.Color.FromArgb(CType(CType(144, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(43, Byte), Integer), CType(CType(226, Byte), Integer))
-        Me.btCertiAlumTeorico.TileStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square
-        Me.btCertiAlumTeorico.TitleText = "VEHICULO"
-        '
-        'btCertiAlumNotasTeorico
-        '
-        Me.btCertiAlumNotasTeorico.Frames.Add(MetroTileFrame2)
-        Me.btCertiAlumNotasTeorico.Image = Global.Presentacion.My.Resources.Resources.INSCRIPCION
-        Me.btCertiAlumNotasTeorico.ImageTextAlignment = System.Drawing.ContentAlignment.MiddleCenter
-        Me.btCertiAlumNotasTeorico.Name = "btCertiAlumNotasTeorico"
-        Me.btCertiAlumNotasTeorico.SymbolColor = System.Drawing.Color.Empty
-        Me.btCertiAlumNotasTeorico.TileColor = DevComponents.DotNetBar.Metro.eMetroTileColor.Azure
-        Me.btCertiAlumNotasTeorico.TileSize = New System.Drawing.Size(250, 135)
-        '
-        '
-        '
-        Me.btCertiAlumNotasTeorico.TileStyle.BackColor = System.Drawing.SystemColors.Highlight
-        Me.btCertiAlumNotasTeorico.TileStyle.BackColor2 = System.Drawing.Color.FromArgb(CType(CType(165, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.btCertiAlumNotasTeorico.TileStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square
-        Me.btCertiAlumNotasTeorico.TitleText = "VEHICULO"
-        '
-        'btCertiAlumPractico
-        '
-        Me.btCertiAlumPractico.Frames.Add(MetroTileFrame2)
-        Me.btCertiAlumPractico.Image = Global.Presentacion.My.Resources.Resources.LISTA_ALUM_PRAC
-        Me.btCertiAlumPractico.ImageTextAlignment = System.Drawing.ContentAlignment.MiddleCenter
-        Me.btCertiAlumPractico.Name = "btCertiAlumPractico"
-        Me.btCertiAlumPractico.SymbolColor = System.Drawing.Color.Empty
-        Me.btCertiAlumPractico.TileColor = DevComponents.DotNetBar.Metro.eMetroTileColor.[Default]
-        Me.btCertiAlumPractico.TileSize = New System.Drawing.Size(250, 135)
-        '
-        '
-        '
-        Me.btCertiAlumPractico.TileStyle.BackColor = System.Drawing.Color.FromArgb(CType(CType(226, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(102, Byte), Integer), CType(CType(204, Byte), Integer))
-        Me.btCertiAlumPractico.TileStyle.BackColor2 = System.Drawing.Color.FromArgb(CType(CType(176, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.btCertiAlumPractico.TileStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square
-        Me.btCertiAlumPractico.TitleText = "VEHICULO"
-        '
-        'btCertiPreguntas
-        '
-        Me.btCertiPreguntas.Frames.Add(MetroTileFrame2)
-        Me.btCertiPreguntas.Image = Global.Presentacion.My.Resources.Resources.PREGUNTAS
-        Me.btCertiPreguntas.ImageTextAlignment = System.Drawing.ContentAlignment.MiddleCenter
-        Me.btCertiPreguntas.Name = "btCertiPreguntas"
-        Me.btCertiPreguntas.SymbolColor = System.Drawing.Color.Empty
-        Me.btCertiPreguntas.TileColor = DevComponents.DotNetBar.Metro.eMetroTileColor.Teal
-        Me.btCertiPreguntas.TileSize = New System.Drawing.Size(250, 135)
-        '
-        '
-        '
-        Me.btCertiPreguntas.TileStyle.BackColor = System.Drawing.SystemColors.Highlight
-        Me.btCertiPreguntas.TileStyle.BackColor2 = System.Drawing.Color.FromArgb(CType(CType(206, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.btCertiPreguntas.TileStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square
-        Me.btCertiPreguntas.TitleText = "VEHICULO"
-        '
-        'btCertiCertificacionAlumnos
-        '
-        Me.btCertiCertificacionAlumnos.Frames.Add(MetroTileFrame2)
-        Me.btCertiCertificacionAlumnos.Image = Global.Presentacion.My.Resources.Resources.PRE_EXAMEN
-        Me.btCertiCertificacionAlumnos.ImageTextAlignment = System.Drawing.ContentAlignment.MiddleCenter
-        Me.btCertiCertificacionAlumnos.Name = "btCertiCertificacionAlumnos"
-        Me.btCertiCertificacionAlumnos.SymbolColor = System.Drawing.Color.Empty
-        Me.btCertiCertificacionAlumnos.TileColor = DevComponents.DotNetBar.Metro.eMetroTileColor.MaroonWashed
-        Me.btCertiCertificacionAlumnos.TileSize = New System.Drawing.Size(250, 135)
-        '
-        '
-        '
-        Me.btCertiCertificacionAlumnos.TileStyle.BackColor = System.Drawing.Color.Black
-        Me.btCertiCertificacionAlumnos.TileStyle.BackColor2 = System.Drawing.Color.FromArgb(CType(CType(185, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.btCertiCertificacionAlumnos.TileStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square
-        Me.btCertiCertificacionAlumnos.TitleText = "VEHICULO"
-        '
-        'btCertiCertificacionPerfecc
-        '
-        Me.btCertiCertificacionPerfecc.Frames.Add(MetroTileFrame2)
-        Me.btCertiCertificacionPerfecc.Image = Global.Presentacion.My.Resources.Resources.perfeccionamiento
-        Me.btCertiCertificacionPerfecc.ImageTextAlignment = System.Drawing.ContentAlignment.MiddleCenter
-        Me.btCertiCertificacionPerfecc.Name = "btCertiCertificacionPerfecc"
-        Me.btCertiCertificacionPerfecc.SymbolColor = System.Drawing.Color.Empty
-        Me.btCertiCertificacionPerfecc.TileColor = DevComponents.DotNetBar.Metro.eMetroTileColor.Maroon
-        Me.btCertiCertificacionPerfecc.TileSize = New System.Drawing.Size(250, 135)
-        '
-        '
-        '
-        Me.btCertiCertificacionPerfecc.TileStyle.BackColor = System.Drawing.Color.Black
-        Me.btCertiCertificacionPerfecc.TileStyle.BackColor2 = System.Drawing.Color.FromArgb(CType(CType(212, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(215, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.btCertiCertificacionPerfecc.TileStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square
-        Me.btCertiCertificacionPerfecc.TitleText = "VEHICULO"
-        '
-        'ItemContainer3
-        '
-        '
-        '
-        '
-        Me.ItemContainer3.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square
-        Me.ItemContainer3.ItemSpacing = 10
-        Me.ItemContainer3.MultiLine = True
-        Me.ItemContainer3.Name = "ItemContainer3"
-        Me.ItemContainer3.SubItems.AddRange(New DevComponents.DotNetBar.BaseItem() {Me.btCertiRepDatosAlum, Me.btCertiRepAlumAproRepro, Me.btCertiRepCertiFormularios, Me.btCertiRepCronoPerfeccion, Me.btCertiRepAlumEscAprob, Me.btCertiRepAlumFiltrados})
-        '
-        '
-        '
-        Me.ItemContainer3.TitleStyle.Class = "MetroTileGroupTitle"
-        Me.ItemContainer3.TitleStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square
-        Me.ItemContainer3.TitleStyle.Font = New System.Drawing.Font("Microsoft Sans Serif", 20.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ItemContainer3.TitleStyle.TextColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.ItemContainer3.TitleText = "REPORTES"
-        '
-        'btCertiRepDatosAlum
-        '
-        Me.btCertiRepDatosAlum.Frames.Add(MetroTileFrame2)
-        Me.btCertiRepDatosAlum.Image = Global.Presentacion.My.Resources.Resources.REPORTE_DATOS_ALUM
-        Me.btCertiRepDatosAlum.ImageTextAlignment = System.Drawing.ContentAlignment.MiddleCenter
-        Me.btCertiRepDatosAlum.Name = "btCertiRepDatosAlum"
-        Me.btCertiRepDatosAlum.SymbolColor = System.Drawing.Color.Empty
-        Me.btCertiRepDatosAlum.TileColor = DevComponents.DotNetBar.Metro.eMetroTileColor.Magenta
-        Me.btCertiRepDatosAlum.TileSize = New System.Drawing.Size(250, 135)
-        '
-        '
-        '
-        Me.btCertiRepDatosAlum.TileStyle.BackColor = System.Drawing.SystemColors.ActiveCaptionText
-        Me.btCertiRepDatosAlum.TileStyle.BackColor2 = System.Drawing.Color.FromArgb(CType(CType(150, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.btCertiRepDatosAlum.TileStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square
-        Me.btCertiRepDatosAlum.TitleText = "VEHICULO"
-        '
-        'btCertiRepAlumAproRepro
-        '
-        Me.btCertiRepAlumAproRepro.Frames.Add(MetroTileFrame2)
-        Me.btCertiRepAlumAproRepro.Image = Global.Presentacion.My.Resources.Resources.REP_ALUM_APROB
-        Me.btCertiRepAlumAproRepro.ImageTextAlignment = System.Drawing.ContentAlignment.MiddleCenter
-        Me.btCertiRepAlumAproRepro.Name = "btCertiRepAlumAproRepro"
-        Me.btCertiRepAlumAproRepro.SymbolColor = System.Drawing.Color.Empty
-        Me.btCertiRepAlumAproRepro.TileColor = DevComponents.DotNetBar.Metro.eMetroTileColor.Green
-        Me.btCertiRepAlumAproRepro.TileSize = New System.Drawing.Size(250, 135)
-        '
-        '
-        '
-        Me.btCertiRepAlumAproRepro.TileStyle.BackColor = System.Drawing.SystemColors.ActiveCaptionText
-        Me.btCertiRepAlumAproRepro.TileStyle.BackColor2 = System.Drawing.Color.FromArgb(CType(CType(190, Byte), Integer), CType(CType(127, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.btCertiRepAlumAproRepro.TileStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square
-        Me.btCertiRepAlumAproRepro.TitleText = "VEHICULO"
-        '
-        'btCertiRepCertiFormularios
-        '
-        Me.btCertiRepCertiFormularios.Frames.Add(MetroTileFrame2)
-        Me.btCertiRepCertiFormularios.Image = Global.Presentacion.My.Resources.Resources.REP_SOCIO
-        Me.btCertiRepCertiFormularios.ImageTextAlignment = System.Drawing.ContentAlignment.MiddleCenter
-        Me.btCertiRepCertiFormularios.Name = "btCertiRepCertiFormularios"
-        Me.btCertiRepCertiFormularios.SymbolColor = System.Drawing.Color.Empty
-        Me.btCertiRepCertiFormularios.TileColor = DevComponents.DotNetBar.Metro.eMetroTileColor.Blue
-        Me.btCertiRepCertiFormularios.TileSize = New System.Drawing.Size(250, 135)
-        '
-        '
-        '
-        Me.btCertiRepCertiFormularios.TileStyle.BackColor = System.Drawing.Color.Black
-        Me.btCertiRepCertiFormularios.TileStyle.BackColor2 = System.Drawing.Color.FromArgb(CType(CType(195, Byte), Integer), CType(CType(127, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(212, Byte), Integer))
-        Me.btCertiRepCertiFormularios.TileStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square
-        Me.btCertiRepCertiFormularios.TitleText = "VEHICULO"
-        '
-        'btCertiRepCronoPerfeccion
-        '
-        Me.btCertiRepCronoPerfeccion.Frames.Add(MetroTileFrame2)
-        Me.btCertiRepCronoPerfeccion.Image = Global.Presentacion.My.Resources.Resources.REP_SOCIO
-        Me.btCertiRepCronoPerfeccion.ImageTextAlignment = System.Drawing.ContentAlignment.MiddleCenter
-        Me.btCertiRepCronoPerfeccion.Name = "btCertiRepCronoPerfeccion"
-        Me.btCertiRepCronoPerfeccion.SymbolColor = System.Drawing.Color.Empty
-        Me.btCertiRepCronoPerfeccion.TileColor = DevComponents.DotNetBar.Metro.eMetroTileColor.Orange
-        Me.btCertiRepCronoPerfeccion.TileSize = New System.Drawing.Size(250, 135)
-        '
-        '
-        '
-        Me.btCertiRepCronoPerfeccion.TileStyle.BackColor = System.Drawing.SystemColors.ActiveCaptionText
-        Me.btCertiRepCronoPerfeccion.TileStyle.BackColor2 = System.Drawing.Color.FromArgb(CType(CType(185, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(43, Byte), Integer), CType(CType(226, Byte), Integer))
-        Me.btCertiRepCronoPerfeccion.TileStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square
-        Me.btCertiRepCronoPerfeccion.TitleText = "VEHICULO"
-        '
-        'btCertiRepAlumEscAprob
-        '
-        Me.btCertiRepAlumEscAprob.Frames.Add(MetroTileFrame2)
-        Me.btCertiRepAlumEscAprob.Image = Global.Presentacion.My.Resources.Resources.REP_ALUM_APROB
-        Me.btCertiRepAlumEscAprob.ImageTextAlignment = System.Drawing.ContentAlignment.MiddleCenter
-        Me.btCertiRepAlumEscAprob.Name = "btCertiRepAlumEscAprob"
-        Me.btCertiRepAlumEscAprob.SymbolColor = System.Drawing.Color.Empty
-        Me.btCertiRepAlumEscAprob.TileColor = DevComponents.DotNetBar.Metro.eMetroTileColor.Maroon
-        Me.btCertiRepAlumEscAprob.TileSize = New System.Drawing.Size(250, 135)
-        '
-        '
-        '
-        Me.btCertiRepAlumEscAprob.TileStyle.BackColor = System.Drawing.Color.Brown
-        Me.btCertiRepAlumEscAprob.TileStyle.BackColor2 = System.Drawing.Color.FromArgb(CType(CType(147, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.btCertiRepAlumEscAprob.TileStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square
-        Me.btCertiRepAlumEscAprob.TitleText = "VEHICULO"
-        '
-        'btCertiRepAlumFiltrados
-        '
-        Me.btCertiRepAlumFiltrados.Frames.Add(MetroTileFrame2)
-        Me.btCertiRepAlumFiltrados.Image = Global.Presentacion.My.Resources.Resources.REP_ALUM_APROB
-        Me.btCertiRepAlumFiltrados.ImageTextAlignment = System.Drawing.ContentAlignment.MiddleCenter
-        Me.btCertiRepAlumFiltrados.Name = "btCertiRepAlumFiltrados"
-        Me.btCertiRepAlumFiltrados.SymbolColor = System.Drawing.Color.Empty
-        Me.btCertiRepAlumFiltrados.TileColor = DevComponents.DotNetBar.Metro.eMetroTileColor.Teal
-        Me.btCertiRepAlumFiltrados.TileSize = New System.Drawing.Size(250, 135)
-        '
-        '
-        '
-        Me.btCertiRepAlumFiltrados.TileStyle.BackColor = System.Drawing.SystemColors.ActiveCaptionText
-        Me.btCertiRepAlumFiltrados.TileStyle.BackColor2 = System.Drawing.Color.FromArgb(CType(CType(185, Byte), Integer), CType(CType(127, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(212, Byte), Integer))
-        Me.btCertiRepAlumFiltrados.TileStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square
-        Me.btCertiRepAlumFiltrados.TitleText = "VEHICULO"
-        '
-        'PictureBox5
-        '
-        Me.PictureBox5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.PictureBox5.Dock = System.Windows.Forms.DockStyle.Bottom
-        Me.PictureBox5.Location = New System.Drawing.Point(0, 509)
-        Me.PictureBox5.Margin = New System.Windows.Forms.Padding(4)
-        Me.PictureBox5.Name = "PictureBox5"
-        Me.PictureBox5.Size = New System.Drawing.Size(1186, 140)
-        Me.PictureBox5.TabIndex = 4
-        Me.PictureBox5.TabStop = False
-        Me.PictureBox5.Visible = False
-        '
-        'SideNav_Conf
-        '
-        Me.SideNav_Conf.Controls.Add(Me.MetroTilePanel1)
-        Me.SideNav_Conf.Controls.Add(Me.PictureBox4)
-        Me.SideNav_Conf.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.SideNav_Conf.Location = New System.Drawing.Point(165, 40)
-        Me.SideNav_Conf.Margin = New System.Windows.Forms.Padding(4)
-        Me.SideNav_Conf.Name = "SideNav_Conf"
-        Me.SideNav_Conf.Size = New System.Drawing.Size(1186, 649)
-        Me.SideNav_Conf.TabIndex = 2
-        Me.SideNav_Conf.Visible = False
-        '
-        'MetroTilePanel1
-        '
-        Me.MetroTilePanel1.BackColor = System.Drawing.Color.Transparent
-        Me.MetroTilePanel1.BackgroundImage = Global.Presentacion.My.Resources.Resources.fondoMonaco04
-        Me.MetroTilePanel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        '
-        '
-        '
-        Me.MetroTilePanel1.BackgroundStyle.BackColor = System.Drawing.Color.Transparent
-        Me.MetroTilePanel1.BackgroundStyle.Class = "MetroTilePanel"
-        Me.MetroTilePanel1.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square
-        Me.MetroTilePanel1.ContainerControlProcessDialogKey = True
-        Me.MetroTilePanel1.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.MetroTilePanel1.DragDropSupport = True
-        Me.MetroTilePanel1.Items.AddRange(New DevComponents.DotNetBar.BaseItem() {Me.btConfServicios, Me.btConfRoles, Me.btConfUsuarios, Me.btConfSucursales, Me.btConfHorarios, Me.btConfPolitica, Me.btconfbanco})
-        Me.MetroTilePanel1.ItemSpacing = 10
-        Me.MetroTilePanel1.Location = New System.Drawing.Point(0, 0)
-        Me.MetroTilePanel1.Margin = New System.Windows.Forms.Padding(4)
-        Me.MetroTilePanel1.MultiLine = True
-        Me.MetroTilePanel1.Name = "MetroTilePanel1"
-        Me.MetroTilePanel1.Size = New System.Drawing.Size(1186, 509)
-        Me.MetroTilePanel1.TabIndex = 0
-        Me.MetroTilePanel1.Text = "mtp1Configuracion"
-        '
-        'btConfServicios
-        '
-        Me.btConfServicios.Image = Global.Presentacion.My.Resources.Resources.SERVICIOS
-        Me.btConfServicios.ImageTextAlignment = System.Drawing.ContentAlignment.MiddleCenter
-        Me.btConfServicios.Name = "btConfServicios"
-        Me.btConfServicios.SymbolColor = System.Drawing.Color.Empty
-        Me.btConfServicios.TileColor = DevComponents.DotNetBar.Metro.eMetroTileColor.Plum
-        Me.btConfServicios.TileSize = New System.Drawing.Size(250, 135)
-        '
-        '
-        '
-        Me.btConfServicios.TileStyle.BackColor = System.Drawing.Color.Blue
-        Me.btConfServicios.TileStyle.BackColor2 = System.Drawing.Color.FromArgb(CType(CType(153, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.btConfServicios.TileStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square
-        Me.btConfServicios.TitleText = "SERVICIOS"
-        '
-        'btConfRoles
-        '
-        Me.btConfRoles.Image = Global.Presentacion.My.Resources.Resources.ROLES
-        Me.btConfRoles.ImageTextAlignment = System.Drawing.ContentAlignment.MiddleCenter
-        Me.btConfRoles.Name = "btConfRoles"
-        Me.btConfRoles.SymbolColor = System.Drawing.Color.Empty
-        Me.btConfRoles.TileColor = DevComponents.DotNetBar.Metro.eMetroTileColor.Maroon
-        Me.btConfRoles.TileSize = New System.Drawing.Size(250, 135)
-        '
-        '
-        '
-        Me.btConfRoles.TileStyle.BackColor = System.Drawing.Color.Black
-        Me.btConfRoles.TileStyle.BackColor2 = System.Drawing.Color.FromArgb(CType(CType(164, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.btConfRoles.TileStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square
-        Me.btConfRoles.TitleText = "ROLES"
-        '
-        'btConfUsuarios
-        '
-        Me.btConfUsuarios.Image = Global.Presentacion.My.Resources.Resources.USUARIO
-        Me.btConfUsuarios.ImageTextAlignment = System.Drawing.ContentAlignment.MiddleCenter
-        Me.btConfUsuarios.Name = "btConfUsuarios"
-        Me.btConfUsuarios.SymbolColor = System.Drawing.Color.Empty
-        Me.btConfUsuarios.TileColor = DevComponents.DotNetBar.Metro.eMetroTileColor.RedOrange
-        Me.btConfUsuarios.TileSize = New System.Drawing.Size(250, 135)
-        '
-        '
-        '
-        Me.btConfUsuarios.TileStyle.BackColor = System.Drawing.Color.Yellow
-        Me.btConfUsuarios.TileStyle.BackColor2 = System.Drawing.Color.FromArgb(CType(CType(195, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.btConfUsuarios.TileStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square
-        Me.btConfUsuarios.TitleText = "USUARIOS"
-        '
-        'btConfSucursales
-        '
-        Me.btConfSucursales.Image = Global.Presentacion.My.Resources.Resources.SUCURSAL
-        Me.btConfSucursales.ImageTextAlignment = System.Drawing.ContentAlignment.MiddleCenter
-        Me.btConfSucursales.Name = "btConfSucursales"
-        Me.btConfSucursales.SymbolColor = System.Drawing.Color.Empty
-        Me.btConfSucursales.TileColor = DevComponents.DotNetBar.Metro.eMetroTileColor.Gray
-        Me.btConfSucursales.TileSize = New System.Drawing.Size(250, 135)
-        '
-        '
-        '
-        Me.btConfSucursales.TileStyle.BackColor = System.Drawing.Color.Blue
-        Me.btConfSucursales.TileStyle.BackColor2 = System.Drawing.Color.FromArgb(CType(CType(167, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(43, Byte), Integer), CType(CType(226, Byte), Integer))
-        Me.btConfSucursales.TileStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square
-        Me.btConfSucursales.TitleText = "SUCURSALES"
-        '
-        'btConfHorarios
-        '
-        Me.btConfHorarios.Image = Global.Presentacion.My.Resources.Resources.HORARIOS
-        Me.btConfHorarios.ImageTextAlignment = System.Drawing.ContentAlignment.MiddleCenter
-        Me.btConfHorarios.Name = "btConfHorarios"
-        Me.btConfHorarios.SymbolColor = System.Drawing.Color.Empty
-        Me.btConfHorarios.TileColor = DevComponents.DotNetBar.Metro.eMetroTileColor.Azure
-        Me.btConfHorarios.TileSize = New System.Drawing.Size(250, 135)
-        '
-        '
-        '
-        Me.btConfHorarios.TileStyle.BackColor = System.Drawing.SystemColors.ActiveCaptionText
-        Me.btConfHorarios.TileStyle.BackColor2 = System.Drawing.Color.FromArgb(CType(CType(193, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(215, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.btConfHorarios.TileStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square
-        Me.btConfHorarios.TitleText = "SUCURSALES"
-        '
-        'btConfPolitica
-        '
-        Me.btConfPolitica.Image = Global.Presentacion.My.Resources.Resources.HORARIOS
-        Me.btConfPolitica.ImageTextAlignment = System.Drawing.ContentAlignment.MiddleCenter
-        Me.btConfPolitica.Name = "btConfPolitica"
-        Me.btConfPolitica.SymbolColor = System.Drawing.Color.Empty
-        Me.btConfPolitica.TileColor = DevComponents.DotNetBar.Metro.eMetroTileColor.Green
-        Me.btConfPolitica.TileSize = New System.Drawing.Size(250, 135)
-        '
-        '
-        '
-        Me.btConfPolitica.TileStyle.BackColor = System.Drawing.Color.DarkBlue
-        Me.btConfPolitica.TileStyle.BackColor2 = System.Drawing.Color.FromArgb(CType(CType(176, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.btConfPolitica.TileStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square
-        Me.btConfPolitica.TitleText = "SUCURSALES"
-        '
-        'btconfbanco
-        '
-        Me.btconfbanco.Image = Global.Presentacion.My.Resources.Resources.HOT_CABANA
-        Me.btconfbanco.ImageTextAlignment = System.Drawing.ContentAlignment.MiddleCenter
-        Me.btconfbanco.Name = "btconfbanco"
-        Me.btconfbanco.SymbolColor = System.Drawing.Color.Empty
-        Me.btconfbanco.TileColor = DevComponents.DotNetBar.Metro.eMetroTileColor.DarkBlue
-        Me.btconfbanco.TileSize = New System.Drawing.Size(250, 135)
-        '
-        '
-        '
-        Me.btconfbanco.TileStyle.BackColor = System.Drawing.Color.DarkMagenta
-        Me.btconfbanco.TileStyle.BackColor2 = System.Drawing.Color.FromArgb(CType(CType(158, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.btconfbanco.TileStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square
-        Me.btconfbanco.TitleText = "BANCOS"
-        '
-        'PictureBox4
-        '
-        Me.PictureBox4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.PictureBox4.Dock = System.Windows.Forms.DockStyle.Bottom
-        Me.PictureBox4.Location = New System.Drawing.Point(0, 509)
-        Me.PictureBox4.Margin = New System.Windows.Forms.Padding(4)
-        Me.PictureBox4.Name = "PictureBox4"
-        Me.PictureBox4.Size = New System.Drawing.Size(1186, 140)
-        Me.PictureBox4.TabIndex = 2
-        Me.PictureBox4.TabStop = False
-        Me.PictureBox4.Visible = False
+        Me.btVentaEstadoCuenta.TileStyle.BackColor = System.Drawing.SystemColors.Highlight
+        Me.btVentaEstadoCuenta.TileStyle.BackColor2 = System.Drawing.Color.FromArgb(CType(CType(165, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer))
+        Me.btVentaEstadoCuenta.TileStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square
+        Me.btVentaEstadoCuenta.TitleText = "ESTADO CUENTAS"
         '
         'SideNavPanel2
         '
@@ -657,6 +261,7 @@ Partial Class P_Principal
         Me.SideNavPanel2.Name = "SideNavPanel2"
         Me.SideNavPanel2.Size = New System.Drawing.Size(1186, 649)
         Me.SideNavPanel2.TabIndex = 56
+        Me.SideNavPanel2.Visible = False
         '
         'MetroTilePanel3
         '
@@ -951,6 +556,454 @@ Partial Class P_Principal
         Me.PictureBox2.TabStop = False
         Me.PictureBox2.Visible = False
         '
+        'SideNav_Conf
+        '
+        Me.SideNav_Conf.Controls.Add(Me.MetroTilePanel1)
+        Me.SideNav_Conf.Controls.Add(Me.PictureBox4)
+        Me.SideNav_Conf.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.SideNav_Conf.Location = New System.Drawing.Point(165, 40)
+        Me.SideNav_Conf.Margin = New System.Windows.Forms.Padding(4)
+        Me.SideNav_Conf.Name = "SideNav_Conf"
+        Me.SideNav_Conf.Size = New System.Drawing.Size(1186, 649)
+        Me.SideNav_Conf.TabIndex = 2
+        Me.SideNav_Conf.Visible = False
+        '
+        'MetroTilePanel1
+        '
+        Me.MetroTilePanel1.BackColor = System.Drawing.Color.Transparent
+        Me.MetroTilePanel1.BackgroundImage = Global.Presentacion.My.Resources.Resources.fondoMonaco04
+        Me.MetroTilePanel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        '
+        '
+        '
+        Me.MetroTilePanel1.BackgroundStyle.BackColor = System.Drawing.Color.Transparent
+        Me.MetroTilePanel1.BackgroundStyle.Class = "MetroTilePanel"
+        Me.MetroTilePanel1.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square
+        Me.MetroTilePanel1.ContainerControlProcessDialogKey = True
+        Me.MetroTilePanel1.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.MetroTilePanel1.DragDropSupport = True
+        Me.MetroTilePanel1.Items.AddRange(New DevComponents.DotNetBar.BaseItem() {Me.btConfServicios, Me.btConfRoles, Me.btConfUsuarios, Me.btConfSucursales, Me.btConfHorarios, Me.btConfPolitica, Me.btconfbanco})
+        Me.MetroTilePanel1.ItemSpacing = 10
+        Me.MetroTilePanel1.Location = New System.Drawing.Point(0, 0)
+        Me.MetroTilePanel1.Margin = New System.Windows.Forms.Padding(4)
+        Me.MetroTilePanel1.MultiLine = True
+        Me.MetroTilePanel1.Name = "MetroTilePanel1"
+        Me.MetroTilePanel1.Size = New System.Drawing.Size(1186, 509)
+        Me.MetroTilePanel1.TabIndex = 0
+        Me.MetroTilePanel1.Text = "mtp1Configuracion"
+        '
+        'btConfServicios
+        '
+        Me.btConfServicios.Image = Global.Presentacion.My.Resources.Resources.SERVICIOS
+        Me.btConfServicios.ImageTextAlignment = System.Drawing.ContentAlignment.MiddleCenter
+        Me.btConfServicios.Name = "btConfServicios"
+        Me.btConfServicios.SymbolColor = System.Drawing.Color.Empty
+        Me.btConfServicios.TileColor = DevComponents.DotNetBar.Metro.eMetroTileColor.Plum
+        Me.btConfServicios.TileSize = New System.Drawing.Size(250, 135)
+        '
+        '
+        '
+        Me.btConfServicios.TileStyle.BackColor = System.Drawing.Color.Blue
+        Me.btConfServicios.TileStyle.BackColor2 = System.Drawing.Color.FromArgb(CType(CType(153, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer))
+        Me.btConfServicios.TileStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square
+        Me.btConfServicios.TitleText = "SERVICIOS"
+        '
+        'btConfRoles
+        '
+        Me.btConfRoles.Image = Global.Presentacion.My.Resources.Resources.ROLES
+        Me.btConfRoles.ImageTextAlignment = System.Drawing.ContentAlignment.MiddleCenter
+        Me.btConfRoles.Name = "btConfRoles"
+        Me.btConfRoles.SymbolColor = System.Drawing.Color.Empty
+        Me.btConfRoles.TileColor = DevComponents.DotNetBar.Metro.eMetroTileColor.Maroon
+        Me.btConfRoles.TileSize = New System.Drawing.Size(250, 135)
+        '
+        '
+        '
+        Me.btConfRoles.TileStyle.BackColor = System.Drawing.Color.Black
+        Me.btConfRoles.TileStyle.BackColor2 = System.Drawing.Color.FromArgb(CType(CType(164, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.btConfRoles.TileStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square
+        Me.btConfRoles.TitleText = "ROLES"
+        '
+        'btConfUsuarios
+        '
+        Me.btConfUsuarios.Image = Global.Presentacion.My.Resources.Resources.USUARIO
+        Me.btConfUsuarios.ImageTextAlignment = System.Drawing.ContentAlignment.MiddleCenter
+        Me.btConfUsuarios.Name = "btConfUsuarios"
+        Me.btConfUsuarios.SymbolColor = System.Drawing.Color.Empty
+        Me.btConfUsuarios.TileColor = DevComponents.DotNetBar.Metro.eMetroTileColor.RedOrange
+        Me.btConfUsuarios.TileSize = New System.Drawing.Size(250, 135)
+        '
+        '
+        '
+        Me.btConfUsuarios.TileStyle.BackColor = System.Drawing.Color.Yellow
+        Me.btConfUsuarios.TileStyle.BackColor2 = System.Drawing.Color.FromArgb(CType(CType(195, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer))
+        Me.btConfUsuarios.TileStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square
+        Me.btConfUsuarios.TitleText = "USUARIOS"
+        '
+        'btConfSucursales
+        '
+        Me.btConfSucursales.Image = Global.Presentacion.My.Resources.Resources.SUCURSAL
+        Me.btConfSucursales.ImageTextAlignment = System.Drawing.ContentAlignment.MiddleCenter
+        Me.btConfSucursales.Name = "btConfSucursales"
+        Me.btConfSucursales.SymbolColor = System.Drawing.Color.Empty
+        Me.btConfSucursales.TileColor = DevComponents.DotNetBar.Metro.eMetroTileColor.Gray
+        Me.btConfSucursales.TileSize = New System.Drawing.Size(250, 135)
+        '
+        '
+        '
+        Me.btConfSucursales.TileStyle.BackColor = System.Drawing.Color.Blue
+        Me.btConfSucursales.TileStyle.BackColor2 = System.Drawing.Color.FromArgb(CType(CType(167, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(43, Byte), Integer), CType(CType(226, Byte), Integer))
+        Me.btConfSucursales.TileStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square
+        Me.btConfSucursales.TitleText = "SUCURSALES"
+        '
+        'btConfHorarios
+        '
+        Me.btConfHorarios.Image = Global.Presentacion.My.Resources.Resources.HORARIOS
+        Me.btConfHorarios.ImageTextAlignment = System.Drawing.ContentAlignment.MiddleCenter
+        Me.btConfHorarios.Name = "btConfHorarios"
+        Me.btConfHorarios.SymbolColor = System.Drawing.Color.Empty
+        Me.btConfHorarios.TileColor = DevComponents.DotNetBar.Metro.eMetroTileColor.Azure
+        Me.btConfHorarios.TileSize = New System.Drawing.Size(250, 135)
+        '
+        '
+        '
+        Me.btConfHorarios.TileStyle.BackColor = System.Drawing.SystemColors.ActiveCaptionText
+        Me.btConfHorarios.TileStyle.BackColor2 = System.Drawing.Color.FromArgb(CType(CType(193, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(215, Byte), Integer), CType(CType(0, Byte), Integer))
+        Me.btConfHorarios.TileStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square
+        Me.btConfHorarios.TitleText = "SUCURSALES"
+        '
+        'btConfPolitica
+        '
+        Me.btConfPolitica.Image = Global.Presentacion.My.Resources.Resources.HORARIOS
+        Me.btConfPolitica.ImageTextAlignment = System.Drawing.ContentAlignment.MiddleCenter
+        Me.btConfPolitica.Name = "btConfPolitica"
+        Me.btConfPolitica.SymbolColor = System.Drawing.Color.Empty
+        Me.btConfPolitica.TileColor = DevComponents.DotNetBar.Metro.eMetroTileColor.Green
+        Me.btConfPolitica.TileSize = New System.Drawing.Size(250, 135)
+        '
+        '
+        '
+        Me.btConfPolitica.TileStyle.BackColor = System.Drawing.Color.DarkBlue
+        Me.btConfPolitica.TileStyle.BackColor2 = System.Drawing.Color.FromArgb(CType(CType(176, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer))
+        Me.btConfPolitica.TileStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square
+        Me.btConfPolitica.TitleText = "SUCURSALES"
+        '
+        'btconfbanco
+        '
+        Me.btconfbanco.Image = Global.Presentacion.My.Resources.Resources.HOT_CABANA
+        Me.btconfbanco.ImageTextAlignment = System.Drawing.ContentAlignment.MiddleCenter
+        Me.btconfbanco.Name = "btconfbanco"
+        Me.btconfbanco.SymbolColor = System.Drawing.Color.Empty
+        Me.btconfbanco.TileColor = DevComponents.DotNetBar.Metro.eMetroTileColor.DarkBlue
+        Me.btconfbanco.TileSize = New System.Drawing.Size(250, 135)
+        '
+        '
+        '
+        Me.btconfbanco.TileStyle.BackColor = System.Drawing.Color.DarkMagenta
+        Me.btconfbanco.TileStyle.BackColor2 = System.Drawing.Color.FromArgb(CType(CType(158, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.btconfbanco.TileStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square
+        Me.btconfbanco.TitleText = "BANCOS"
+        '
+        'PictureBox4
+        '
+        Me.PictureBox4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.PictureBox4.Dock = System.Windows.Forms.DockStyle.Bottom
+        Me.PictureBox4.Location = New System.Drawing.Point(0, 509)
+        Me.PictureBox4.Margin = New System.Windows.Forms.Padding(4)
+        Me.PictureBox4.Name = "PictureBox4"
+        Me.PictureBox4.Size = New System.Drawing.Size(1186, 140)
+        Me.PictureBox4.TabIndex = 2
+        Me.PictureBox4.TabStop = False
+        Me.PictureBox4.Visible = False
+        '
+        'SideNavPanel3
+        '
+        Me.SideNavPanel3.Controls.Add(Me.MetroTilePanel5)
+        Me.SideNavPanel3.Controls.Add(Me.PictureBox5)
+        Me.SideNavPanel3.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.SideNavPanel3.Location = New System.Drawing.Point(165, 40)
+        Me.SideNavPanel3.Margin = New System.Windows.Forms.Padding(4)
+        Me.SideNavPanel3.Name = "SideNavPanel3"
+        Me.SideNavPanel3.Size = New System.Drawing.Size(1186, 649)
+        Me.SideNavPanel3.TabIndex = 73
+        Me.SideNavPanel3.Visible = False
+        '
+        'MetroTilePanel5
+        '
+        Me.MetroTilePanel5.BackColor = System.Drawing.Color.Transparent
+        Me.MetroTilePanel5.BackgroundImage = Global.Presentacion.My.Resources.Resources.fondomonaco03
+        Me.MetroTilePanel5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        '
+        '
+        '
+        Me.MetroTilePanel5.BackgroundStyle.BackColor = System.Drawing.Color.Transparent
+        Me.MetroTilePanel5.BackgroundStyle.Class = "MetroTilePanel"
+        Me.MetroTilePanel5.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square
+        Me.MetroTilePanel5.ContainerControlProcessDialogKey = True
+        Me.MetroTilePanel5.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.MetroTilePanel5.DragDropSupport = True
+        Me.MetroTilePanel5.Items.AddRange(New DevComponents.DotNetBar.BaseItem() {Me.btCertiAlumnos, Me.btCertiAlumTeorico, Me.btCertiAlumNotasTeorico, Me.btCertiAlumPractico, Me.btCertiPreguntas, Me.btCertiCertificacionAlumnos, Me.btCertiCertificacionPerfecc, Me.ItemContainer3})
+        Me.MetroTilePanel5.ItemSpacing = 10
+        Me.MetroTilePanel5.Location = New System.Drawing.Point(0, 0)
+        Me.MetroTilePanel5.Margin = New System.Windows.Forms.Padding(4)
+        Me.MetroTilePanel5.MultiLine = True
+        Me.MetroTilePanel5.Name = "MetroTilePanel5"
+        Me.MetroTilePanel5.Size = New System.Drawing.Size(1186, 509)
+        Me.MetroTilePanel5.TabIndex = 3
+        Me.MetroTilePanel5.Text = "mtp3Pedidos"
+        '
+        'btCertiAlumnos
+        '
+        Me.btCertiAlumnos.Frames.Add(MetroTileFrame2)
+        Me.btCertiAlumnos.Image = Global.Presentacion.My.Resources.Resources.ALUMNO
+        Me.btCertiAlumnos.ImageTextAlignment = System.Drawing.ContentAlignment.MiddleCenter
+        Me.btCertiAlumnos.Name = "btCertiAlumnos"
+        Me.btCertiAlumnos.SymbolColor = System.Drawing.Color.Empty
+        Me.btCertiAlumnos.TileColor = DevComponents.DotNetBar.Metro.eMetroTileColor.RedOrange
+        Me.btCertiAlumnos.TileSize = New System.Drawing.Size(250, 135)
+        '
+        '
+        '
+        Me.btCertiAlumnos.TileStyle.BackColor = System.Drawing.SystemColors.Highlight
+        Me.btCertiAlumnos.TileStyle.BackColor2 = System.Drawing.Color.FromArgb(CType(CType(173, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer))
+        Me.btCertiAlumnos.TileStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square
+        Me.btCertiAlumnos.TitleText = "VEHICULO"
+        '
+        'btCertiAlumTeorico
+        '
+        Me.btCertiAlumTeorico.Frames.Add(MetroTileFrame2)
+        Me.btCertiAlumTeorico.Image = Global.Presentacion.My.Resources.Resources.LISTA_ALUM_TEO
+        Me.btCertiAlumTeorico.ImageTextAlignment = System.Drawing.ContentAlignment.MiddleCenter
+        Me.btCertiAlumTeorico.Name = "btCertiAlumTeorico"
+        Me.btCertiAlumTeorico.SymbolColor = System.Drawing.Color.Empty
+        Me.btCertiAlumTeorico.TileColor = DevComponents.DotNetBar.Metro.eMetroTileColor.Green
+        Me.btCertiAlumTeorico.TileSize = New System.Drawing.Size(250, 135)
+        '
+        '
+        '
+        Me.btCertiAlumTeorico.TileStyle.BackColor = System.Drawing.Color.DarkCyan
+        Me.btCertiAlumTeorico.TileStyle.BackColor2 = System.Drawing.Color.FromArgb(CType(CType(144, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(43, Byte), Integer), CType(CType(226, Byte), Integer))
+        Me.btCertiAlumTeorico.TileStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square
+        Me.btCertiAlumTeorico.TitleText = "VEHICULO"
+        '
+        'btCertiAlumNotasTeorico
+        '
+        Me.btCertiAlumNotasTeorico.Frames.Add(MetroTileFrame2)
+        Me.btCertiAlumNotasTeorico.Image = Global.Presentacion.My.Resources.Resources.INSCRIPCION
+        Me.btCertiAlumNotasTeorico.ImageTextAlignment = System.Drawing.ContentAlignment.MiddleCenter
+        Me.btCertiAlumNotasTeorico.Name = "btCertiAlumNotasTeorico"
+        Me.btCertiAlumNotasTeorico.SymbolColor = System.Drawing.Color.Empty
+        Me.btCertiAlumNotasTeorico.TileColor = DevComponents.DotNetBar.Metro.eMetroTileColor.Azure
+        Me.btCertiAlumNotasTeorico.TileSize = New System.Drawing.Size(250, 135)
+        '
+        '
+        '
+        Me.btCertiAlumNotasTeorico.TileStyle.BackColor = System.Drawing.SystemColors.Highlight
+        Me.btCertiAlumNotasTeorico.TileStyle.BackColor2 = System.Drawing.Color.FromArgb(CType(CType(165, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer))
+        Me.btCertiAlumNotasTeorico.TileStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square
+        Me.btCertiAlumNotasTeorico.TitleText = "VEHICULO"
+        '
+        'btCertiAlumPractico
+        '
+        Me.btCertiAlumPractico.Frames.Add(MetroTileFrame2)
+        Me.btCertiAlumPractico.Image = Global.Presentacion.My.Resources.Resources.LISTA_ALUM_PRAC
+        Me.btCertiAlumPractico.ImageTextAlignment = System.Drawing.ContentAlignment.MiddleCenter
+        Me.btCertiAlumPractico.Name = "btCertiAlumPractico"
+        Me.btCertiAlumPractico.SymbolColor = System.Drawing.Color.Empty
+        Me.btCertiAlumPractico.TileColor = DevComponents.DotNetBar.Metro.eMetroTileColor.[Default]
+        Me.btCertiAlumPractico.TileSize = New System.Drawing.Size(250, 135)
+        '
+        '
+        '
+        Me.btCertiAlumPractico.TileStyle.BackColor = System.Drawing.Color.FromArgb(CType(CType(226, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(102, Byte), Integer), CType(CType(204, Byte), Integer))
+        Me.btCertiAlumPractico.TileStyle.BackColor2 = System.Drawing.Color.FromArgb(CType(CType(176, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer))
+        Me.btCertiAlumPractico.TileStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square
+        Me.btCertiAlumPractico.TitleText = "VEHICULO"
+        '
+        'btCertiPreguntas
+        '
+        Me.btCertiPreguntas.Frames.Add(MetroTileFrame2)
+        Me.btCertiPreguntas.Image = Global.Presentacion.My.Resources.Resources.PREGUNTAS
+        Me.btCertiPreguntas.ImageTextAlignment = System.Drawing.ContentAlignment.MiddleCenter
+        Me.btCertiPreguntas.Name = "btCertiPreguntas"
+        Me.btCertiPreguntas.SymbolColor = System.Drawing.Color.Empty
+        Me.btCertiPreguntas.TileColor = DevComponents.DotNetBar.Metro.eMetroTileColor.Teal
+        Me.btCertiPreguntas.TileSize = New System.Drawing.Size(250, 135)
+        '
+        '
+        '
+        Me.btCertiPreguntas.TileStyle.BackColor = System.Drawing.SystemColors.Highlight
+        Me.btCertiPreguntas.TileStyle.BackColor2 = System.Drawing.Color.FromArgb(CType(CType(206, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer))
+        Me.btCertiPreguntas.TileStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square
+        Me.btCertiPreguntas.TitleText = "VEHICULO"
+        '
+        'btCertiCertificacionAlumnos
+        '
+        Me.btCertiCertificacionAlumnos.Frames.Add(MetroTileFrame2)
+        Me.btCertiCertificacionAlumnos.Image = Global.Presentacion.My.Resources.Resources.PRE_EXAMEN
+        Me.btCertiCertificacionAlumnos.ImageTextAlignment = System.Drawing.ContentAlignment.MiddleCenter
+        Me.btCertiCertificacionAlumnos.Name = "btCertiCertificacionAlumnos"
+        Me.btCertiCertificacionAlumnos.SymbolColor = System.Drawing.Color.Empty
+        Me.btCertiCertificacionAlumnos.TileColor = DevComponents.DotNetBar.Metro.eMetroTileColor.MaroonWashed
+        Me.btCertiCertificacionAlumnos.TileSize = New System.Drawing.Size(250, 135)
+        '
+        '
+        '
+        Me.btCertiCertificacionAlumnos.TileStyle.BackColor = System.Drawing.Color.Black
+        Me.btCertiCertificacionAlumnos.TileStyle.BackColor2 = System.Drawing.Color.FromArgb(CType(CType(185, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(0, Byte), Integer))
+        Me.btCertiCertificacionAlumnos.TileStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square
+        Me.btCertiCertificacionAlumnos.TitleText = "VEHICULO"
+        '
+        'btCertiCertificacionPerfecc
+        '
+        Me.btCertiCertificacionPerfecc.Frames.Add(MetroTileFrame2)
+        Me.btCertiCertificacionPerfecc.Image = Global.Presentacion.My.Resources.Resources.perfeccionamiento
+        Me.btCertiCertificacionPerfecc.ImageTextAlignment = System.Drawing.ContentAlignment.MiddleCenter
+        Me.btCertiCertificacionPerfecc.Name = "btCertiCertificacionPerfecc"
+        Me.btCertiCertificacionPerfecc.SymbolColor = System.Drawing.Color.Empty
+        Me.btCertiCertificacionPerfecc.TileColor = DevComponents.DotNetBar.Metro.eMetroTileColor.Maroon
+        Me.btCertiCertificacionPerfecc.TileSize = New System.Drawing.Size(250, 135)
+        '
+        '
+        '
+        Me.btCertiCertificacionPerfecc.TileStyle.BackColor = System.Drawing.Color.Black
+        Me.btCertiCertificacionPerfecc.TileStyle.BackColor2 = System.Drawing.Color.FromArgb(CType(CType(212, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(215, Byte), Integer), CType(CType(0, Byte), Integer))
+        Me.btCertiCertificacionPerfecc.TileStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square
+        Me.btCertiCertificacionPerfecc.TitleText = "VEHICULO"
+        '
+        'ItemContainer3
+        '
+        '
+        '
+        '
+        Me.ItemContainer3.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square
+        Me.ItemContainer3.ItemSpacing = 10
+        Me.ItemContainer3.MultiLine = True
+        Me.ItemContainer3.Name = "ItemContainer3"
+        Me.ItemContainer3.SubItems.AddRange(New DevComponents.DotNetBar.BaseItem() {Me.btCertiRepDatosAlum, Me.btCertiRepAlumAproRepro, Me.btCertiRepCertiFormularios, Me.btCertiRepCronoPerfeccion, Me.btCertiRepAlumEscAprob, Me.btCertiRepAlumFiltrados})
+        '
+        '
+        '
+        Me.ItemContainer3.TitleStyle.Class = "MetroTileGroupTitle"
+        Me.ItemContainer3.TitleStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square
+        Me.ItemContainer3.TitleStyle.Font = New System.Drawing.Font("Microsoft Sans Serif", 20.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.ItemContainer3.TitleStyle.TextColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.ItemContainer3.TitleText = "REPORTES"
+        '
+        'btCertiRepDatosAlum
+        '
+        Me.btCertiRepDatosAlum.Frames.Add(MetroTileFrame2)
+        Me.btCertiRepDatosAlum.Image = Global.Presentacion.My.Resources.Resources.REPORTE_DATOS_ALUM
+        Me.btCertiRepDatosAlum.ImageTextAlignment = System.Drawing.ContentAlignment.MiddleCenter
+        Me.btCertiRepDatosAlum.Name = "btCertiRepDatosAlum"
+        Me.btCertiRepDatosAlum.SymbolColor = System.Drawing.Color.Empty
+        Me.btCertiRepDatosAlum.TileColor = DevComponents.DotNetBar.Metro.eMetroTileColor.Magenta
+        Me.btCertiRepDatosAlum.TileSize = New System.Drawing.Size(250, 135)
+        '
+        '
+        '
+        Me.btCertiRepDatosAlum.TileStyle.BackColor = System.Drawing.SystemColors.ActiveCaptionText
+        Me.btCertiRepDatosAlum.TileStyle.BackColor2 = System.Drawing.Color.FromArgb(CType(CType(150, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer))
+        Me.btCertiRepDatosAlum.TileStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square
+        Me.btCertiRepDatosAlum.TitleText = "VEHICULO"
+        '
+        'btCertiRepAlumAproRepro
+        '
+        Me.btCertiRepAlumAproRepro.Frames.Add(MetroTileFrame2)
+        Me.btCertiRepAlumAproRepro.Image = Global.Presentacion.My.Resources.Resources.REP_ALUM_APROB
+        Me.btCertiRepAlumAproRepro.ImageTextAlignment = System.Drawing.ContentAlignment.MiddleCenter
+        Me.btCertiRepAlumAproRepro.Name = "btCertiRepAlumAproRepro"
+        Me.btCertiRepAlumAproRepro.SymbolColor = System.Drawing.Color.Empty
+        Me.btCertiRepAlumAproRepro.TileColor = DevComponents.DotNetBar.Metro.eMetroTileColor.Green
+        Me.btCertiRepAlumAproRepro.TileSize = New System.Drawing.Size(250, 135)
+        '
+        '
+        '
+        Me.btCertiRepAlumAproRepro.TileStyle.BackColor = System.Drawing.SystemColors.ActiveCaptionText
+        Me.btCertiRepAlumAproRepro.TileStyle.BackColor2 = System.Drawing.Color.FromArgb(CType(CType(190, Byte), Integer), CType(CType(127, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(0, Byte), Integer))
+        Me.btCertiRepAlumAproRepro.TileStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square
+        Me.btCertiRepAlumAproRepro.TitleText = "VEHICULO"
+        '
+        'btCertiRepCertiFormularios
+        '
+        Me.btCertiRepCertiFormularios.Frames.Add(MetroTileFrame2)
+        Me.btCertiRepCertiFormularios.Image = Global.Presentacion.My.Resources.Resources.REP_SOCIO
+        Me.btCertiRepCertiFormularios.ImageTextAlignment = System.Drawing.ContentAlignment.MiddleCenter
+        Me.btCertiRepCertiFormularios.Name = "btCertiRepCertiFormularios"
+        Me.btCertiRepCertiFormularios.SymbolColor = System.Drawing.Color.Empty
+        Me.btCertiRepCertiFormularios.TileColor = DevComponents.DotNetBar.Metro.eMetroTileColor.Blue
+        Me.btCertiRepCertiFormularios.TileSize = New System.Drawing.Size(250, 135)
+        '
+        '
+        '
+        Me.btCertiRepCertiFormularios.TileStyle.BackColor = System.Drawing.Color.Black
+        Me.btCertiRepCertiFormularios.TileStyle.BackColor2 = System.Drawing.Color.FromArgb(CType(CType(195, Byte), Integer), CType(CType(127, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(212, Byte), Integer))
+        Me.btCertiRepCertiFormularios.TileStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square
+        Me.btCertiRepCertiFormularios.TitleText = "VEHICULO"
+        '
+        'btCertiRepCronoPerfeccion
+        '
+        Me.btCertiRepCronoPerfeccion.Frames.Add(MetroTileFrame2)
+        Me.btCertiRepCronoPerfeccion.Image = Global.Presentacion.My.Resources.Resources.REP_SOCIO
+        Me.btCertiRepCronoPerfeccion.ImageTextAlignment = System.Drawing.ContentAlignment.MiddleCenter
+        Me.btCertiRepCronoPerfeccion.Name = "btCertiRepCronoPerfeccion"
+        Me.btCertiRepCronoPerfeccion.SymbolColor = System.Drawing.Color.Empty
+        Me.btCertiRepCronoPerfeccion.TileColor = DevComponents.DotNetBar.Metro.eMetroTileColor.Orange
+        Me.btCertiRepCronoPerfeccion.TileSize = New System.Drawing.Size(250, 135)
+        '
+        '
+        '
+        Me.btCertiRepCronoPerfeccion.TileStyle.BackColor = System.Drawing.SystemColors.ActiveCaptionText
+        Me.btCertiRepCronoPerfeccion.TileStyle.BackColor2 = System.Drawing.Color.FromArgb(CType(CType(185, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(43, Byte), Integer), CType(CType(226, Byte), Integer))
+        Me.btCertiRepCronoPerfeccion.TileStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square
+        Me.btCertiRepCronoPerfeccion.TitleText = "VEHICULO"
+        '
+        'btCertiRepAlumEscAprob
+        '
+        Me.btCertiRepAlumEscAprob.Frames.Add(MetroTileFrame2)
+        Me.btCertiRepAlumEscAprob.Image = Global.Presentacion.My.Resources.Resources.REP_ALUM_APROB
+        Me.btCertiRepAlumEscAprob.ImageTextAlignment = System.Drawing.ContentAlignment.MiddleCenter
+        Me.btCertiRepAlumEscAprob.Name = "btCertiRepAlumEscAprob"
+        Me.btCertiRepAlumEscAprob.SymbolColor = System.Drawing.Color.Empty
+        Me.btCertiRepAlumEscAprob.TileColor = DevComponents.DotNetBar.Metro.eMetroTileColor.Maroon
+        Me.btCertiRepAlumEscAprob.TileSize = New System.Drawing.Size(250, 135)
+        '
+        '
+        '
+        Me.btCertiRepAlumEscAprob.TileStyle.BackColor = System.Drawing.Color.Brown
+        Me.btCertiRepAlumEscAprob.TileStyle.BackColor2 = System.Drawing.Color.FromArgb(CType(CType(147, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer))
+        Me.btCertiRepAlumEscAprob.TileStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square
+        Me.btCertiRepAlumEscAprob.TitleText = "VEHICULO"
+        '
+        'btCertiRepAlumFiltrados
+        '
+        Me.btCertiRepAlumFiltrados.Frames.Add(MetroTileFrame2)
+        Me.btCertiRepAlumFiltrados.Image = Global.Presentacion.My.Resources.Resources.REP_ALUM_APROB
+        Me.btCertiRepAlumFiltrados.ImageTextAlignment = System.Drawing.ContentAlignment.MiddleCenter
+        Me.btCertiRepAlumFiltrados.Name = "btCertiRepAlumFiltrados"
+        Me.btCertiRepAlumFiltrados.SymbolColor = System.Drawing.Color.Empty
+        Me.btCertiRepAlumFiltrados.TileColor = DevComponents.DotNetBar.Metro.eMetroTileColor.Teal
+        Me.btCertiRepAlumFiltrados.TileSize = New System.Drawing.Size(250, 135)
+        '
+        '
+        '
+        Me.btCertiRepAlumFiltrados.TileStyle.BackColor = System.Drawing.SystemColors.ActiveCaptionText
+        Me.btCertiRepAlumFiltrados.TileStyle.BackColor2 = System.Drawing.Color.FromArgb(CType(CType(185, Byte), Integer), CType(CType(127, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(212, Byte), Integer))
+        Me.btCertiRepAlumFiltrados.TileStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square
+        Me.btCertiRepAlumFiltrados.TitleText = "VEHICULO"
+        '
+        'PictureBox5
+        '
+        Me.PictureBox5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.PictureBox5.Dock = System.Windows.Forms.DockStyle.Bottom
+        Me.PictureBox5.Location = New System.Drawing.Point(0, 509)
+        Me.PictureBox5.Margin = New System.Windows.Forms.Padding(4)
+        Me.PictureBox5.Name = "PictureBox5"
+        Me.PictureBox5.Size = New System.Drawing.Size(1186, 140)
+        Me.PictureBox5.TabIndex = 4
+        Me.PictureBox5.TabStop = False
+        Me.PictureBox5.Visible = False
+        '
         'SideNavItem1
         '
         Me.SideNavItem1.IsSystemMenu = True
@@ -978,7 +1031,6 @@ Partial Class P_Principal
         '
         'FP_Escuela
         '
-        Me.FP_Escuela.Checked = True
         Me.FP_Escuela.Name = "FP_Escuela"
         Me.FP_Escuela.Panel = Me.SideNavPanel2
         Me.FP_Escuela.Symbol = ""
@@ -1003,6 +1055,7 @@ Partial Class P_Principal
         '
         'FP_Venta
         '
+        Me.FP_Venta.Checked = True
         Me.FP_Venta.Name = "FP_Venta"
         Me.FP_Venta.Panel = Me.SideNavPanel1
         Me.FP_Venta.Symbol = ""
@@ -1203,22 +1256,22 @@ Partial Class P_Principal
         Me.tbDecimal.TabIndex = 5
         Me.tbDecimal.Visible = False
         '
-        'btVentaCierreCaja
+        'btVentaMorosidad
         '
-        Me.btVentaCierreCaja.Frames.Add(MetroTileFrame2)
-        Me.btVentaCierreCaja.Image = Global.Presentacion.My.Resources.Resources.INSCRIPCION
-        Me.btVentaCierreCaja.ImageTextAlignment = System.Drawing.ContentAlignment.MiddleCenter
-        Me.btVentaCierreCaja.Name = "btVentaCierreCaja"
-        Me.btVentaCierreCaja.SymbolColor = System.Drawing.Color.Empty
-        Me.btVentaCierreCaja.TileColor = DevComponents.DotNetBar.Metro.eMetroTileColor.Azure
-        Me.btVentaCierreCaja.TileSize = New System.Drawing.Size(250, 135)
+        Me.btVentaMorosidad.Frames.Add(MetroTileFrame2)
+        Me.btVentaMorosidad.Image = Global.Presentacion.My.Resources.Resources.INSCRIPCION
+        Me.btVentaMorosidad.ImageTextAlignment = System.Drawing.ContentAlignment.MiddleCenter
+        Me.btVentaMorosidad.Name = "btVentaMorosidad"
+        Me.btVentaMorosidad.SymbolColor = System.Drawing.Color.Empty
+        Me.btVentaMorosidad.TileColor = DevComponents.DotNetBar.Metro.eMetroTileColor.Azure
+        Me.btVentaMorosidad.TileSize = New System.Drawing.Size(250, 135)
         '
         '
         '
-        Me.btVentaCierreCaja.TileStyle.BackColor = System.Drawing.SystemColors.Highlight
-        Me.btVentaCierreCaja.TileStyle.BackColor2 = System.Drawing.Color.FromArgb(CType(CType(165, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.btVentaCierreCaja.TileStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square
-        Me.btVentaCierreCaja.TitleText = "CIERRE CAJA"
+        Me.btVentaMorosidad.TileStyle.BackColor = System.Drawing.SystemColors.Highlight
+        Me.btVentaMorosidad.TileStyle.BackColor2 = System.Drawing.Color.FromArgb(CType(CType(165, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer))
+        Me.btVentaMorosidad.TileStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square
+        Me.btVentaMorosidad.TitleText = "REPORTE MOROSIDAD"
         '
         'P_Principal
         '
@@ -1236,12 +1289,12 @@ Partial Class P_Principal
         Me.ModVenta.ResumeLayout(False)
         Me.ModVenta.PerformLayout()
         Me.SideNavPanel1.ResumeLayout(False)
-        Me.SideNavPanel3.ResumeLayout(False)
-        CType(Me.PictureBox5, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.SideNav_Conf.ResumeLayout(False)
-        CType(Me.PictureBox4, System.ComponentModel.ISupportInitialize).EndInit()
         Me.SideNavPanel2.ResumeLayout(False)
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.SideNav_Conf.ResumeLayout(False)
+        CType(Me.PictureBox4, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.SideNavPanel3.ResumeLayout(False)
+        CType(Me.PictureBox5, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.tbDecimal, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
@@ -1317,4 +1370,7 @@ Partial Class P_Principal
     Friend WithEvents btVentas As DevComponents.DotNetBar.Metro.MetroTileItem
     Private WithEvents FP_Venta As DevComponents.DotNetBar.Controls.SideNavItem
     Friend WithEvents btVentaCierreCaja As DevComponents.DotNetBar.Metro.MetroTileItem
+    Friend WithEvents btVentaPagos As DevComponents.DotNetBar.Metro.MetroTileItem
+    Friend WithEvents btVentaEstadoCuenta As DevComponents.DotNetBar.Metro.MetroTileItem
+    Friend WithEvents btVentaMorosidad As DevComponents.DotNetBar.Metro.MetroTileItem
 End Class

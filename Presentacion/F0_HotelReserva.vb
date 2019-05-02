@@ -1056,7 +1056,7 @@ Public Class F0_HotelReserva
 
     Private Sub F0_HotelReserva_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         _prIniciarTodo()
-        'Prueba 3
+
     End Sub
     Private Sub grCabecera_ColumnWidthChanged(sender As Object, e As DataGridViewColumnEventArgs) Handles grCabecera.ColumnWidthChanged
         grHorario.Columns(e.Column.Index).Width = grCabecera.Columns(e.Column.Index).Width

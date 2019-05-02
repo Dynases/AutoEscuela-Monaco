@@ -527,10 +527,28 @@
     <Compile Include="F_SocioVehiculo.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Monaco\F0_PagoCliente.Designer.vb">
+      <DependentUpon>F0_PagoCliente.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Monaco\F0_PagoCliente.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Monaco\F0_VentaServicios.Designer.vb">
       <DependentUpon>F0_VentaServicios.vb</DependentUpon>
     </Compile>
     <Compile Include="Monaco\F0_VentaServicios.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Monaco\FR_EstadoCuentas.Designer.vb">
+      <DependentUpon>FR_EstadoCuentas.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Monaco\FR_EstadoCuentas.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Monaco\Fr_Morosidad.Designer.vb">
+      <DependentUpon>Fr_Morosidad.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Monaco\Fr_Morosidad.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Monaco\Pr_Caja.Designer.vb">
@@ -909,6 +927,12 @@
       <DependentUpon>R_FichaEscuela.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="Reportes\R_HisotorialCobrosVentasCredito.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>R_HisotorialCobrosVentasCredito.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Reportes\R_HistorialDescuentosSocio.vb">
       <DependentUpon>R_HistorialDescuentosSocio.rpt</DependentUpon>
       <AutoGen>True</AutoGen>
@@ -997,6 +1021,12 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>R_Mam_FacturaLavadero.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reportes\R_MorosidadCredito.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>R_MorosidadCredito.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="Reportes\R_Pagos.vb">
@@ -1434,8 +1464,17 @@
     <EmbeddedResource Include="F_SocioVehiculo.resx">
       <DependentUpon>F_SocioVehiculo.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Monaco\F0_PagoCliente.resx">
+      <DependentUpon>F0_PagoCliente.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Monaco\F0_VentaServicios.resx">
       <DependentUpon>F0_VentaServicios.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Monaco\FR_EstadoCuentas.resx">
+      <DependentUpon>FR_EstadoCuentas.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Monaco\Fr_Morosidad.resx">
+      <DependentUpon>Fr_Morosidad.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Monaco\Pr_Caja.resx">
       <DependentUpon>Pr_Caja.vb</DependentUpon>
@@ -1640,6 +1679,10 @@
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>R_FichaEscuela.vb</LastGenOutput>
     </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\R_HisotorialCobrosVentasCredito.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>R_HisotorialCobrosVentasCredito.vb</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="Reportes\R_HistorialDescuentosSocio.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>R_HistorialDescuentosSocio.vb</LastGenOutput>
@@ -1699,6 +1742,10 @@
     <EmbeddedResource Include="Reportes\R_Mam_FacturaLavadero.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>R_Mam_FacturaLavadero.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\R_MorosidadCredito.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>R_MorosidadCredito.vb</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="Reportes\R_Pagos.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
