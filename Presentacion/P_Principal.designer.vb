@@ -98,6 +98,7 @@ Partial Class P_Principal
         Me.MetroTileItem3 = New DevComponents.DotNetBar.Metro.MetroTileItem()
         Me.tbDecimal = New DevComponents.Editors.DoubleInput()
         Me.btVentaMorosidad = New DevComponents.DotNetBar.Metro.MetroTileItem()
+        Me.btconfPersonal = New DevComponents.DotNetBar.Metro.MetroTileItem()
         MetroTileFrame1 = New DevComponents.DotNetBar.Metro.MetroTileFrame()
         MetroTileFrame2 = New DevComponents.DotNetBar.Metro.MetroTileFrame()
         Me.ModVenta.SuspendLayout()
@@ -138,9 +139,9 @@ Partial Class P_Principal
         'ModVenta
         '
         Me.ModVenta.BackColor = System.Drawing.SystemColors.ActiveCaption
-        Me.ModVenta.Controls.Add(Me.SideNavPanel1)
-        Me.ModVenta.Controls.Add(Me.SideNavPanel2)
         Me.ModVenta.Controls.Add(Me.SideNav_Conf)
+        Me.ModVenta.Controls.Add(Me.SideNavPanel2)
+        Me.ModVenta.Controls.Add(Me.SideNavPanel1)
         Me.ModVenta.Controls.Add(Me.SideNavPanel3)
         Me.ModVenta.Dock = System.Windows.Forms.DockStyle.Fill
         Me.ModVenta.Items.AddRange(New DevComponents.DotNetBar.BaseItem() {Me.SideNavItem1, Me.Separator1, Me.FP_Configuracion, Me.FP_Escuela, Me.FP_Certificacion, Me.Separator2, Me.FP_Venta})
@@ -160,6 +161,7 @@ Partial Class P_Principal
         Me.SideNavPanel1.Name = "SideNavPanel1"
         Me.SideNavPanel1.Size = New System.Drawing.Size(1186, 649)
         Me.SideNavPanel1.TabIndex = 83
+        Me.SideNavPanel1.Visible = False
         '
         'MetroTilePanel2
         '
@@ -566,7 +568,6 @@ Partial Class P_Principal
         Me.SideNav_Conf.Name = "SideNav_Conf"
         Me.SideNav_Conf.Size = New System.Drawing.Size(1186, 649)
         Me.SideNav_Conf.TabIndex = 2
-        Me.SideNav_Conf.Visible = False
         '
         'MetroTilePanel1
         '
@@ -582,7 +583,7 @@ Partial Class P_Principal
         Me.MetroTilePanel1.ContainerControlProcessDialogKey = True
         Me.MetroTilePanel1.Dock = System.Windows.Forms.DockStyle.Fill
         Me.MetroTilePanel1.DragDropSupport = True
-        Me.MetroTilePanel1.Items.AddRange(New DevComponents.DotNetBar.BaseItem() {Me.btConfServicios, Me.btConfRoles, Me.btConfUsuarios, Me.btConfSucursales, Me.btConfHorarios, Me.btConfPolitica, Me.btconfbanco})
+        Me.MetroTilePanel1.Items.AddRange(New DevComponents.DotNetBar.BaseItem() {Me.btConfServicios, Me.btConfRoles, Me.btConfUsuarios, Me.btConfSucursales, Me.btConfHorarios, Me.btConfPolitica, Me.btconfbanco, Me.btconfPersonal})
         Me.MetroTilePanel1.ItemSpacing = 10
         Me.MetroTilePanel1.Location = New System.Drawing.Point(0, 0)
         Me.MetroTilePanel1.Margin = New System.Windows.Forms.Padding(4)
@@ -1024,6 +1025,7 @@ Partial Class P_Principal
         '
         'FP_Configuracion
         '
+        Me.FP_Configuracion.Checked = True
         Me.FP_Configuracion.Name = "FP_Configuracion"
         Me.FP_Configuracion.Panel = Me.SideNav_Conf
         Me.FP_Configuracion.Symbol = ""
@@ -1055,7 +1057,6 @@ Partial Class P_Principal
         '
         'FP_Venta
         '
-        Me.FP_Venta.Checked = True
         Me.FP_Venta.Name = "FP_Venta"
         Me.FP_Venta.Panel = Me.SideNavPanel1
         Me.FP_Venta.Symbol = ""
@@ -1273,6 +1274,22 @@ Partial Class P_Principal
         Me.btVentaMorosidad.TileStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square
         Me.btVentaMorosidad.TitleText = "REPORTE MOROSIDAD"
         '
+        'btconfPersonal
+        '
+        Me.btconfPersonal.Image = Global.Presentacion.My.Resources.Resources.USUARIO
+        Me.btconfPersonal.ImageTextAlignment = System.Drawing.ContentAlignment.MiddleCenter
+        Me.btconfPersonal.Name = "btconfPersonal"
+        Me.btconfPersonal.SymbolColor = System.Drawing.Color.Empty
+        Me.btconfPersonal.TileColor = DevComponents.DotNetBar.Metro.eMetroTileColor.RedOrange
+        Me.btconfPersonal.TileSize = New System.Drawing.Size(250, 135)
+        '
+        '
+        '
+        Me.btconfPersonal.TileStyle.BackColor = System.Drawing.Color.LimeGreen
+        Me.btconfPersonal.TileStyle.BackColor2 = System.Drawing.Color.FromArgb(CType(CType(195, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer))
+        Me.btconfPersonal.TileStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square
+        Me.btconfPersonal.TitleText = "PERSONAL"
+        '
         'P_Principal
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
@@ -1373,4 +1390,5 @@ Partial Class P_Principal
     Friend WithEvents btVentaPagos As DevComponents.DotNetBar.Metro.MetroTileItem
     Friend WithEvents btVentaEstadoCuenta As DevComponents.DotNetBar.Metro.MetroTileItem
     Friend WithEvents btVentaMorosidad As DevComponents.DotNetBar.Metro.MetroTileItem
+    Friend WithEvents btconfPersonal As DevComponents.DotNetBar.Metro.MetroTileItem
 End Class

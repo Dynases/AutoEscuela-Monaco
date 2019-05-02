@@ -47,7 +47,7 @@ Public Class F0_ClasesPracticas3
     Const conEstClasePermiso As Integer = 2
     Const conEstClaseSuspension As Integer = 3
 
-    Private _cantClasesPracticas As Integer = 13
+    Private _cantClasesPracticas As Integer = 10
     Private _cantClasesReforzamiento As Integer = 5
 
     Private _isClasePractica As Boolean
@@ -1589,6 +1589,7 @@ Public Class F0_ClasesPracticas3
     End Sub
 
     Private Sub _prSetHorarioCorrido()
+
         '_prCargarGridAlumnos(tbPersona.Value)
         '_prCargarGridHorario(DateTimePicker1.Value, tbPersona.Value)
         If grHorario.CurrentCell.ColumnIndex < 1 Then
@@ -1608,6 +1609,7 @@ Public Class F0_ClasesPracticas3
         Dim vistaFecha As Integer = 1
         Dim c1 As Integer = 1
         Dim fecha1 As Date = tbFechaSelect.Value
+
         'Dim fecha2 As Date = DateAdd(DateInterval.Month, 1, tbFechaSelect.Value)
         While i <= _cantClasesPracticas
             If c - 1 <= _meses.vmes1.vUltDia - 1 And vistaFecha = 1 Then
@@ -1778,7 +1780,7 @@ Public Class F0_ClasesPracticas3
     End Sub
 
     Private Sub _prModificarHorarioCorrido()
-
+        _cantClasesPracticas = 8
         If btnNuevo.Enabled = True Then
             ToastNotification.Show(Me, "si quiere volver a marcar, primero limpie el horario con el boton 'limpiar' ".ToUpper, My.Resources.WARNING, 5000, eToastGlowColor.Green, eToastPosition.TopCenter)
             Exit Sub
@@ -2729,16 +2731,31 @@ Public Class F0_ClasesPracticas3
 
     Private Sub ADICIONARHORARIOToolStripMenuItem2_Click(sender As Object, e As EventArgs) Handles ADICIONARHORARIOToolStripMenuItem2.Click
         If _AlumSelect < 0 Then
-            _prSetHorarioCorrido()
+            Dim obs As String = InputBox("ingrese la cantidad de clases a programar".ToUpper, "Cantidad de Clases".ToUpper, "").ToUpper
+            If obs <> String.Empty And IsNumeric(obs) Then
+                _cantClasesPracticas = CInt(obs)
+                _prSetHorarioCorrido()
+            End If
+
         Else
-            _prModificarHorarioCorrido()
+            Dim obs As String = InputBox("ingrese la cantidad de clases a programar".ToUpper, "Cantidad de Clases".ToUpper, "").ToUpper
+            If obs <> String.Empty And IsNumeric(obs) Then
+                _cantClasesPracticas = CInt(obs)
+                _prModificarHorarioCorrido()
+            End If
+
         End If
     End Sub
 
     Private Sub ADICIONARMANUALMENTEToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ADICIONARMANUALMENTEToolStripMenuItem.Click
-        _limiteDias = _cantClasesPracticas
-        _isClasePractica = True
-        _prSetHorarioManualmente()
+        Dim obs As String = InputBox("ingrese la cantidad de clases a programar".ToUpper, "Cantidad de Clases".ToUpper, "").ToUpper
+        If obs <> String.Empty And IsNumeric(obs) Then
+            _cantClasesPracticas = CInt(obs)
+            _limiteDias = _cantClasesPracticas
+            _isClasePractica = True
+            _prSetHorarioManualmente()
+        End If
+
     End Sub
 
     Private Sub ADICIONARHORARIOToolStripMenuItem3_Click(sender As Object, e As EventArgs) Handles ADICIONARHORARIOToolStripMenuItem3.Click

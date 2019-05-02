@@ -715,4 +715,10 @@ Public Class P_Principal
         Dim frm As New Fr_Morosidad
         frm.Show()
     End Sub
+
+    Private Sub btconfPersonal_Click(sender As Object, e As EventArgs) Handles btconfPersonal.Click
+        Dim frm As New F1_Personal
+        frm._nameButton = btconfPersonal.Name
+        frm.Show()
+    End Sub
 End Class
