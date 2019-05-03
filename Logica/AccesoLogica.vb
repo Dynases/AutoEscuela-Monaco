@@ -12045,4 +12045,91 @@ Public Class AccesoLogica
 
 #End Region
 
+#Region "TG001 GASTOS"
+    'Funcion eliminar gastos
+    Public Shared Function L_FnEliminarGastos(numi As String, ByRef mensaje As String) As Boolean
+        Dim _resultado As Boolean
+        If L_fnbValidarEliminacion(numi, "TG001", "ganumi", mensaje) = True Then
+            Dim _Tabla As DataTable
+            Dim _listParam As New List(Of Datos.DParametro)
+
+            _listParam.Add(New Datos.DParametro("@tipo", -1))
+            _listParam.Add(New Datos.DParametro("@ganumi", numi))
+            _listParam.Add(New Datos.DParametro("@gauact", L_Usuario))
+
+            _Tabla = D_ProcedimientoConParam("sp_Mam_TG001", _listParam)
+
+            If _Tabla.Rows.Count > 0 Then
+                _resultado = True
+            Else
+                _resultado = False
+            End If
+        Else
+            _resultado = False
+        End If
+        Return _resultado
+    End Function
+
+    'Funcion Nuevo registro
+    Public Shared Function L_FnGrabarGastos(ByRef ganumi As String, gacon As String, gadesc As String, gamont As Decimal, gafact As String, gahact As String, gafdoc As String) As Boolean
+        Dim _resultado As Boolean
+        Dim _Tabla As DataTable
+        Dim _listParam As New List(Of Datos.DParametro)
+
+        _listParam.Add(New Datos.DParametro("@tipo", 1))
+        _listParam.Add(New Datos.DParametro("@ganumi", ganumi))
+        _listParam.Add(New Datos.DParametro("@gacon", gacon))
+        _listParam.Add(New Datos.DParametro("@gadesc", gadesc))
+        _listParam.Add(New Datos.DParametro("@gamont", gamont))
+        _listParam.Add(New Datos.DParametro("@gafdoc", gafdoc))
+        _listParam.Add(New Datos.DParametro("@gafact", gafact))
+        _listParam.Add(New Datos.DParametro("@gahact", gahact))
+
+
+
+        _listParam.Add(New Datos.DParametro("@gauact", L_Usuario))
+        _Tabla = D_ProcedimientoConParam("sp_Mam_TG001", _listParam)
+        If _Tabla.Rows.Count > 0 Then
+            _resultado = True
+        Else
+            _resultado = False
+        End If
+        Return _resultado
+    End Function
+
+    Public Shared Function L_FnModificarGastos(ByRef ganumi As String, gacon As String, gadesc As String, gamont As Double, gafdoc As String, gafact As String, gahact As String) As Boolean
+        Dim _resultado As Boolean
+        Dim _Tabla As DataTable
+        Dim _listParam As New List(Of Datos.DParametro)
+
+        _listParam.Add(New Datos.DParametro("@tipo", 2))
+        _listParam.Add(New Datos.DParametro("@ganumi", ganumi))
+        _listParam.Add(New Datos.DParametro("@gacon", gacon))
+        _listParam.Add(New Datos.DParametro("@gadesc", gadesc))
+        _listParam.Add(New Datos.DParametro("@gamont", gamont))
+        _listParam.Add(New Datos.DParametro("@gafdoc", gafdoc))
+        _listParam.Add(New Datos.DParametro("@gafact", gafact))
+        _listParam.Add(New Datos.DParametro("@gahact", gahact))
+        _listParam.Add(New Datos.DParametro("@gauact", L_Usuario))
+
+        _Tabla = D_ProcedimientoConParam("sp_Mam_TG001", _listParam)
+        If _Tabla.Rows.Count > 0 Then
+            _resultado = True
+        Else
+            _resultado = False
+        End If
+        Return _resultado
+    End Function
+
+    Public Shared Function L_FnGeneralGastos() As DataTable
+        Dim _Tabla As DataTable
+        Dim _listParam As New List(Of Datos.DParametro) From {
+            New Datos.DParametro("@tipo", 3),
+            New Datos.DParametro("@gauact", L_Usuario)
+        }
+        _Tabla = D_ProcedimientoConParam("sp_Mam_TG001", _listParam)
+        Return _Tabla
+    End Function
+#End Region
+
 End Class

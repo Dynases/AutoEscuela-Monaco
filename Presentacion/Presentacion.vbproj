@@ -245,6 +245,12 @@
     <Compile Include="F0_CertificacionAlumnos.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="F0_Gastos.Designer.vb">
+      <DependentUpon>F0_Gastos.vb</DependentUpon>
+    </Compile>
+    <Compile Include="F0_Gastos.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="F0_HotelReserva.Designer.vb">
       <DependentUpon>F0_HotelReserva.vb</DependentUpon>
     </Compile>
@@ -1322,6 +1328,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="F0_CertificacionAlumnos.resx">
       <DependentUpon>F0_CertificacionAlumnos.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="F0_Gastos.resx">
+      <DependentUpon>F0_Gastos.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="F0_HotelReserva.resx">
       <DependentUpon>F0_HotelReserva.vb</DependentUpon>
