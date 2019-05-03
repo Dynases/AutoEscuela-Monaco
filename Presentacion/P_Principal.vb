@@ -721,4 +721,10 @@ Public Class P_Principal
         frm._nameButton = btconfPersonal.Name
         frm.Show()
     End Sub
+
+    Private Sub btGastos_Click(sender As Object, e As EventArgs) Handles btGastos.Click
+        Dim frm As New F0_Gastos
+        'frm._nameButton = btconfPersonal.Name
+        frm.Show()
+    End Sub
 End Class

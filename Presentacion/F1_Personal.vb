@@ -17,7 +17,7 @@ Public Class F1_Personal
     Private _numiSuc As Integer
 #Region "Variable MArco"
     Dim TableEmpleado As DataTable
-    Public axCZKEM1 As New zkemkeeper.CZKEM
+    'Public axCZKEM1 As New zkemkeeper.CZKEM
     Private bIsConnected = False
     Private iMachineNumber As Integer
 #End Region
@@ -38,76 +38,76 @@ Public Class F1_Personal
 
 #Region "Marco"
     Public Sub _prConectar()
-        Dim ta As DataTable = L_prObtenerIpReloj(1)
-        If (ta.Rows.Count > 0) Then
-            Ip = ta.Rows(0).Item("caip")
-        Else
-            MsgBox("No se Pudo Conectar Error en Obtener Ip Sucursal", MsgBoxStyle.Exclamation, "Error")
-            Return
+        'Dim ta As DataTable = L_prObtenerIpReloj(1)
+        'If (ta.Rows.Count > 0) Then
+        '    Ip = ta.Rows(0).Item("caip")
+        'Else
+        '    MsgBox("No se Pudo Conectar Error en Obtener Ip Sucursal", MsgBoxStyle.Exclamation, "Error")
+        '    Return
 
-        End If
+        'End If
 
-        Cursor = Cursors.WaitCursor
+        'Cursor = Cursors.WaitCursor
 
-        Dim idwErrorCode As Integer
-        If btConectar.Text = "DESCONECTAR" Then
-            axCZKEM1.Disconnect()
-            bIsConnected = False
-            btConectar.Text = "CONECTAR"
+        'Dim idwErrorCode As Integer
+        'If btConectar.Text = "DESCONECTAR" Then
+        '    axCZKEM1.Disconnect()
+        '    bIsConnected = False
+        '    btConectar.Text = "CONECTAR"
 
-            btConectar.Image = My.Resources.switch_2
-            Cursor = Cursors.Default
-            Return
-        End If
-        bIsConnected = axCZKEM1.Connect_Net(Ip, Convert.ToInt32("4370"))
-        If bIsConnected = True Then
-            iMachineNumber = 1 'In fact,when you are using the tcp/ip communication,this parameter will be ignored,that is any integer will all right.Here we use 1.
-            axCZKEM1.RegEvent(iMachineNumber, 65535) 'Here you can register the realtime events that you want to be triggered(the parameters 65535 means registering all)
+        '    btConectar.Image = My.Resources.switch_2
+        '    Cursor = Cursors.Default
+        '    Return
+        'End If
+        'bIsConnected = axCZKEM1.Connect_Net(Ip, Convert.ToInt32("4370"))
+        'If bIsConnected = True Then
+        '    iMachineNumber = 1 'In fact,when you are using the tcp/ip communication,this parameter will be ignored,that is any integer will all right.Here we use 1.
+        '    axCZKEM1.RegEvent(iMachineNumber, 65535) 'Here you can register the realtime events that you want to be triggered(the parameters 65535 means registering all)
 
-            btConectar.Text = "DESCONECTAR"
-            btConectar.Image = My.Resources.switch_3
+        '    btConectar.Text = "DESCONECTAR"
+        '    btConectar.Image = My.Resources.switch_3
 
-            btConectar.Refresh()
-        Else
-            axCZKEM1.GetLastError(idwErrorCode)
-            MsgBox("No se Pudo Conectar=" & idwErrorCode, MsgBoxStyle.Exclamation, "Error")
+        '    btConectar.Refresh()
+        'Else
+        '    axCZKEM1.GetLastError(idwErrorCode)
+        '    MsgBox("No se Pudo Conectar=" & idwErrorCode, MsgBoxStyle.Exclamation, "Error")
 
-        End If
-        Cursor = Cursors.Default
+        'End If
+        'Cursor = Cursors.Default
     End Sub
     Public Sub _prRegistrarEmpleadoAlReloj()
-        If bIsConnected = False Then
-            MsgBox("Conecte el Reloj al sistema por favor".ToUpper, MsgBoxStyle.Exclamation, "Error")
-            Return
-        End If
-        Dim idwErrorCode As Integer
-        Dim bEnabled As Boolean = True
-        If (TableEmpleado.Rows.Count > 0) Then
-            For i As Integer = 0 To TableEmpleado.Rows.Count - 1 Step 1
-                Dim sdwEnrollNumber As Integer = TableEmpleado.Rows(i).Item("panumi")
-                Dim sName As String = TableEmpleado.Rows(i).Item("nombre")
-                Dim sPassword As String = ""
-                Dim iPrivilege As Integer = 0
-                Dim sCardnumber As String = ""
+        'If bIsConnected = False Then
+        '    MsgBox("Conecte el Reloj al sistema por favor".ToUpper, MsgBoxStyle.Exclamation, "Error")
+        '    Return
+        'End If
+        'Dim idwErrorCode As Integer
+        'Dim bEnabled As Boolean = True
+        'If (TableEmpleado.Rows.Count > 0) Then
+        '    For i As Integer = 0 To TableEmpleado.Rows.Count - 1 Step 1
+        '        Dim sdwEnrollNumber As Integer = TableEmpleado.Rows(i).Item("panumi")
+        '        Dim sName As String = TableEmpleado.Rows(i).Item("nombre")
+        '        Dim sPassword As String = ""
+        '        Dim iPrivilege As Integer = 0
+        '        Dim sCardnumber As String = ""
 
-                Cursor = Cursors.WaitCursor
-                axCZKEM1.EnableDevice(iMachineNumber, False)
-                axCZKEM1.SetStrCardNumber(sCardnumber) 'Before you using function SetUserInfo,set the card number to make sure you can upload it to the device
-                If axCZKEM1.SSR_SetUserInfo(iMachineNumber, sdwEnrollNumber, sName, sPassword, iPrivilege, bEnabled) = True Then 'upload the user's information(card number included)
-                    'MsgBox("SetUserInfo,UserID:" + sdwEnrollNumber.ToString() + " Privilege:" + iPrivilege.ToString() + " Cardnumber:" + sCardnumber + " Enabled:" + bEnabled.ToString(), MsgBoxStyle.Information, "Success")
-                    TableEmpleado.Rows(i).Item("pareloj") = 1
-                Else
-                    axCZKEM1.GetLastError(idwErrorCode)
-                    MsgBox("No se Pudo Registrar,ErrorCode=" & idwErrorCode.ToString(), MsgBoxStyle.Exclamation, "Error")
-                End If
-                axCZKEM1.RefreshData(iMachineNumber) 'the data in the device should be refreshed
-                axCZKEM1.EnableDevice(iMachineNumber, True)
-                Cursor = Cursors.Default
-            Next
-        Else
-            axCZKEM1.GetLastError(idwErrorCode)
-            MsgBox("NO EXISTE USUARIO SIN REGISTRAR EN EL RELOJ DE MARCACION", MsgBoxStyle.Exclamation, "AVISO")
-        End If
+        '        Cursor = Cursors.WaitCursor
+        '        axCZKEM1.EnableDevice(iMachineNumber, False)
+        '        axCZKEM1.SetStrCardNumber(sCardnumber) 'Before you using function SetUserInfo,set the card number to make sure you can upload it to the device
+        '        If axCZKEM1.SSR_SetUserInfo(iMachineNumber, sdwEnrollNumber, sName, sPassword, iPrivilege, bEnabled) = True Then 'upload the user's information(card number included)
+        '            'MsgBox("SetUserInfo,UserID:" + sdwEnrollNumber.ToString() + " Privilege:" + iPrivilege.ToString() + " Cardnumber:" + sCardnumber + " Enabled:" + bEnabled.ToString(), MsgBoxStyle.Information, "Success")
+        '            TableEmpleado.Rows(i).Item("pareloj") = 1
+        '        Else
+        '            axCZKEM1.GetLastError(idwErrorCode)
+        '            MsgBox("No se Pudo Registrar,ErrorCode=" & idwErrorCode.ToString(), MsgBoxStyle.Exclamation, "Error")
+        '        End If
+        '        axCZKEM1.RefreshData(iMachineNumber) 'the data in the device should be refreshed
+        '        axCZKEM1.EnableDevice(iMachineNumber, True)
+        '        Cursor = Cursors.Default
+        '    Next
+        'Else
+        '    axCZKEM1.GetLastError(idwErrorCode)
+        '    MsgBox("NO EXISTE USUARIO SIN REGISTRAR EN EL RELOJ DE MARCACION", MsgBoxStyle.Exclamation, "AVISO")
+        'End If
 
     End Sub
 #End Region
@@ -564,23 +564,23 @@ Public Class F1_Personal
             MEP.SetError(tbCi, "")
         End If
 
-        If tbDireccion.Text = String.Empty Then
-            tbDireccion.BackColor = Color.Red
-            MEP.SetError(tbDireccion, "ingrese direccion del personal!".ToUpper)
-            _ok = False
-        Else
-            tbDireccion.BackColor = Color.White
-            MEP.SetError(tbDireccion, "")
-        End If
+        'If tbDireccion.Text = String.Empty Then
+        '    tbDireccion.BackColor = Color.Red
+        '    MEP.SetError(tbDireccion, "ingrese direccion del personal!".ToUpper)
+        '    _ok = False
+        'Else
+        '    tbDireccion.BackColor = Color.White
+        '    MEP.SetError(tbDireccion, "")
+        'End If
 
-        If tbEmail.Text = String.Empty Then
-            tbEmail.BackColor = Color.Red
-            MEP.SetError(tbEmail, "ingrese e-mail del personal!".ToUpper)
-            _ok = False
-        Else
-            tbEmail.BackColor = Color.White
-            MEP.SetError(tbEmail, "")
-        End If
+        'If tbEmail.Text = String.Empty Then
+        '    tbEmail.BackColor = Color.Red
+        '    MEP.SetError(tbEmail, "ingrese e-mail del personal!".ToUpper)
+        '    _ok = False
+        'Else
+        '    tbEmail.BackColor = Color.White
+        '    MEP.SetError(tbEmail, "")
+        'End If
 
         If tbNombre.Text = String.Empty Then
             tbNombre.BackColor = Color.Red
@@ -591,14 +591,14 @@ Public Class F1_Personal
             MEP.SetError(tbNombre, "")
         End If
 
-        If tbTelef1.Text = String.Empty Then
-            tbTelef1.BackColor = Color.Red
-            MEP.SetError(tbTelef1, "ingrese telefono del personal!".ToUpper)
-            _ok = False
-        Else
-            tbTelef1.BackColor = Color.White
-            MEP.SetError(tbTelef1, "")
-        End If
+        'If tbTelef1.Text = String.Empty Then
+        '    tbTelef1.BackColor = Color.Red
+        '    MEP.SetError(tbTelef1, "ingrese telefono del personal!".ToUpper)
+        '    _ok = False
+        'Else
+        '    tbTelef1.BackColor = Color.White
+        '    MEP.SetError(tbTelef1, "")
+        'End If
 
         If tbTelef2.Text = String.Empty Then
             tbTelef2.BackColor = Color.Red
@@ -609,14 +609,14 @@ Public Class F1_Personal
             MEP.SetError(tbTelef2, "")
         End If
 
-        If tbObs.Text = String.Empty Then
-            tbObs.BackColor = Color.Red
-            MEP.SetError(tbObs, "ingrese la observacion del personal!".ToUpper)
-            _ok = False
-        Else
-            tbObs.BackColor = Color.White
-            MEP.SetError(tbObs, "")
-        End If
+        'If tbObs.Text = String.Empty Then
+        '    tbObs.BackColor = Color.Red
+        '    MEP.SetError(tbObs, "ingrese la observacion del personal!".ToUpper)
+        '    _ok = False
+        'Else
+        '    tbObs.BackColor = Color.White
+        '    MEP.SetError(tbObs, "")
+        'End If
 
         If tbTipo.SelectedIndex < 0 Then
             tbTipo.BackColor = Color.Red
