@@ -148,7 +148,7 @@ Partial Class F0_ClasesPracticas3
         '
         'PanelSuperior
         '
-        Me.PanelSuperior.Margin = New System.Windows.Forms.Padding(5, 5, 5, 5)
+        Me.PanelSuperior.Margin = New System.Windows.Forms.Padding(5)
         Me.PanelSuperior.Size = New System.Drawing.Size(1179, 101)
         Me.PanelSuperior.Style.Alignment = System.Drawing.StringAlignment.Center
         Me.PanelSuperior.Style.BackColor1.Color = System.Drawing.Color.Yellow
@@ -195,20 +195,20 @@ Partial Class F0_ClasesPracticas3
         '
         'PanelToolBar1
         '
-        Me.PanelToolBar1.Margin = New System.Windows.Forms.Padding(5, 5, 5, 5)
+        Me.PanelToolBar1.Margin = New System.Windows.Forms.Padding(5)
         Me.PanelToolBar1.Size = New System.Drawing.Size(619, 101)
         '
         'btnSalir
         '
         Me.btnSalir.Location = New System.Drawing.Point(467, 0)
-        Me.btnSalir.Margin = New System.Windows.Forms.Padding(5, 5, 5, 5)
+        Me.btnSalir.Margin = New System.Windows.Forms.Padding(5)
         Me.btnSalir.Size = New System.Drawing.Size(96, 101)
         '
         'btnGrabar
         '
         Me.btnGrabar.Image = Global.Presentacion.My.Resources.Resources.VER_DISPONIBILIDAD
         Me.btnGrabar.Location = New System.Drawing.Point(332, 0)
-        Me.btnGrabar.Margin = New System.Windows.Forms.Padding(5, 5, 5, 5)
+        Me.btnGrabar.Margin = New System.Windows.Forms.Padding(5)
         Me.btnGrabar.Size = New System.Drawing.Size(135, 101)
         Me.btnGrabar.Text = "VER DISPONIBILIDAD"
         '
@@ -216,7 +216,7 @@ Partial Class F0_ClasesPracticas3
         '
         Me.btnEliminar.Image = Global.Presentacion.My.Resources.Resources.success
         Me.btnEliminar.Location = New System.Drawing.Point(216, 0)
-        Me.btnEliminar.Margin = New System.Windows.Forms.Padding(5, 5, 5, 5)
+        Me.btnEliminar.Margin = New System.Windows.Forms.Padding(5)
         Me.btnEliminar.Size = New System.Drawing.Size(116, 101)
         Me.btnEliminar.Text = "CONFIRMAR SELECCION"
         Me.btnEliminar.Visible = False
@@ -225,14 +225,14 @@ Partial Class F0_ClasesPracticas3
         '
         Me.btnModificar.Image = Global.Presentacion.My.Resources.Resources.LIMPIAR
         Me.btnModificar.Location = New System.Drawing.Point(104, 0)
-        Me.btnModificar.Margin = New System.Windows.Forms.Padding(5, 5, 5, 5)
+        Me.btnModificar.Margin = New System.Windows.Forms.Padding(5)
         Me.btnModificar.Size = New System.Drawing.Size(112, 101)
         Me.btnModificar.Text = "LIMPIAR"
         '
         'btnNuevo
         '
         Me.btnNuevo.Image = Global.Presentacion.My.Resources.Resources.OK
-        Me.btnNuevo.Margin = New System.Windows.Forms.Padding(5, 5, 5, 5)
+        Me.btnNuevo.Margin = New System.Windows.Forms.Padding(5)
         Me.btnNuevo.Size = New System.Drawing.Size(104, 101)
         Me.btnNuevo.Text = "CONFIRMAR"
         '
@@ -241,7 +241,7 @@ Partial Class F0_ClasesPracticas3
         Me.PanelToolBar2.Controls.Add(Me.LabelX1)
         Me.PanelToolBar2.Controls.Add(Me.tbTodosInst)
         Me.PanelToolBar2.Location = New System.Drawing.Point(851, 0)
-        Me.PanelToolBar2.Margin = New System.Windows.Forms.Padding(5, 5, 5, 5)
+        Me.PanelToolBar2.Margin = New System.Windows.Forms.Padding(5)
         Me.PanelToolBar2.Size = New System.Drawing.Size(328, 101)
         Me.PanelToolBar2.Controls.SetChildIndex(Me.btnImprimir, 0)
         Me.PanelToolBar2.Controls.SetChildIndex(Me.tbTodosInst, 0)
@@ -252,7 +252,7 @@ Partial Class F0_ClasesPracticas3
         Me.PanelPrincipal.Controls.Add(Me.Panel6)
         Me.PanelPrincipal.Controls.Add(Me.Panel1)
         Me.PanelPrincipal.Location = New System.Drawing.Point(0, 101)
-        Me.PanelPrincipal.Margin = New System.Windows.Forms.Padding(5, 5, 5, 5)
+        Me.PanelPrincipal.Margin = New System.Windows.Forms.Padding(5)
         Me.PanelPrincipal.Size = New System.Drawing.Size(1179, 517)
         Me.PanelPrincipal.Controls.SetChildIndex(Me.PanelUsuario, 0)
         Me.PanelPrincipal.Controls.SetChildIndex(Me.Panel1, 0)
@@ -261,13 +261,13 @@ Partial Class F0_ClasesPracticas3
         'PanelUsuario
         '
         Me.PanelUsuario.Location = New System.Drawing.Point(837, 106)
-        Me.PanelUsuario.Margin = New System.Windows.Forms.Padding(5, 5, 5, 5)
+        Me.PanelUsuario.Margin = New System.Windows.Forms.Padding(5)
         '
         'btnImprimir
         '
         Me.btnImprimir.Image = Global.Presentacion.My.Resources.Resources.permiso
         Me.btnImprimir.Location = New System.Drawing.Point(201, 0)
-        Me.btnImprimir.Margin = New System.Windows.Forms.Padding(5, 5, 5, 5)
+        Me.btnImprimir.Margin = New System.Windows.Forms.Padding(5)
         Me.btnImprimir.Size = New System.Drawing.Size(127, 101)
         Me.btnImprimir.Text = "LIBERAR HORA"
         '
@@ -286,7 +286,7 @@ Partial Class F0_ClasesPracticas3
         '
         Me.MRlAccion.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square
         Me.MRlAccion.Location = New System.Drawing.Point(788, 7)
-        Me.MRlAccion.Margin = New System.Windows.Forms.Padding(5, 5, 5, 5)
+        Me.MRlAccion.Margin = New System.Windows.Forms.Padding(5)
         Me.MRlAccion.Size = New System.Drawing.Size(37, 74)
         '
         'Panel1
@@ -294,7 +294,7 @@ Partial Class F0_ClasesPracticas3
         Me.Panel1.Controls.Add(Me.Panel4)
         Me.Panel1.Dock = System.Windows.Forms.DockStyle.Top
         Me.Panel1.Location = New System.Drawing.Point(0, 0)
-        Me.Panel1.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Panel1.Margin = New System.Windows.Forms.Padding(4)
         Me.Panel1.Name = "Panel1"
         Me.Panel1.Size = New System.Drawing.Size(1179, 76)
         Me.Panel1.TabIndex = 20
@@ -308,7 +308,7 @@ Partial Class F0_ClasesPracticas3
         Me.Panel4.Controls.Add(Me.tbPersona)
         Me.Panel4.Dock = System.Windows.Forms.DockStyle.Left
         Me.Panel4.Location = New System.Drawing.Point(0, 0)
-        Me.Panel4.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Panel4.Margin = New System.Windows.Forms.Padding(4)
         Me.Panel4.Name = "Panel4"
         Me.Panel4.Size = New System.Drawing.Size(1064, 76)
         Me.Panel4.TabIndex = 36
@@ -319,7 +319,7 @@ Partial Class F0_ClasesPracticas3
         Me.tbSuc.DesignTimeLayout = tbSuc_DesignTimeLayout
         Me.tbSuc.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.tbSuc.Location = New System.Drawing.Point(736, 20)
-        Me.tbSuc.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.tbSuc.Margin = New System.Windows.Forms.Padding(4)
         Me.tbSuc.Name = "tbSuc"
         Me.tbSuc.SelectedIndex = -1
         Me.tbSuc.SelectedItem = Nothing
@@ -334,7 +334,7 @@ Partial Class F0_ClasesPracticas3
         Me.LabelX16.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square
         Me.LabelX16.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.LabelX16.Location = New System.Drawing.Point(624, 18)
-        Me.LabelX16.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.LabelX16.Margin = New System.Windows.Forms.Padding(4)
         Me.LabelX16.Name = "LabelX16"
         Me.LabelX16.Size = New System.Drawing.Size(105, 28)
         Me.LabelX16.TabIndex = 111
@@ -345,7 +345,7 @@ Partial Class F0_ClasesPracticas3
         Me.Panel5.Controls.Add(Me.ButtonX2)
         Me.Panel5.Controls.Add(Me.ButtonX1)
         Me.Panel5.Location = New System.Drawing.Point(4, 106)
-        Me.Panel5.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Panel5.Margin = New System.Windows.Forms.Padding(4)
         Me.Panel5.Name = "Panel5"
         Me.Panel5.Size = New System.Drawing.Size(716, 75)
         Me.Panel5.TabIndex = 38
@@ -357,7 +357,7 @@ Partial Class F0_ClasesPracticas3
         Me.ButtonX2.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground
         Me.ButtonX2.Dock = System.Windows.Forms.DockStyle.Left
         Me.ButtonX2.Location = New System.Drawing.Point(100, 0)
-        Me.ButtonX2.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.ButtonX2.Margin = New System.Windows.Forms.Padding(4)
         Me.ButtonX2.Name = "ButtonX2"
         Me.ButtonX2.Size = New System.Drawing.Size(100, 75)
         Me.ButtonX2.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled
@@ -370,7 +370,7 @@ Partial Class F0_ClasesPracticas3
         Me.ButtonX1.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground
         Me.ButtonX1.Dock = System.Windows.Forms.DockStyle.Left
         Me.ButtonX1.Location = New System.Drawing.Point(0, 0)
-        Me.ButtonX1.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.ButtonX1.Margin = New System.Windows.Forms.Padding(4)
         Me.ButtonX1.Name = "ButtonX1"
         Me.ButtonX1.Size = New System.Drawing.Size(100, 75)
         Me.ButtonX1.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled
@@ -385,7 +385,7 @@ Partial Class F0_ClasesPracticas3
         Me.LabelX4.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square
         Me.LabelX4.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.LabelX4.Location = New System.Drawing.Point(17, 18)
-        Me.LabelX4.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.LabelX4.Margin = New System.Windows.Forms.Padding(4)
         Me.LabelX4.Name = "LabelX4"
         Me.LabelX4.Size = New System.Drawing.Size(120, 28)
         Me.LabelX4.TabIndex = 35
@@ -397,7 +397,7 @@ Partial Class F0_ClasesPracticas3
         Me.tbPersona.DesignTimeLayout = tbPersona_DesignTimeLayout
         Me.tbPersona.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.tbPersona.Location = New System.Drawing.Point(145, 20)
-        Me.tbPersona.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.tbPersona.Margin = New System.Windows.Forms.Padding(4)
         Me.tbPersona.Name = "tbPersona"
         Me.tbPersona.SelectedIndex = -1
         Me.tbPersona.SelectedItem = Nothing
@@ -409,7 +409,7 @@ Partial Class F0_ClasesPracticas3
         Me.tbFechaSelect.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.tbFechaSelect.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
         Me.tbFechaSelect.Location = New System.Drawing.Point(128, 5)
-        Me.tbFechaSelect.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.tbFechaSelect.Margin = New System.Windows.Forms.Padding(4)
         Me.tbFechaSelect.Name = "tbFechaSelect"
         Me.tbFechaSelect.Size = New System.Drawing.Size(225, 30)
         Me.tbFechaSelect.TabIndex = 1
@@ -423,7 +423,7 @@ Partial Class F0_ClasesPracticas3
         Me.GroupPanel1.Dock = System.Windows.Forms.DockStyle.Left
         Me.GroupPanel1.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.GroupPanel1.Location = New System.Drawing.Point(0, 0)
-        Me.GroupPanel1.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.GroupPanel1.Margin = New System.Windows.Forms.Padding(4)
         Me.GroupPanel1.Name = "GroupPanel1"
         Me.GroupPanel1.Size = New System.Drawing.Size(431, 441)
         '
@@ -461,7 +461,7 @@ Partial Class F0_ClasesPracticas3
         '
         Me.grAlumnos.Dock = System.Windows.Forms.DockStyle.Fill
         Me.grAlumnos.Location = New System.Drawing.Point(0, 0)
-        Me.grAlumnos.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.grAlumnos.Margin = New System.Windows.Forms.Padding(4)
         Me.grAlumnos.Name = "grAlumnos"
         Me.grAlumnos.Size = New System.Drawing.Size(425, 414)
         Me.grAlumnos.TabIndex = 0
@@ -472,7 +472,7 @@ Partial Class F0_ClasesPracticas3
         Me.Panel2.Controls.Add(Me.grCabecera)
         Me.Panel2.Dock = System.Windows.Forms.DockStyle.Fill
         Me.Panel2.Location = New System.Drawing.Point(0, 42)
-        Me.Panel2.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Panel2.Margin = New System.Windows.Forms.Padding(4)
         Me.Panel2.Name = "Panel2"
         Me.Panel2.Size = New System.Drawing.Size(748, 399)
         Me.Panel2.TabIndex = 21
@@ -491,7 +491,7 @@ Partial Class F0_ClasesPracticas3
         Me.grHorario.DefaultCellStyle = DataGridViewCellStyle1
         Me.grHorario.Dock = System.Windows.Forms.DockStyle.Fill
         Me.grHorario.Location = New System.Drawing.Point(0, 32)
-        Me.grHorario.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.grHorario.Margin = New System.Windows.Forms.Padding(4)
         Me.grHorario.Name = "grHorario"
         Me.grHorario.Size = New System.Drawing.Size(748, 367)
         Me.grHorario.TabIndex = 0
@@ -510,7 +510,7 @@ Partial Class F0_ClasesPracticas3
         Me.grCabecera.DefaultCellStyle = DataGridViewCellStyle2
         Me.grCabecera.Dock = System.Windows.Forms.DockStyle.Top
         Me.grCabecera.Location = New System.Drawing.Point(0, 0)
-        Me.grCabecera.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.grCabecera.Margin = New System.Windows.Forms.Padding(4)
         Me.grCabecera.Name = "grCabecera"
         Me.grCabecera.Size = New System.Drawing.Size(748, 32)
         Me.grCabecera.TabIndex = 1
@@ -522,7 +522,7 @@ Partial Class F0_ClasesPracticas3
         Me.PanelFechas.Controls.Add(Me.btnFAnt)
         Me.PanelFechas.Dock = System.Windows.Forms.DockStyle.Top
         Me.PanelFechas.Location = New System.Drawing.Point(0, 0)
-        Me.PanelFechas.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.PanelFechas.Margin = New System.Windows.Forms.Padding(4)
         Me.PanelFechas.Name = "PanelFechas"
         Me.PanelFechas.Size = New System.Drawing.Size(748, 42)
         Me.PanelFechas.TabIndex = 22
@@ -535,7 +535,7 @@ Partial Class F0_ClasesPracticas3
         Me.btnFSig.Image = Global.Presentacion.My.Resources.Resources.FECHA_SIG
         Me.btnFSig.ImageFixedSize = New System.Drawing.Size(30, 30)
         Me.btnFSig.Location = New System.Drawing.Point(61, 0)
-        Me.btnFSig.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.btnFSig.Margin = New System.Windows.Forms.Padding(4)
         Me.btnFSig.Name = "btnFSig"
         Me.btnFSig.Size = New System.Drawing.Size(61, 42)
         Me.btnFSig.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled
@@ -549,7 +549,7 @@ Partial Class F0_ClasesPracticas3
         Me.btnFAnt.Image = Global.Presentacion.My.Resources.Resources.FECHA_ANT
         Me.btnFAnt.ImageFixedSize = New System.Drawing.Size(30, 30)
         Me.btnFAnt.Location = New System.Drawing.Point(0, 0)
-        Me.btnFAnt.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.btnFAnt.Margin = New System.Windows.Forms.Padding(4)
         Me.btnFAnt.Name = "btnFAnt"
         Me.btnFAnt.Size = New System.Drawing.Size(61, 42)
         Me.btnFAnt.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled
@@ -737,7 +737,7 @@ Partial Class F0_ClasesPracticas3
         Me.Panel6.Controls.Add(Me.GroupPanel1)
         Me.Panel6.Dock = System.Windows.Forms.DockStyle.Fill
         Me.Panel6.Location = New System.Drawing.Point(0, 76)
-        Me.Panel6.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Panel6.Margin = New System.Windows.Forms.Padding(4)
         Me.Panel6.Name = "Panel6"
         Me.Panel6.Size = New System.Drawing.Size(1179, 441)
         Me.Panel6.TabIndex = 39
@@ -748,7 +748,7 @@ Partial Class F0_ClasesPracticas3
         Me.Panel7.Controls.Add(Me.PanelFechas)
         Me.Panel7.Dock = System.Windows.Forms.DockStyle.Fill
         Me.Panel7.Location = New System.Drawing.Point(431, 0)
-        Me.Panel7.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Panel7.Margin = New System.Windows.Forms.Padding(4)
         Me.Panel7.Name = "Panel7"
         Me.Panel7.Size = New System.Drawing.Size(748, 441)
         Me.Panel7.TabIndex = 2
@@ -799,7 +799,7 @@ Partial Class F0_ClasesPracticas3
         '
         Me.tbTodosInst.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square
         Me.tbTodosInst.Location = New System.Drawing.Point(4, 54)
-        Me.tbTodosInst.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.tbTodosInst.Margin = New System.Windows.Forms.Padding(4)
         Me.tbTodosInst.Name = "tbTodosInst"
         Me.tbTodosInst.OffText = "NO"
         Me.tbTodosInst.OnText = "SI"
@@ -815,7 +815,7 @@ Partial Class F0_ClasesPracticas3
         Me.LabelX1.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square
         Me.LabelX1.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.LabelX1.Location = New System.Drawing.Point(4, 4)
-        Me.LabelX1.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.LabelX1.Margin = New System.Windows.Forms.Padding(4)
         Me.LabelX1.Name = "LabelX1"
         Me.LabelX1.Size = New System.Drawing.Size(199, 47)
         Me.LabelX1.TabIndex = 13
@@ -839,7 +839,7 @@ Partial Class F0_ClasesPracticas3
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1179, 690)
-        Me.Margin = New System.Windows.Forms.Padding(5, 5, 5, 5)
+        Me.Margin = New System.Windows.Forms.Padding(5)
         Me.Name = "F0_ClasesPracticas3"
         Me.Text = "F0_ClasesPracticas2"
         Me.Controls.SetChildIndex(Me.SuperTabPrincipal, 0)

@@ -2760,13 +2760,25 @@ Public Class F0_ClasesPracticas3
 
     Private Sub ADICIONARHORARIOToolStripMenuItem3_Click(sender As Object, e As EventArgs) Handles ADICIONARHORARIOToolStripMenuItem3.Click
 
-        _prSetHorarioCorridoReforzamiento()
+
+        Dim obs As String = InputBox("ingrese la cantidad de clases a programar".ToUpper, "Cantidad de Clases".ToUpper, "").ToUpper
+        If obs <> String.Empty And IsNumeric(obs) Then
+            _cantClasesReforzamiento = CInt(obs)
+            _prSetHorarioCorridoReforzamiento()
+        End If
+
     End Sub
 
     Private Sub ADICIONARMANUALMENTEToolStripMenuItem1_Click(sender As Object, e As EventArgs) Handles ADICIONARMANUALMENTEToolStripMenuItem1.Click
-        _limiteDias = _cantClasesReforzamiento
-        _isClasePractica = False
-        _prSetHorarioManualmente()
+        Dim obs As String = InputBox("ingrese la cantidad de clases a programar".ToUpper, "Cantidad de Clases".ToUpper, "").ToUpper
+        If obs <> String.Empty And IsNumeric(obs) Then
+            _cantClasesReforzamiento = CInt(obs)
+            _limiteDias = _cantClasesReforzamiento
+            _isClasePractica = False
+            _prSetHorarioManualmente()
+        End If
+
+
     End Sub
 
     Private Sub ASIGNARSUSPENCIONToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ASIGNARSUSPENCIONToolStripMenuItem.Click
