@@ -2981,6 +2981,29 @@ Public Class AccesoLogica
     End Function
 
 
+    Public Shared Function L_prObtenerCantidadClases(ByRef _numi As String, _numiChof As String, _numiAlum As String, ByRef dt As DataTable) As Boolean
+        Dim _resultado As Boolean
+
+        Dim _Tabla As DataTable
+        Dim _listParam As New List(Of Datos.DParametro)
+
+        _listParam.Add(New Datos.DParametro("@tipo", 100001))
+        _listParam.Add(New Datos.DParametro("@egnumi", _numi))
+        _listParam.Add(New Datos.DParametro("@egchof", _numiChof))
+        _listParam.Add(New Datos.DParametro("@egalum", _numiAlum))
+        _listParam.Add(New Datos.DParametro("@eguact", L_Usuario))
+
+        _Tabla = D_ProcedimientoConParam("sp_dg_TCE006", _listParam)
+        dt = _Tabla
+        If _Tabla.Rows.Count > 0 Then
+            _resultado = True
+        Else
+            _resultado = False
+        End If
+
+        Return _resultado
+    End Function
+
     Public Shared Function L_prClasesPracDetalleModificarEstado(_TCE0061 As DataTable) As Boolean
         Dim _resultado As Boolean
 

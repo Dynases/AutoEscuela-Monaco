@@ -2530,6 +2530,13 @@ Public Class F0_ClasesPracticas3
             If frmAyuda.seleccionado = True Then
                 Dim numiAalumno As String = frmAyuda.filaSelect.Cells("cbnumi").Value
                 Dim numiReg As String = ""
+                Dim dtclases As DataTable = New DataTable
+                If (L_prObtenerCantidadClases(numiReg, tbPersona.Value, numiAalumno, dtclases)) Then
+                    ',egnclsprac ,egnclsref
+                    _cantClasesPracticas = dtclases.Rows(0).Item("egnclsprac")
+                    _cantClasesReforzamiento = dtclases.Rows(0).Item("egnclsref")
+                End If
+
                 Dim respuesta As Boolean = L_prClasesPracDetalleGrabar2(numiReg, tbPersona.Value, numiAalumno, estadoTipoClase, _cantClasesPracticas, _cantClasesReforzamiento, _dtFechas)
                 If respuesta = True Then
                     _dtFechas.Rows.Clear()
