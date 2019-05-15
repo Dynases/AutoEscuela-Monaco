@@ -141,10 +141,10 @@ Partial Class P_Principal
         'ModVenta
         '
         Me.ModVenta.BackColor = System.Drawing.SystemColors.ActiveCaption
+        Me.ModVenta.Controls.Add(Me.SideNavPanel3)
         Me.ModVenta.Controls.Add(Me.SideNavPanel1)
         Me.ModVenta.Controls.Add(Me.SideNav_Conf)
         Me.ModVenta.Controls.Add(Me.SideNavPanel2)
-        Me.ModVenta.Controls.Add(Me.SideNavPanel3)
         Me.ModVenta.Dock = System.Windows.Forms.DockStyle.Fill
         Me.ModVenta.Items.AddRange(New DevComponents.DotNetBar.BaseItem() {Me.SideNavItem1, Me.Separator1, Me.FP_Configuracion, Me.FP_Escuela, Me.FP_Certificacion, Me.Separator2, Me.FP_Venta})
         Me.ModVenta.Location = New System.Drawing.Point(0, 0)
@@ -163,11 +163,12 @@ Partial Class P_Principal
         Me.SideNavPanel1.Name = "SideNavPanel1"
         Me.SideNavPanel1.Size = New System.Drawing.Size(870, 524)
         Me.SideNavPanel1.TabIndex = 83
+        Me.SideNavPanel1.Visible = False
         '
         'MetroTilePanel2
         '
         Me.MetroTilePanel2.BackColor = System.Drawing.Color.Transparent
-        Me.MetroTilePanel2.BackgroundImage = Global.Presentacion.My.Resources.Resources.fondoMonaco04
+        Me.MetroTilePanel2.BackgroundImage = Global.Presentacion.My.Resources.Resources.fondomonaco02
         Me.MetroTilePanel2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         '
         '
@@ -293,14 +294,14 @@ Partial Class P_Principal
         Me.SideNav_Conf.Dock = System.Windows.Forms.DockStyle.Fill
         Me.SideNav_Conf.Location = New System.Drawing.Point(142, 36)
         Me.SideNav_Conf.Name = "SideNav_Conf"
-        Me.SideNav_Conf.Size = New System.Drawing.Size(871, 524)
+        Me.SideNav_Conf.Size = New System.Drawing.Size(870, 524)
         Me.SideNav_Conf.TabIndex = 2
         Me.SideNav_Conf.Visible = False
         '
         'MetroTilePanel1
         '
         Me.MetroTilePanel1.BackColor = System.Drawing.Color.Transparent
-        Me.MetroTilePanel1.BackgroundImage = Global.Presentacion.My.Resources.Resources.fondoMonaco04
+        Me.MetroTilePanel1.BackgroundImage = Global.Presentacion.My.Resources.Resources.fondomonaco02
         Me.MetroTilePanel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         '
         '
@@ -316,7 +317,7 @@ Partial Class P_Principal
         Me.MetroTilePanel1.Location = New System.Drawing.Point(0, 0)
         Me.MetroTilePanel1.MultiLine = True
         Me.MetroTilePanel1.Name = "MetroTilePanel1"
-        Me.MetroTilePanel1.Size = New System.Drawing.Size(871, 410)
+        Me.MetroTilePanel1.Size = New System.Drawing.Size(870, 410)
         Me.MetroTilePanel1.TabIndex = 0
         Me.MetroTilePanel1.Text = "mtp1Configuracion"
         '
@@ -454,7 +455,7 @@ Partial Class P_Principal
         Me.PictureBox4.Dock = System.Windows.Forms.DockStyle.Bottom
         Me.PictureBox4.Location = New System.Drawing.Point(0, 410)
         Me.PictureBox4.Name = "PictureBox4"
-        Me.PictureBox4.Size = New System.Drawing.Size(871, 114)
+        Me.PictureBox4.Size = New System.Drawing.Size(870, 114)
         Me.PictureBox4.TabIndex = 2
         Me.PictureBox4.TabStop = False
         Me.PictureBox4.Visible = False
@@ -466,14 +467,14 @@ Partial Class P_Principal
         Me.SideNavPanel2.Dock = System.Windows.Forms.DockStyle.Fill
         Me.SideNavPanel2.Location = New System.Drawing.Point(142, 36)
         Me.SideNavPanel2.Name = "SideNavPanel2"
-        Me.SideNavPanel2.Size = New System.Drawing.Size(871, 524)
+        Me.SideNavPanel2.Size = New System.Drawing.Size(870, 524)
         Me.SideNavPanel2.TabIndex = 56
         Me.SideNavPanel2.Visible = False
         '
         'MetroTilePanel3
         '
         Me.MetroTilePanel3.BackColor = System.Drawing.Color.Transparent
-        Me.MetroTilePanel3.BackgroundImage = Global.Presentacion.My.Resources.Resources.fondomonaco03
+        Me.MetroTilePanel3.BackgroundImage = Global.Presentacion.My.Resources.Resources.fondomonaco02
         Me.MetroTilePanel3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         '
         '
@@ -489,7 +490,7 @@ Partial Class P_Principal
         Me.MetroTilePanel3.Location = New System.Drawing.Point(0, 0)
         Me.MetroTilePanel3.MultiLine = True
         Me.MetroTilePanel3.Name = "MetroTilePanel3"
-        Me.MetroTilePanel3.Size = New System.Drawing.Size(871, 410)
+        Me.MetroTilePanel3.Size = New System.Drawing.Size(870, 410)
         Me.MetroTilePanel3.TabIndex = 2
         Me.MetroTilePanel3.Text = "mtp3Pedidos"
         '
@@ -756,7 +757,7 @@ Partial Class P_Principal
         Me.PictureBox2.Dock = System.Windows.Forms.DockStyle.Bottom
         Me.PictureBox2.Location = New System.Drawing.Point(0, 410)
         Me.PictureBox2.Name = "PictureBox2"
-        Me.PictureBox2.Size = New System.Drawing.Size(871, 114)
+        Me.PictureBox2.Size = New System.Drawing.Size(870, 114)
         Me.PictureBox2.TabIndex = 3
         Me.PictureBox2.TabStop = False
         Me.PictureBox2.Visible = False
@@ -768,14 +769,13 @@ Partial Class P_Principal
         Me.SideNavPanel3.Dock = System.Windows.Forms.DockStyle.Fill
         Me.SideNavPanel3.Location = New System.Drawing.Point(142, 36)
         Me.SideNavPanel3.Name = "SideNavPanel3"
-        Me.SideNavPanel3.Size = New System.Drawing.Size(871, 524)
+        Me.SideNavPanel3.Size = New System.Drawing.Size(870, 524)
         Me.SideNavPanel3.TabIndex = 73
-        Me.SideNavPanel3.Visible = False
         '
         'MetroTilePanel5
         '
         Me.MetroTilePanel5.BackColor = System.Drawing.Color.Transparent
-        Me.MetroTilePanel5.BackgroundImage = Global.Presentacion.My.Resources.Resources.fondomonaco03
+        Me.MetroTilePanel5.BackgroundImage = Global.Presentacion.My.Resources.Resources.fondomonaco02
         Me.MetroTilePanel5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         '
         '
@@ -791,7 +791,7 @@ Partial Class P_Principal
         Me.MetroTilePanel5.Location = New System.Drawing.Point(0, 0)
         Me.MetroTilePanel5.MultiLine = True
         Me.MetroTilePanel5.Name = "MetroTilePanel5"
-        Me.MetroTilePanel5.Size = New System.Drawing.Size(871, 410)
+        Me.MetroTilePanel5.Size = New System.Drawing.Size(870, 410)
         Me.MetroTilePanel5.TabIndex = 3
         Me.MetroTilePanel5.Text = "mtp3Pedidos"
         '
@@ -1041,7 +1041,7 @@ Partial Class P_Principal
         Me.PictureBox5.Dock = System.Windows.Forms.DockStyle.Bottom
         Me.PictureBox5.Location = New System.Drawing.Point(0, 410)
         Me.PictureBox5.Name = "PictureBox5"
-        Me.PictureBox5.Size = New System.Drawing.Size(871, 114)
+        Me.PictureBox5.Size = New System.Drawing.Size(870, 114)
         Me.PictureBox5.TabIndex = 4
         Me.PictureBox5.TabStop = False
         Me.PictureBox5.Visible = False
@@ -1080,6 +1080,7 @@ Partial Class P_Principal
         '
         'FP_Certificacion
         '
+        Me.FP_Certificacion.Checked = True
         Me.FP_Certificacion.Name = "FP_Certificacion"
         Me.FP_Certificacion.Panel = Me.SideNavPanel3
         Me.FP_Certificacion.Symbol = ""
@@ -1097,7 +1098,6 @@ Partial Class P_Principal
         '
         'FP_Venta
         '
-        Me.FP_Venta.Checked = True
         Me.FP_Venta.Name = "FP_Venta"
         Me.FP_Venta.Panel = Me.SideNavPanel1
         Me.FP_Venta.Symbol = ""
