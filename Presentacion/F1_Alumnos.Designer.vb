@@ -154,6 +154,7 @@ Partial Class F1_Alumnos
         '
         'SuperTabControlPanelRegistro
         '
+        Me.SuperTabControlPanelRegistro.Location = New System.Drawing.Point(0, 25)
         Me.SuperTabControlPanelRegistro.Size = New System.Drawing.Size(1173, 536)
         Me.SuperTabControlPanelRegistro.Controls.SetChildIndex(Me.PanelSuperior, 0)
         Me.SuperTabControlPanelRegistro.Controls.SetChildIndex(Me.PanelInferior, 0)
@@ -173,6 +174,7 @@ Partial Class F1_Alumnos
         '
         'PanelInferior
         '
+        Me.PanelInferior.Location = New System.Drawing.Point(0, 500)
         Me.PanelInferior.Size = New System.Drawing.Size(1173, 36)
         Me.PanelInferior.Style.Alignment = System.Drawing.StringAlignment.Center
         Me.PanelInferior.Style.BackColor1.Color = System.Drawing.Color.Gold
@@ -385,6 +387,10 @@ Partial Class F1_Alumnos
         Me.btnImprimir.Location = New System.Drawing.Point(153, 0)
         Me.btnImprimir.Size = New System.Drawing.Size(72, 82)
         '
+        'btnUltimo
+        '
+        Me.btnUltimo.Location = New System.Drawing.Point(129, 0)
+        '
         'MPanelUserAct
         '
         Me.MPanelUserAct.Location = New System.Drawing.Point(973, 0)
@@ -566,6 +572,7 @@ Partial Class F1_Alumnos
         Me.tbTipo.SelectedItem = Nothing
         Me.tbTipo.Size = New System.Drawing.Size(141, 22)
         Me.tbTipo.TabIndex = 10
+        Me.tbTipo.Visible = False
         '
         'LabelX9
         '
@@ -579,6 +586,7 @@ Partial Class F1_Alumnos
         Me.LabelX9.Size = New System.Drawing.Size(114, 23)
         Me.LabelX9.TabIndex = 70
         Me.LabelX9.Text = "TIPO:"
+        Me.LabelX9.Visible = False
         '
         'LabelX8
         '
@@ -923,6 +931,7 @@ Partial Class F1_Alumnos
         Me.gpFamiliarSocio.StyleMouseOver.CornerType = DevComponents.DotNetBar.eCornerType.Square
         Me.gpFamiliarSocio.TabIndex = 15
         Me.gpFamiliarSocio.Text = "P A R A    F A M I L I A R E S    D E    S O C I O S"
+        Me.gpFamiliarSocio.Visible = False
         '
         'btParentesco
         '
@@ -1280,6 +1289,7 @@ Partial Class F1_Alumnos
         Me.tbNroFactura.PreventEnterBeep = True
         Me.tbNroFactura.Size = New System.Drawing.Size(75, 22)
         Me.tbNroFactura.TabIndex = 105
+        Me.tbNroFactura.Visible = False
         '
         'LabelX25
         '

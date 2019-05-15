@@ -2743,14 +2743,12 @@ Public Class F0_ClasesPracticas3
                 _cantClasesPracticas = CInt(obs)
                 _prSetHorarioCorrido()
             End If
-
         Else
             Dim obs As String = InputBox("ingrese la cantidad de clases a programar".ToUpper, "Cantidad de Clases".ToUpper, "").ToUpper
             If obs <> String.Empty And IsNumeric(obs) Then
                 _cantClasesPracticas = CInt(obs)
                 _prModificarHorarioCorrido()
             End If
-
         End If
     End Sub
 
@@ -2762,45 +2760,34 @@ Public Class F0_ClasesPracticas3
             _isClasePractica = True
             _prSetHorarioManualmente()
         End If
-
     End Sub
-
     Private Sub ADICIONARHORARIOToolStripMenuItem3_Click(sender As Object, e As EventArgs) Handles ADICIONARHORARIOToolStripMenuItem3.Click
-
-
         Dim obs As String = InputBox("ingrese la cantidad de clases a programar".ToUpper, "Cantidad de Clases".ToUpper, "").ToUpper
         If obs <> String.Empty And IsNumeric(obs) Then
             _cantClasesReforzamiento = CInt(obs)
             _prSetHorarioCorridoReforzamiento()
         End If
-
     End Sub
 
     Private Sub ADICIONARMANUALMENTEToolStripMenuItem1_Click(sender As Object, e As EventArgs) Handles ADICIONARMANUALMENTEToolStripMenuItem1.Click
-        Dim obs As String = InputBox("ingrese la cantidad de clases a programar".ToUpper, "Cantidad de Clases".ToUpper, "").ToUpper
+        Dim obs As String = InputBox("ingrese la cantidad de clase s a programar".ToUpper, "Cantidad de Clases".ToUpper, "").ToUpper
         If obs <> String.Empty And IsNumeric(obs) Then
             _cantClasesReforzamiento = CInt(obs)
             _limiteDias = _cantClasesReforzamiento
             _isClasePractica = False
             _prSetHorarioManualmente()
         End If
-
-
     End Sub
 
     Private Sub ASIGNARSUSPENCIONToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ASIGNARSUSPENCIONToolStripMenuItem.Click
-
-
     End Sub
 
     Private Sub FINALIZARCURSOToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles FINALIZARCURSOToolStripMenuItem.Click
         Dim f As Integer
         f = grAlumnos.Row
-
         If f >= 0 Then
             Dim estado As Integer = grAlumnos.GetValue("egest")
             Dim numiCab As String = grAlumnos.GetValue("egnumi")
-
             Dim res As Boolean = L_prClasesPracModificarEstadoCabecera(numiCab, (estado * -1).ToString.Trim)
             If res Then
                 ToastNotification.Show(Me, "se finalizo la clase seleccionado".ToUpper, My.Resources.WARNING, 5000, eToastGlowColor.Green, eToastPosition.TopCenter)
@@ -2810,7 +2797,6 @@ Public Class F0_ClasesPracticas3
             Else
                 ToastNotification.Show(Me, "no se pudo realizar la operacion".ToUpper, My.Resources.WARNING, 5000, eToastGlowColor.Green, eToastPosition.TopCenter)
             End If
-
         End If
     End Sub
 
@@ -2818,14 +2804,11 @@ Public Class F0_ClasesPracticas3
         Dim f, c As Integer
         f = grHorario.CurrentCell.RowIndex
         c = grHorario.CurrentCell.ColumnIndex
-
         If f >= 0 And c >= 1 Then
             Dim hora As ClsHora = _meses.vmes1.vDias(f, c - 1)
-
             If IsNothing(hora) = False Then
                 If hora.estado = conDiaGrabadoAlumno And (hora.estadoCls = conEstClaseAsistida Or hora.estadoCls = conEstClaseFalta Or hora.estadoCls = conEstClasePermiso Or hora.estadoCls = conEstClaseSuspension) Then
                     Dim line As Integer = _meses.vmes1.vDias(f, c - 1).line
-
                     Dim obs As String = InputBox("ingrese alguna observacion".ToUpper, "observacion de la reprogramacion".ToUpper, "").ToUpper
                     If obs <> String.Empty Then
                         _dtFechas.Rows.Clear()
@@ -2870,9 +2853,7 @@ Public Class F0_ClasesPracticas3
                             '        hora1.numCla = numero
                             '        numero = numero + 1
                             '    End If
-
                             'Next
-
                             '_prRepaintGrilla(1)
                             _prCargarGridAlumnos(tbPersona.Value)
                             _prCargarGridHorario(tbFechaSelect.Value, tbPersona.Value)

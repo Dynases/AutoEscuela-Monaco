@@ -6892,7 +6892,7 @@ Public Class AccesoLogica
 
         Dim _listParam As New List(Of Datos.DParametro)
 
-        _listParam.Add(New Datos.DParametro("@tipo", 8))
+        _listParam.Add(New Datos.DParametro("@tipo", 10))
         _listParam.Add(New Datos.DParametro("@fechai", fechaI))
         _listParam.Add(New Datos.DParametro("@fechaf", fechaF))
         _listParam.Add(New Datos.DParametro("@vcuact", L_Usuario))
@@ -6907,7 +6907,7 @@ Public Class AccesoLogica
 
         Dim _listParam As New List(Of Datos.DParametro)
 
-        _listParam.Add(New Datos.DParametro("@tipo", 9))
+        _listParam.Add(New Datos.DParametro("@tipo", 11))
         _listParam.Add(New Datos.DParametro("@fechai", fechaI))
         _listParam.Add(New Datos.DParametro("@fechaf", fechaF))
         _listParam.Add(New Datos.DParametro("@vcuact", L_Usuario))

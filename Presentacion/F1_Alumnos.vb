@@ -342,7 +342,8 @@ Public Class F1_Alumnos
         tbNroFactura.Text = ""
         tbSuc.Value = gi_userSuc
         _prEliminarImagen()
-
+        tbNroFactura.Text = "0"
+        tbTipo.Value = 2
         'grDatos = Nothing
     End Sub
 
