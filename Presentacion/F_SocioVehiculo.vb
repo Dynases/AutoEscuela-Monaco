@@ -5,7 +5,7 @@ Imports DevComponents.DotNetBar
 
 Public Class F_SocioVehiculo
 
-
+    'prueba sergio
 #Region "Atributos"
 
     'Datos del socio
