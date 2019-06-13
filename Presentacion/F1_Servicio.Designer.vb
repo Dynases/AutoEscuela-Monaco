@@ -51,6 +51,8 @@ Partial Class F1_Servicio
         Me.btnEliminar2 = New System.Windows.Forms.ToolStripMenuItem()
         Me.LabelX5 = New DevComponents.DotNetBar.LabelX()
         Me.cbsucursal = New Janus.Windows.GridEX.EditControls.MultiColumnCombo()
+        Me.LabelX6 = New DevComponents.DotNetBar.LabelX()
+        Me.tbcantidad = New DevComponents.DotNetBar.Controls.TextBoxX()
         CType(Me.SuperTabPrincipal, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuperTabPrincipal.SuspendLayout()
         Me.SuperTabControlPanelRegistro.SuspendLayout()
@@ -175,11 +177,13 @@ Partial Class F1_Servicio
         '
         'PanelToolBar2
         '
-        Me.PanelToolBar2.Location = New System.Drawing.Point(1799, 0)
+        Me.PanelToolBar2.Location = New System.Drawing.Point(1554, 0)
         Me.PanelToolBar2.Margin = New System.Windows.Forms.Padding(5)
         '
         'MPanelSup
         '
+        Me.MPanelSup.Controls.Add(Me.tbcantidad)
+        Me.MPanelSup.Controls.Add(Me.LabelX6)
         Me.MPanelSup.Controls.Add(Me.cbsucursal)
         Me.MPanelSup.Controls.Add(Me.LabelX5)
         Me.MPanelSup.Controls.Add(Me.tbTipoPrecio)
@@ -199,7 +203,7 @@ Partial Class F1_Servicio
         Me.MPanelSup.Controls.Add(Me.LabelX1)
         Me.MPanelSup.Controls.Add(Me.tbNumi)
         Me.MPanelSup.Margin = New System.Windows.Forms.Padding(5)
-        Me.MPanelSup.Size = New System.Drawing.Size(1906, 226)
+        Me.MPanelSup.Size = New System.Drawing.Size(1906, 272)
         Me.MPanelSup.Controls.SetChildIndex(Me.PanelUsuario, 0)
         Me.MPanelSup.Controls.SetChildIndex(Me.tbNumi, 0)
         Me.MPanelSup.Controls.SetChildIndex(Me.LabelX1, 0)
@@ -219,6 +223,8 @@ Partial Class F1_Servicio
         Me.MPanelSup.Controls.SetChildIndex(Me.tbTipoPrecio, 0)
         Me.MPanelSup.Controls.SetChildIndex(Me.LabelX5, 0)
         Me.MPanelSup.Controls.SetChildIndex(Me.cbsucursal, 0)
+        Me.MPanelSup.Controls.SetChildIndex(Me.LabelX6, 0)
+        Me.MPanelSup.Controls.SetChildIndex(Me.tbcantidad, 0)
         '
         'PanelPrincipal
         '
@@ -227,8 +233,9 @@ Partial Class F1_Servicio
         '
         'GroupPanelBuscador
         '
+        Me.GroupPanelBuscador.Location = New System.Drawing.Point(0, 272)
         Me.GroupPanelBuscador.Margin = New System.Windows.Forms.Padding(5)
-        Me.GroupPanelBuscador.Size = New System.Drawing.Size(1906, 303)
+        Me.GroupPanelBuscador.Size = New System.Drawing.Size(1906, 257)
         '
         '
         '
@@ -261,16 +268,12 @@ Partial Class F1_Servicio
         'JGrM_Buscador
         '
         Me.JGrM_Buscador.Margin = New System.Windows.Forms.Padding(5)
-        Me.JGrM_Buscador.Size = New System.Drawing.Size(1900, 276)
+        Me.JGrM_Buscador.Size = New System.Drawing.Size(1900, 230)
         '
         'PanelUsuario
         '
         Me.PanelUsuario.Location = New System.Drawing.Point(680, 22)
         Me.PanelUsuario.Margin = New System.Windows.Forms.Padding(5)
-        '
-        'btnUltimo
-        '
-        Me.btnUltimo.Location = New System.Drawing.Point(171, 0)
         '
         'MPanelUserAct
         '
@@ -445,7 +448,7 @@ Partial Class F1_Servicio
         Me.gpDetalle1.Location = New System.Drawing.Point(1499, 0)
         Me.gpDetalle1.Margin = New System.Windows.Forms.Padding(4)
         Me.gpDetalle1.Name = "gpDetalle1"
-        Me.gpDetalle1.Size = New System.Drawing.Size(407, 226)
+        Me.gpDetalle1.Size = New System.Drawing.Size(407, 272)
         '
         '
         '
@@ -483,7 +486,7 @@ Partial Class F1_Servicio
         Me.grDetalle.Location = New System.Drawing.Point(0, 0)
         Me.grDetalle.Margin = New System.Windows.Forms.Padding(4)
         Me.grDetalle.Name = "grDetalle"
-        Me.grDetalle.Size = New System.Drawing.Size(401, 203)
+        Me.grDetalle.Size = New System.Drawing.Size(401, 249)
         Me.grDetalle.TabIndex = 1
         '
         'cmOpciones
@@ -538,7 +541,7 @@ Partial Class F1_Servicio
         Me.gpDetalle2.Location = New System.Drawing.Point(984, 0)
         Me.gpDetalle2.Margin = New System.Windows.Forms.Padding(4)
         Me.gpDetalle2.Name = "gpDetalle2"
-        Me.gpDetalle2.Size = New System.Drawing.Size(515, 226)
+        Me.gpDetalle2.Size = New System.Drawing.Size(515, 272)
         '
         '
         '
@@ -576,7 +579,7 @@ Partial Class F1_Servicio
         Me.grDetalle2.Location = New System.Drawing.Point(0, 0)
         Me.grDetalle2.Margin = New System.Windows.Forms.Padding(4)
         Me.grDetalle2.Name = "grDetalle2"
-        Me.grDetalle2.Size = New System.Drawing.Size(509, 203)
+        Me.grDetalle2.Size = New System.Drawing.Size(509, 249)
         Me.grDetalle2.TabIndex = 0
         '
         'tbTipoPrecio
@@ -632,6 +635,35 @@ Partial Class F1_Servicio
         Me.cbsucursal.SelectedItem = Nothing
         Me.cbsucursal.Size = New System.Drawing.Size(274, 26)
         Me.cbsucursal.TabIndex = 108
+        '
+        'LabelX6
+        '
+        '
+        '
+        '
+        Me.LabelX6.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square
+        Me.LabelX6.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LabelX6.Location = New System.Drawing.Point(31, 226)
+        Me.LabelX6.Margin = New System.Windows.Forms.Padding(4)
+        Me.LabelX6.Name = "LabelX6"
+        Me.LabelX6.Size = New System.Drawing.Size(116, 28)
+        Me.LabelX6.TabIndex = 109
+        Me.LabelX6.Text = "CANTIDAD:"
+        '
+        'tbcantidad
+        '
+        '
+        '
+        '
+        Me.tbcantidad.Border.Class = "TextBoxBorder"
+        Me.tbcantidad.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square
+        Me.tbcantidad.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.tbcantidad.Location = New System.Drawing.Point(164, 229)
+        Me.tbcantidad.Margin = New System.Windows.Forms.Padding(4)
+        Me.tbcantidad.Name = "tbcantidad"
+        Me.tbcantidad.PreventEnterBeep = True
+        Me.tbcantidad.Size = New System.Drawing.Size(133, 26)
+        Me.tbcantidad.TabIndex = 110
         '
         'F1_Servicio
         '
@@ -697,4 +729,6 @@ Partial Class F1_Servicio
     Friend WithEvents grDetalle As Janus.Windows.GridEX.GridEX
     Friend WithEvents cbsucursal As Janus.Windows.GridEX.EditControls.MultiColumnCombo
     Friend WithEvents LabelX5 As DevComponents.DotNetBar.LabelX
+    Friend WithEvents tbcantidad As DevComponents.DotNetBar.Controls.TextBoxX
+    Friend WithEvents LabelX6 As DevComponents.DotNetBar.LabelX
 End Class

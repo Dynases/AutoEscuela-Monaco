@@ -308,12 +308,17 @@ Public Class F0_VentaServicios
         End With
 
         With grProducto.RootTable.Columns("edprec")
-            .Width = 180
+            .Width = 150
             .Visible = True
             .Caption = "PRECIO"
             .FormatString = "0.00"
         End With
-
+        With grProducto.RootTable.Columns("edcant")
+            .Width = 150
+            .Visible = True
+            .Caption = "Cantidad Clases"
+            .FormatString = "0"
+        End With
 
         With grProducto
             .GroupByBoxVisible = False
@@ -374,13 +379,17 @@ Public Class F0_VentaServicios
 
         End With
         With grDetalle.RootTable.Columns("vdserv")
-            .Width = 120
+            .Width = 100
             .Visible = True
             .Caption = "Cod Servicio"
         End With
-
+        With grDetalle.RootTable.Columns("edcant")
+            .Width = 120
+            .Visible = True
+            .Caption = "Cant Clases"
+        End With
         With grDetalle.RootTable.Columns("servicio")
-            .Width = 350
+            .Width = 320
             .Caption = "SERVICIO"
             .Visible = True
         End With
@@ -532,13 +541,13 @@ Public Class F0_VentaServicios
 
         Dim lin As Integer = _fnObtenerLinDetalle() + 1
         _prCalcularPrecioTotal()
-        CType(grDetalle.DataSource, DataTable).Rows.Add(lin, 0, 0, "", 0, 0, 0, 0, 0, 0, "", 0, 0, 0)
+        CType(grDetalle.DataSource, DataTable).Rows.Add(lin, 0, 0, 0, "", 0, 0, 0, 0, 0, 0, "", 0, 0, 0)
     End Sub
 
     Public Function _fnValidarColumn(pos As Integer, row As Integer, _MostrarMensaje As Boolean) As Boolean
         If (CType(grDetalle.DataSource, DataTable).Rows(pos).Item("servicio") = String.Empty) Then
             grDetalle.Row = row
-            grDetalle.Col = 3
+            grDetalle.Col = 4
             grDetalle.FocusCellFormatStyle.BackColor = Color.Red
 
             If (_MostrarMensaje = True) Then
@@ -1129,6 +1138,7 @@ salirIf:
 
                     CType(grDetalle.DataSource, DataTable).Rows(pos).Item("vdpbas") = grProducto.GetValue("edprec")
                     CType(grDetalle.DataSource, DataTable).Rows(pos).Item("vdptot") = grProducto.GetValue("edprec")
+                    CType(grDetalle.DataSource, DataTable).Rows(pos).Item("edcant") = grProducto.GetValue("edcant")
                     CType(grDetalle.DataSource, DataTable).Rows(pos).Item("vdtotdesc") = grProducto.GetValue("edprec")
                     CType(grDetalle.DataSource, DataTable).Rows(pos).Item("vdptot2") = grProducto.GetValue("edprec")
                     CType(grDetalle.DataSource, DataTable).Rows(pos).Item("vdcmin") = 1
@@ -1170,11 +1180,12 @@ salirIf:
 
     Private Sub _DesHabilitarProductos()
         If (GpPanelServicio.Visible = True) Then
+            grDetalle.Row = grDetalle.RowCount - 1
             GpPanelServicio.Visible = False
             PanelInferior.Visible = True
             grDetalle.Select()
-            grDetalle.Col = 4
-            grDetalle.Row = grDetalle.RowCount - 1
+            grDetalle.Col = 5
+
 
         End If
 

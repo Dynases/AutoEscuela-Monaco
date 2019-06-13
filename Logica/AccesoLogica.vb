@@ -1555,7 +1555,7 @@ Public Class AccesoLogica
         Return _Tabla
     End Function
 
-    Public Shared Function L_prServicioGrabar(ByRef _numi As String, _codigo As String, _desc As String, _precio As String, _tipo As String, _estado As String, _TCE0041 As DataTable, _TCE0042 As DataTable, _suc As Integer) As Boolean
+    Public Shared Function L_prServicioGrabar(ByRef _numi As String, _codigo As String, _desc As String, _precio As String, _tipo As String, _estado As String, _TCE0041 As DataTable, _TCE0042 As DataTable, _suc As Integer, _cantidad As String) As Boolean
         Dim _resultado As Boolean
 
         Dim _Tabla As DataTable
@@ -1572,6 +1572,7 @@ Public Class AccesoLogica
         _listParam.Add(New Datos.DParametro("@TCE0041", "", _TCE0041))
         _listParam.Add(New Datos.DParametro("@TCE0042", "", _TCE0042))
         _listParam.Add(New Datos.DParametro("@edsuc", _suc))
+        _listParam.Add(New Datos.DParametro("@edcant", _cantidad))
         _Tabla = D_ProcedimientoConParam("sp_dg_TCE004", _listParam)
 
         If _Tabla.Rows.Count > 0 Then
@@ -1583,7 +1584,7 @@ Public Class AccesoLogica
 
         Return _resultado
     End Function
-    Public Shared Function L_prServicioModificar(ByRef _numi As String, _codigo As String, _desc As String, _precio As String, _tipo As String, _estado As String, _TCE0041 As DataTable, _TCE0042 As DataTable, ByRef _mensaje As String, _suc As Integer) As Boolean
+    Public Shared Function L_prServicioModificar(ByRef _numi As String, _codigo As String, _desc As String, _precio As String, _tipo As String, _estado As String, _TCE0041 As DataTable, _TCE0042 As DataTable, ByRef _mensaje As String, _suc As Integer, _cantidad As String) As Boolean
         Dim _resultado As Boolean
 
         Dim _Tabla As DataTable
@@ -1600,6 +1601,7 @@ Public Class AccesoLogica
         _listParam.Add(New Datos.DParametro("@TCE0041", "", _TCE0041))
         _listParam.Add(New Datos.DParametro("@TCE0042", "", _TCE0042))
         _listParam.Add(New Datos.DParametro("@edsuc", _suc))
+        _listParam.Add(New Datos.DParametro("@edcant", _cantidad))
         _Tabla = D_ProcedimientoConParam("sp_dg_TCE004", _listParam)
 
         If _Tabla.Rows.Count > 0 Then

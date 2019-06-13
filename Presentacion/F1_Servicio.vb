@@ -255,6 +255,7 @@ Public Class F1_Servicio
         tbTipo.ReadOnly = False
         tbCodigo.ReadOnly = False
         tbEstado.IsReadOnly = False
+        tbcantidad.ReadOnly = False
         'tbPrecio.IsInputReadOnly = False
         cbsucursal.ReadOnly = False
         'grDetalle.Enabled = True
@@ -274,7 +275,7 @@ Public Class F1_Servicio
         tbTipo.ReadOnly = True
         tbEstado.IsReadOnly = True
         tbPrecio.ReadOnly = True
-
+        tbcantidad.ReadOnly = True
         btnElimFila1.Visible = False
         btnEliminar2.Visible = False
         cbsucursal.ReadOnly = True
@@ -288,7 +289,7 @@ Public Class F1_Servicio
         tbTipo.Text = ""
         tbEstado.Value = True
         tbPrecio.Text = "0"
-
+        tbcantidad.Text = "0"
         'VACIO EL DETALLE
         _prCargarGridDetalle(-1)
         grDetalle.AllowAddNew = InheritableBoolean.True
@@ -308,6 +309,7 @@ Public Class F1_Servicio
         tbCodigo.BackColor = Color.White
         tbPrecio.BackColor = Color.White
         cbsucursal.BackColor = Color.White
+        tbcantidad.BackColor = Color.White
     End Sub
 
     Public Overrides Function _PMOGrabarRegistro() As Boolean
@@ -319,7 +321,7 @@ Public Class F1_Servicio
 
         _prLlenarNumTiposPrecios()
         Dim dtDetalle2 As DataTable = CType(grDetalle2.DataSource, DataTable).DefaultView.ToTable(True, "eqnumi", "eqtce4", "eqtip1_4", "eqmes", "eqano", "eqprecio", "estado")
-        Dim res As Boolean = L_prServicioGrabar(tbNumi.Text, tbCodigo.Text, tbDesc.Text, tbPrecio.Text, tbTipo.Value, IIf(tbEstado.Value = True, 1, 0), CType(grDetalle.DataSource, DataTable), dtDetalle2, cbsucursal.Value)
+        Dim res As Boolean = L_prServicioGrabar(tbNumi.Text, tbCodigo.Text, tbDesc.Text, tbPrecio.Text, tbTipo.Value, IIf(tbEstado.Value = True, 1, 0), CType(grDetalle.DataSource, DataTable), dtDetalle2, cbsucursal.Value, tbcantidad.Text)
         If res Then
             ToastNotification.Show(Me, "Codigo de servicio ".ToUpper + tbNumi.Text + " Grabado con Exito.".ToUpper, My.Resources.GRABACION_EXITOSA, 5000, eToastGlowColor.Green, eToastPosition.TopCenter)
             tbCodigo.Focus()
@@ -338,7 +340,7 @@ Public Class F1_Servicio
         Dim mensaje As String = String.Empty
         _prLlenarNumTiposPrecios()
         Dim dtDetalle2 As DataTable = CType(grDetalle2.DataSource, DataTable).DefaultView.ToTable(True, "eqnumi", "eqtce4", "eqtip1_4", "eqmes", "eqano", "eqprecio", "estado")
-        Dim res As Boolean = L_prServicioModificar(tbNumi.Text, tbCodigo.Text, tbDesc.Text, tbPrecio.Text, tbTipo.Value, IIf(tbEstado.Value = True, 1, 0), CType(grDetalle.DataSource, DataTable), dtDetalle2, mensaje, cbsucursal.Value)
+        Dim res As Boolean = L_prServicioModificar(tbNumi.Text, tbCodigo.Text, tbDesc.Text, tbPrecio.Text, tbTipo.Value, IIf(tbEstado.Value = True, 1, 0), CType(grDetalle.DataSource, DataTable), dtDetalle2, mensaje, cbsucursal.Value, tbcantidad.Text)
         If res Then
             ToastNotification.Show(Me, "Codigo de servicio ".ToUpper + tbNumi.Text + " modificado con Exito.".ToUpper, My.Resources.GRABACION_EXITOSA, 5000, eToastGlowColor.Green, eToastPosition.TopCenter)
         Else
@@ -367,6 +369,14 @@ Public Class F1_Servicio
         Dim _ok As Boolean = True
         MEP.Clear()
 
+        If (Not IsNumeric(tbcantidad.Text)) Then
+            tbcantidad.BackColor = Color.Red
+            MEP.SetError(tbcantidad, "El formato del valor es incorrecto!".ToUpper)
+            _ok = False
+        Else
+            tbcantidad.BackColor = Color.White
+            MEP.SetError(tbcantidad, "")
+        End If
         If tbDesc.Text = String.Empty Then
             tbDesc.BackColor = Color.Red
             MEP.SetError(tbDesc, "ingrese la descripcion del servicio!".ToUpper)
@@ -374,6 +384,15 @@ Public Class F1_Servicio
         Else
             tbDesc.BackColor = Color.White
             MEP.SetError(tbDesc, "")
+        End If
+
+        If tbcantidad.Text = String.Empty Then
+            tbcantidad.BackColor = Color.Red
+            MEP.SetError(tbcantidad, "ingrese la cantidad de clases!".ToUpper)
+            _ok = False
+        Else
+            tbcantidad.BackColor = Color.White
+            MEP.SetError(tbcantidad, "")
         End If
 
         If tbCodigo.Text = String.Empty Then
@@ -429,6 +448,7 @@ Public Class F1_Servicio
         listEstCeldas.Add(New Modelos.Celda("edest", False))
         listEstCeldas.Add(New Modelos.Celda("edest2", True, "ESTADO", 70))
         listEstCeldas.Add(New Modelos.Celda("edprec", True, "PRECIO", 70, "0.00"))
+        listEstCeldas.Add(New Modelos.Celda("edcant", True, "CANTIDAD", 80, "0"))
         listEstCeldas.Add(New Modelos.Celda("edfact", False))
         listEstCeldas.Add(New Modelos.Celda("edhact", False))
         listEstCeldas.Add(New Modelos.Celda("eduact", False))
@@ -452,7 +472,7 @@ Public Class F1_Servicio
             lbFecha.Text = CType(.GetValue("edfact"), Date).ToString("dd/MM/yyyy")
             lbHora.Text = .GetValue("edhact").ToString
             lbUsuario.Text = .GetValue("eduact").ToString
-
+            tbcantidad.Text = .GetValue("edcant").ToString
             'CARGAR DETALLE
             If tbTipo.Value = _tipoValor Then
                 _prCargarGridPrecios2(tbNumi.Text)
@@ -478,6 +498,7 @@ Public Class F1_Servicio
             .SetHighlightOnFocus(tbTipo, DevComponents.DotNetBar.Validator.eHighlightColor.Blue)
             .SetHighlightOnFocus(tbPrecio, DevComponents.DotNetBar.Validator.eHighlightColor.Blue)
             .SetHighlightOnFocus(cbsucursal, DevComponents.DotNetBar.Validator.eHighlightColor.Blue)
+            .SetHighlightOnFocus(tbcantidad, DevComponents.DotNetBar.Validator.eHighlightColor.Blue)
         End With
 
     End Sub
@@ -632,6 +653,10 @@ Public Class F1_Servicio
     End Sub
 
     Private Sub MultiColumnCombo1_ValueChanged(sender As Object, e As EventArgs) Handles cbsucursal.ValueChanged
+
+    End Sub
+
+    Private Sub btnGrabar_Click(sender As Object, e As EventArgs) Handles btnGrabar.Click
 
     End Sub
 End Class
