@@ -304,7 +304,7 @@ Partial Class P_Principal
         'MetroTilePanel1
         '
         Me.MetroTilePanel1.BackColor = System.Drawing.Color.Transparent
-        Me.MetroTilePanel1.BackgroundImage = Global.Presentacion.My.Resources.Resources.fondoMonaco04
+        Me.MetroTilePanel1.BackgroundImage = Global.Presentacion.My.Resources.Resources.fondomonaco02
         Me.MetroTilePanel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         '
         '
@@ -480,7 +480,7 @@ Partial Class P_Principal
         'MetroTilePanel3
         '
         Me.MetroTilePanel3.BackColor = System.Drawing.Color.Transparent
-        Me.MetroTilePanel3.BackgroundImage = Global.Presentacion.My.Resources.Resources.fondomonaco03
+        Me.MetroTilePanel3.BackgroundImage = Global.Presentacion.My.Resources.Resources.fondomonaco02
         Me.MetroTilePanel3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         '
         '
@@ -784,7 +784,7 @@ Partial Class P_Principal
         'MetroTilePanel5
         '
         Me.MetroTilePanel5.BackColor = System.Drawing.Color.Transparent
-        Me.MetroTilePanel5.BackgroundImage = Global.Presentacion.My.Resources.Resources.fondomonaco03
+        Me.MetroTilePanel5.BackgroundImage = Global.Presentacion.My.Resources.Resources.fondomonaco02
         Me.MetroTilePanel5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         '
         '
