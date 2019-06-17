@@ -1007,7 +1007,7 @@ Public Class F0_ClasesPracticas3
 
         With grAlumnos.RootTable.Columns("cbnom2")
             .Caption = "Nombre"
-            .Width = 250
+            .Width = 180
             .HeaderAlignment = Janus.Windows.GridEX.TextAlignment.Center
         End With
 
