@@ -51,6 +51,8 @@ Public Class F0_ClasesPracticas3
     Private _cantClasesReforzamiento As Integer = 5
 
     Private _isClasePractica As Boolean
+    Private _NumiAlumno As Integer = 0
+    Private _NumiVenta As Integer = 0
 
     'Dim _cantClasesPracticas As Integer
 
@@ -115,7 +117,9 @@ Public Class F0_ClasesPracticas3
         _AlumSelect = -1
         '_limiteDias = 15
         _limiteDias = _cantClasesPracticas
-
+        PanelAlumno.Visible = False
+        lbalumno.Text = ""
+        lbcantidad.Text = ""
         'poner eventos
         AddHandler tbFechaSelect.ValueChanged, AddressOf tbFechaSelect_ValueChanged
 
@@ -1542,33 +1546,28 @@ Public Class F0_ClasesPracticas3
     'End Sub
 
     Private Sub _prGrabarRegistro()
-        If _numiAlumInscrito = -1 Then
+        If _numiAlumInscrito = -1 And _NumiAlumno > 0 Then
             'grabar horario de forma normal como si estuvieran de forma nativa en el programa
-            Dim frmAyuda As Modelos.ModeloAyuda
-            Dim dt As DataTable = L_prAlumnoLibresInstructorAyuda(tbSuc.Value, tbPersona.Value) 'gi_userSuc
-            Dim listEstCeldas As New List(Of Modelos.Celda)
-            listEstCeldas.Add(New Modelos.Celda("cbnumi", True, "Codigo".ToUpper, 70))
-            listEstCeldas.Add(New Modelos.Celda("cbci", True, "CI".ToUpper, 70))
-            listEstCeldas.Add(New Modelos.Celda("cbnom2", True, "Nombre completo".ToUpper, 300))
 
-            frmAyuda = New Modelos.ModeloAyuda(600, 300, dt, "Seleccione el estudiante a quien se programara el horario".ToUpper, listEstCeldas)
-            frmAyuda.ShowDialog()
-
-            If frmAyuda.seleccionado = True Then
-                Dim numiAalumno As String = frmAyuda.filaSelect.Cells("cbnumi").Value
-                Dim numiReg As String = ""
-                Dim respuesta As Boolean = L_prClasesPracCabeceraDetalleGrabar2(numiReg, tbPersona.Value, numiAalumno, IIf(_isClasePractica = True, 1, 2), _cantClasesPracticas, _cantClasesReforzamiento, _dtFechas)
-                If respuesta Then
-                    _prCargarGridAlumnos(tbPersona.Value)
-                    _prCargarGridHorario(tbFechaSelect.Value, tbPersona.Value)
-                    btnNuevo.Enabled = False
-                    _dtFechas.Rows.Clear()
-                    tbFechaSelect.Enabled = True
-                    '_limiteDias = 15
-                    _limiteDias = _cantClasesPracticas
-                    _marcarManual = 0
-                End If
+            Dim numiAalumno As String = _NumiAlumno
+            Dim numiReg As String = ""
+            Dim respuesta As Boolean = L_prClasesPracCabeceraDetalleGrabar2Venta(numiReg, tbPersona.Value, numiAalumno, IIf(_isClasePractica = True, 1, 2), _cantClasesPracticas, _cantClasesReforzamiento, _dtFechas, _NumiVenta)
+            If respuesta Then
+                _prCargarGridAlumnos(tbPersona.Value)
+                _prCargarGridHorario(tbFechaSelect.Value, tbPersona.Value)
+                btnNuevo.Enabled = False
+                _dtFechas.Rows.Clear()
+                tbFechaSelect.Enabled = True
+                '_limiteDias = 15
+                _limiteDias = _cantClasesPracticas
+                _marcarManual = 0
+                _NumiAlumno = 0
+                _NumiVenta = 0
+                lbalumno.Text = ""
+                lbcantidad.Text = ""
+                PanelAlumno.Visible = False
             End If
+
         Else
             'grabar un alumno recien inscrito
             Dim numiAalumno As String = _numiAlumInscrito
@@ -1584,6 +1583,8 @@ Public Class F0_ClasesPracticas3
                 _limiteDias = _cantClasesPracticas
                 _numiAlumInscrito = -1
                 _marcarManual = 0
+                _NumiAlumno = 0
+                _NumiVenta = 0
             End If
         End If
     End Sub
@@ -2081,9 +2082,13 @@ Public Class F0_ClasesPracticas3
         btnModificar.Visible = True
         btnEliminar.Visible = False
         PanelToolBar1.Refresh()
-
+        _NumiAlumno = 0
+        _NumiVenta = 0
         _marcarManual = 0
         _dtFechas.Rows.Clear()
+        PanelAlumno.Visible = False
+        lbalumno.Text = ""
+        lbcantidad.Text = ""
     End Sub
 
     Private Sub _prMostrarChoferesDisponibles()
@@ -2204,6 +2209,9 @@ Public Class F0_ClasesPracticas3
             _prCargarGridHorario(tbFechaSelect.Value, tbPersona.Value)
             btnModificar.Enabled = True
             PanelFechas.Enabled = True
+            PanelAlumno.Visible = False
+            lbalumno.Text = ""
+            lbcantidad.Text = ""
         End If
     End Sub
 
@@ -2231,8 +2239,10 @@ Public Class F0_ClasesPracticas3
 
     Private Sub btnNuevo_Click(sender As Object, e As EventArgs) Handles btnNuevo.Click
         If _AlumSelect < 0 Then
+            ''''' Aqui cuando es un nuevo registro
             _prGrabarRegistro()
         Else
+            ''''' Aqui entra cuando modifican horario de un alumno ya programado
             _prModificarRegistro()
         End If
     End Sub
@@ -2738,11 +2748,38 @@ Public Class F0_ClasesPracticas3
 
     Private Sub ADICIONARHORARIOToolStripMenuItem2_Click(sender As Object, e As EventArgs) Handles ADICIONARHORARIOToolStripMenuItem2.Click
         If _AlumSelect < 0 Then
-            Dim obs As String = InputBox("ingrese la cantidad de clases a programar".ToUpper, "Cantidad de Clases".ToUpper, "").ToUpper
-            If obs <> String.Empty And IsNumeric(obs) Then
-                _cantClasesPracticas = CInt(obs)
-                _prSetHorarioCorrido()
+            Dim frmAyuda As Modelos.ModeloAyuda
+            Dim dt As DataTable = L_prAlumnoLibresInstructorAyudaVenta(tbSuc.Value, tbPersona.Value) 'gi_userSuc
+            Dim listEstCeldas As New List(Of Modelos.Celda)
+            listEstCeldas.Add(New Modelos.Celda("vcnumi", True, "Cod Venta".ToUpper, 80))
+            listEstCeldas.Add(New Modelos.Celda("vcfdoc", True, "Fecha Venta".ToUpper, 90, "dd/MM/yyyy"))
+            listEstCeldas.Add(New Modelos.Celda("cbnumi", True, "Codigo".ToUpper, 70))
+            listEstCeldas.Add(New Modelos.Celda("cbci", True, "CI".ToUpper, 70))
+            listEstCeldas.Add(New Modelos.Celda("cbnom2", True, "Nombre completo".ToUpper, 300))
+            listEstCeldas.Add(New Modelos.Celda("cantidadClases", True, "Cant. Clases".ToUpper, 90))
+            frmAyuda = New Modelos.ModeloAyuda(600, 300, dt, "Seleccione el estudiante a quien se programara el horario".ToUpper, listEstCeldas)
+            frmAyuda.ShowDialog()
+
+            If frmAyuda.seleccionado = True Then
+                Dim numiAalumno As String = frmAyuda.filaSelect.Cells("cbnumi").Value
+                Dim numiReg As String = ""
+                Dim cantclases As Integer = frmAyuda.filaSelect.Cells("cantidadClases").Value
+
+                If (cantclases > 0) Then
+                    PanelAlumno.Visible = True
+                    lbalumno.Text = frmAyuda.filaSelect.Cells("cbnom2").Value
+                    lbcantidad.Text = frmAyuda.filaSelect.Cells("cantidadClases").Value
+                    _NumiAlumno = numiAalumno
+                    _NumiVenta = frmAyuda.filaSelect.Cells("vcnumi").Value
+                    _cantClasesPracticas = cantclases
+                    _prSetHorarioCorrido()
+                End If
+
+
             End If
+
+
+
         Else
             Dim obs As String = InputBox("ingrese la cantidad de clases a programar".ToUpper, "Cantidad de Clases".ToUpper, "").ToUpper
             If obs <> String.Empty And IsNumeric(obs) Then
@@ -2753,13 +2790,41 @@ Public Class F0_ClasesPracticas3
     End Sub
 
     Private Sub ADICIONARMANUALMENTEToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ADICIONARMANUALMENTEToolStripMenuItem.Click
-        Dim obs As String = InputBox("ingrese la cantidad de clases a programar".ToUpper, "Cantidad de Clases".ToUpper, "").ToUpper
-        If obs <> String.Empty And IsNumeric(obs) Then
-            _cantClasesPracticas = CInt(obs)
-            _limiteDias = _cantClasesPracticas
-            _isClasePractica = True
-            _prSetHorarioManualmente()
+        Dim frmAyuda As Modelos.ModeloAyuda
+        Dim dt As DataTable = L_prAlumnoLibresInstructorAyudaVenta(tbSuc.Value, tbPersona.Value) 'gi_userSuc
+        Dim listEstCeldas As New List(Of Modelos.Celda)
+        listEstCeldas.Add(New Modelos.Celda("vcnumi", True, "Cod Venta".ToUpper, 80))
+        listEstCeldas.Add(New Modelos.Celda("vcfdoc", True, "Fecha Venta".ToUpper, 90, "dd/MM/yyyy"))
+        listEstCeldas.Add(New Modelos.Celda("cbnumi", True, "Codigo".ToUpper, 70))
+        listEstCeldas.Add(New Modelos.Celda("cbci", True, "CI".ToUpper, 70))
+        listEstCeldas.Add(New Modelos.Celda("cbnom2", True, "Nombre completo".ToUpper, 300))
+        listEstCeldas.Add(New Modelos.Celda("cantidadClases", True, "Cant. Clases".ToUpper, 90))
+        frmAyuda = New Modelos.ModeloAyuda(600, 300, dt, "Seleccione el estudiante a quien se programara el horario".ToUpper, listEstCeldas)
+        frmAyuda.ShowDialog()
+
+        If frmAyuda.seleccionado = True Then
+            Dim numiAalumno As String = frmAyuda.filaSelect.Cells("cbnumi").Value
+            Dim numiReg As String = ""
+            Dim cantclases As Integer = frmAyuda.filaSelect.Cells("cantidadClases").Value
+
+            If (cantclases > 0) Then
+                PanelAlumno.Visible = True
+                lbalumno.Text = frmAyuda.filaSelect.Cells("cbnom2").Value
+                lbcantidad.Text = frmAyuda.filaSelect.Cells("cantidadClases").Value
+                _NumiAlumno = numiAalumno
+                _NumiVenta = frmAyuda.filaSelect.Cells("vcnumi").Value
+                _cantClasesPracticas = cantclases
+                _limiteDias = _cantClasesPracticas
+                _isClasePractica = True
+                _prSetHorarioManualmente()
+            End If
+
+
         End If
+
+
+
+
     End Sub
     Private Sub ADICIONARHORARIOToolStripMenuItem3_Click(sender As Object, e As EventArgs) Handles ADICIONARHORARIOToolStripMenuItem3.Click
         Dim obs As String = InputBox("ingrese la cantidad de clases a programar".ToUpper, "Cantidad de Clases".ToUpper, "").ToUpper

@@ -993,6 +993,21 @@ Public Class AccesoLogica
 
         Return _Tabla
     End Function
+
+    Public Shared Function L_prAlumnoLibresInstructorAyudaVenta(_suc As String, _numiInst As String) As DataTable
+        Dim _Tabla As DataTable
+
+        Dim _listParam As New List(Of Datos.DParametro)
+
+        _listParam.Add(New Datos.DParametro("@tipo", 7777))
+        _listParam.Add(New Datos.DParametro("@cbnumi", _numiInst))
+        _listParam.Add(New Datos.DParametro("@cbsuc", _suc))
+        _listParam.Add(New Datos.DParametro("@cbuact", L_Usuario))
+
+        _Tabla = D_ProcedimientoConParam("sp_dg_TCE002", _listParam)
+
+        Return _Tabla
+    End Function
     Public Shared Function L_prAlumnoLibresInstructorAyudaR(_suc As String, _numiInst As String) As DataTable
         Dim _Tabla As DataTable
 
@@ -2917,6 +2932,34 @@ Public Class AccesoLogica
         _listParam.Add(New Datos.DParametro("@egnclsref", numClasRef))
         _listParam.Add(New Datos.DParametro("@TCE0061", "", _TCE0061))
         _listParam.Add(New Datos.DParametro("@eguact", L_Usuario))
+
+        _Tabla = D_ProcedimientoConParam("sp_dg_TCE006", _listParam)
+
+        If _Tabla.Rows.Count > 0 Then
+            _numi = _Tabla.Rows(0).Item(0)
+            _resultado = True
+        Else
+            _resultado = False
+        End If
+
+        Return _resultado
+    End Function
+    Public Shared Function L_prClasesPracCabeceraDetalleGrabar2Venta(ByRef _numi As String, _numiChof As String, _numiAlum As String, _estado As String, numClasPrac As String, numClasRef As String, _TCE0061 As DataTable, _vcnumi As Integer) As Boolean
+        Dim _resultado As Boolean
+
+        Dim _Tabla As DataTable
+        Dim _listParam As New List(Of Datos.DParametro)
+
+        _listParam.Add(New Datos.DParametro("@tipo", 4))
+        _listParam.Add(New Datos.DParametro("@egnumi", _numi))
+        _listParam.Add(New Datos.DParametro("@egchof", _numiChof))
+        _listParam.Add(New Datos.DParametro("@egalum", _numiAlum))
+        _listParam.Add(New Datos.DParametro("@egest", _estado))
+        _listParam.Add(New Datos.DParametro("@egnclsprac", numClasPrac))
+        _listParam.Add(New Datos.DParametro("@egnclsref", numClasRef))
+        _listParam.Add(New Datos.DParametro("@TCE0061", "", _TCE0061))
+        _listParam.Add(New Datos.DParametro("@eguact", L_Usuario))
+        _listParam.Add(New Datos.DParametro("@vcnumi", _vcnumi))
 
         _Tabla = D_ProcedimientoConParam("sp_dg_TCE006", _listParam)
 

@@ -26,8 +26,8 @@ Partial Class F0_ClasesPracticas3
         Dim tbSuc_DesignTimeLayout As Janus.Windows.GridEX.GridEXLayout = New Janus.Windows.GridEX.GridEXLayout()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(F0_ClasesPracticas3))
         Dim tbPersona_DesignTimeLayout As Janus.Windows.GridEX.GridEXLayout = New Janus.Windows.GridEX.GridEXLayout()
-        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.Panel4 = New System.Windows.Forms.Panel()
         Me.tbSuc = New Janus.Windows.GridEX.EditControls.MultiColumnCombo()
@@ -78,6 +78,11 @@ Partial Class F0_ClasesPracticas3
         Me.LabelX1 = New DevComponents.DotNetBar.LabelX()
         Me.msOpsVerDisp = New System.Windows.Forms.ContextMenuStrip(Me.components)
         Me.ADICIONARHORARIOToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
+        Me.PanelAlumno = New System.Windows.Forms.Panel()
+        Me.LabelX2 = New DevComponents.DotNetBar.LabelX()
+        Me.LabelX3 = New DevComponents.DotNetBar.LabelX()
+        Me.lbalumno = New DevComponents.DotNetBar.LabelX()
+        Me.lbcantidad = New DevComponents.DotNetBar.LabelX()
         CType(Me.SuperTabPrincipal, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuperTabPrincipal.SuspendLayout()
         Me.SuperTabControlPanelRegistro.SuspendLayout()
@@ -107,6 +112,7 @@ Partial Class F0_ClasesPracticas3
         Me.Panel7.SuspendLayout()
         Me.msOpsAlumnos.SuspendLayout()
         Me.msOpsVerDisp.SuspendLayout()
+        Me.PanelAlumno.SuspendLayout()
         Me.SuspendLayout()
         '
         'SuperTabPrincipal
@@ -124,6 +130,7 @@ Partial Class F0_ClasesPracticas3
         Me.SuperTabPrincipal.ControlBox.MenuBox.Name = ""
         Me.SuperTabPrincipal.ControlBox.Name = ""
         Me.SuperTabPrincipal.ControlBox.SubItems.AddRange(New DevComponents.DotNetBar.BaseItem() {Me.SuperTabPrincipal.ControlBox.MenuBox, Me.SuperTabPrincipal.ControlBox.CloseBox})
+        Me.SuperTabPrincipal.Size = New System.Drawing.Size(1282, 690)
         Me.SuperTabPrincipal.Controls.SetChildIndex(Me.SuperTabControlPanelBuscador, 0)
         Me.SuperTabPrincipal.Controls.SetChildIndex(Me.SuperTabControlPanelRegistro, 0)
         '
@@ -141,15 +148,16 @@ Partial Class F0_ClasesPracticas3
         '
         Me.SuperTabControlPanelRegistro.Location = New System.Drawing.Point(0, 28)
         Me.SuperTabControlPanelRegistro.Margin = New System.Windows.Forms.Padding(2)
-        Me.SuperTabControlPanelRegistro.Size = New System.Drawing.Size(1179, 662)
+        Me.SuperTabControlPanelRegistro.Size = New System.Drawing.Size(1282, 662)
         Me.SuperTabControlPanelRegistro.Controls.SetChildIndex(Me.PanelSuperior, 0)
         Me.SuperTabControlPanelRegistro.Controls.SetChildIndex(Me.PanelInferior, 0)
         Me.SuperTabControlPanelRegistro.Controls.SetChildIndex(Me.PanelPrincipal, 0)
         '
         'PanelSuperior
         '
+        Me.PanelSuperior.Controls.Add(Me.PanelAlumno)
         Me.PanelSuperior.Margin = New System.Windows.Forms.Padding(5)
-        Me.PanelSuperior.Size = New System.Drawing.Size(1179, 101)
+        Me.PanelSuperior.Size = New System.Drawing.Size(1282, 101)
         Me.PanelSuperior.Style.Alignment = System.Drawing.StringAlignment.Center
         Me.PanelSuperior.Style.BackColor1.Color = System.Drawing.Color.Yellow
         Me.PanelSuperior.Style.BackColor2.Color = System.Drawing.Color.Khaki
@@ -157,11 +165,16 @@ Partial Class F0_ClasesPracticas3
         Me.PanelSuperior.Style.BorderColor.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBorder
         Me.PanelSuperior.Style.ForeColor.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelText
         Me.PanelSuperior.Style.GradientAngle = 90
+        Me.PanelSuperior.Controls.SetChildIndex(Me.PanelToolBar1, 0)
+        Me.PanelSuperior.Controls.SetChildIndex(Me.PanelToolBar2, 0)
+        Me.PanelSuperior.Controls.SetChildIndex(Me.MRlAccion, 0)
+        Me.PanelSuperior.Controls.SetChildIndex(Me.PanelAlumno, 0)
         '
         'PanelInferior
         '
         Me.PanelInferior.Location = New System.Drawing.Point(0, 618)
         Me.PanelInferior.Margin = New System.Windows.Forms.Padding(2)
+        Me.PanelInferior.Size = New System.Drawing.Size(1282, 44)
         Me.PanelInferior.Style.Alignment = System.Drawing.StringAlignment.Center
         Me.PanelInferior.Style.BackColor1.Color = System.Drawing.Color.Gold
         Me.PanelInferior.Style.BackColor2.Color = System.Drawing.Color.Gold
@@ -240,9 +253,9 @@ Partial Class F0_ClasesPracticas3
         '
         Me.PanelToolBar2.Controls.Add(Me.LabelX1)
         Me.PanelToolBar2.Controls.Add(Me.tbTodosInst)
-        Me.PanelToolBar2.Location = New System.Drawing.Point(851, 0)
+        Me.PanelToolBar2.Location = New System.Drawing.Point(931, 0)
         Me.PanelToolBar2.Margin = New System.Windows.Forms.Padding(5)
-        Me.PanelToolBar2.Size = New System.Drawing.Size(328, 101)
+        Me.PanelToolBar2.Size = New System.Drawing.Size(351, 101)
         Me.PanelToolBar2.Controls.SetChildIndex(Me.btnImprimir, 0)
         Me.PanelToolBar2.Controls.SetChildIndex(Me.tbTodosInst, 0)
         Me.PanelToolBar2.Controls.SetChildIndex(Me.LabelX1, 0)
@@ -253,7 +266,7 @@ Partial Class F0_ClasesPracticas3
         Me.PanelPrincipal.Controls.Add(Me.Panel1)
         Me.PanelPrincipal.Location = New System.Drawing.Point(0, 101)
         Me.PanelPrincipal.Margin = New System.Windows.Forms.Padding(5)
-        Me.PanelPrincipal.Size = New System.Drawing.Size(1179, 517)
+        Me.PanelPrincipal.Size = New System.Drawing.Size(1282, 517)
         Me.PanelPrincipal.Controls.SetChildIndex(Me.PanelUsuario, 0)
         Me.PanelPrincipal.Controls.SetChildIndex(Me.Panel1, 0)
         Me.PanelPrincipal.Controls.SetChildIndex(Me.Panel6, 0)
@@ -266,7 +279,7 @@ Partial Class F0_ClasesPracticas3
         'btnImprimir
         '
         Me.btnImprimir.Image = Global.Presentacion.My.Resources.Resources.permiso
-        Me.btnImprimir.Location = New System.Drawing.Point(201, 0)
+        Me.btnImprimir.Location = New System.Drawing.Point(224, 0)
         Me.btnImprimir.Margin = New System.Windows.Forms.Padding(5)
         Me.btnImprimir.Size = New System.Drawing.Size(127, 101)
         Me.btnImprimir.Text = "LIBERAR HORA"
@@ -278,6 +291,10 @@ Partial Class F0_ClasesPracticas3
         'btnUltimo
         '
         Me.btnUltimo.Margin = New System.Windows.Forms.Padding(2)
+        '
+        'MPanelUserAct
+        '
+        Me.MPanelUserAct.Location = New System.Drawing.Point(1015, 0)
         '
         'MRlAccion
         '
@@ -296,7 +313,7 @@ Partial Class F0_ClasesPracticas3
         Me.Panel1.Location = New System.Drawing.Point(0, 0)
         Me.Panel1.Margin = New System.Windows.Forms.Padding(4)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(1179, 76)
+        Me.Panel1.Size = New System.Drawing.Size(1282, 76)
         Me.Panel1.TabIndex = 20
         '
         'Panel4
@@ -474,45 +491,45 @@ Partial Class F0_ClasesPracticas3
         Me.Panel2.Location = New System.Drawing.Point(0, 42)
         Me.Panel2.Margin = New System.Windows.Forms.Padding(4)
         Me.Panel2.Name = "Panel2"
-        Me.Panel2.Size = New System.Drawing.Size(748, 399)
+        Me.Panel2.Size = New System.Drawing.Size(851, 399)
         Me.Panel2.TabIndex = 21
         '
         'grHorario
         '
         Me.grHorario.AllowUserToResizeColumns = False
         Me.grHorario.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window
-        DataGridViewCellStyle1.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlText
-        DataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.grHorario.DefaultCellStyle = DataGridViewCellStyle1
+        DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window
+        DataGridViewCellStyle3.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText
+        DataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.grHorario.DefaultCellStyle = DataGridViewCellStyle3
         Me.grHorario.Dock = System.Windows.Forms.DockStyle.Fill
         Me.grHorario.Location = New System.Drawing.Point(0, 32)
         Me.grHorario.Margin = New System.Windows.Forms.Padding(4)
         Me.grHorario.Name = "grHorario"
-        Me.grHorario.Size = New System.Drawing.Size(748, 367)
+        Me.grHorario.Size = New System.Drawing.Size(851, 367)
         Me.grHorario.TabIndex = 0
         '
         'grCabecera
         '
         Me.grCabecera.AllowUserToResizeColumns = False
         Me.grCabecera.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window
-        DataGridViewCellStyle2.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText
-        DataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.grCabecera.DefaultCellStyle = DataGridViewCellStyle2
+        DataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Window
+        DataGridViewCellStyle4.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.ControlText
+        DataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.grCabecera.DefaultCellStyle = DataGridViewCellStyle4
         Me.grCabecera.Dock = System.Windows.Forms.DockStyle.Top
         Me.grCabecera.Location = New System.Drawing.Point(0, 0)
         Me.grCabecera.Margin = New System.Windows.Forms.Padding(4)
         Me.grCabecera.Name = "grCabecera"
-        Me.grCabecera.Size = New System.Drawing.Size(748, 32)
+        Me.grCabecera.Size = New System.Drawing.Size(851, 32)
         Me.grCabecera.TabIndex = 1
         '
         'PanelFechas
@@ -524,7 +541,7 @@ Partial Class F0_ClasesPracticas3
         Me.PanelFechas.Location = New System.Drawing.Point(0, 0)
         Me.PanelFechas.Margin = New System.Windows.Forms.Padding(4)
         Me.PanelFechas.Name = "PanelFechas"
-        Me.PanelFechas.Size = New System.Drawing.Size(748, 42)
+        Me.PanelFechas.Size = New System.Drawing.Size(851, 42)
         Me.PanelFechas.TabIndex = 22
         '
         'btnFSig
@@ -560,7 +577,7 @@ Partial Class F0_ClasesPracticas3
         Me.msOpsHorario.ImageScalingSize = New System.Drawing.Size(20, 20)
         Me.msOpsHorario.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ADICIONARHORARIOToolStripMenuItem, Me.CLASESREFORZAMIENTOToolStripMenuItem, Me.ASIGNARPERMISOToolStripMenuItem, Me.ASIGNARSUSPENCIONToolStripMenuItem, Me.ASIGNARFALTAToolStripMenuItem, Me.ASIGARCLASEToolStripMenuItem, Me.ASIGNARCLASEREFORZAMIENTOToolStripMenuItem, Me.AGREGAROBSERVACIONToolStripMenuItem, Me.ASToolStripMenuItem, Me.VOLVERAPROGRAMARCLASEToolStripMenuItem, Me.ELIMINARLIBERACIONDEHORAToolStripMenuItem, Me.AGREGARHORADILIGENCIAToolStripMenuItem})
         Me.msOpsHorario.Name = "msOpcionesHorario"
-        Me.msOpsHorario.Size = New System.Drawing.Size(374, 464)
+        Me.msOpsHorario.Size = New System.Drawing.Size(374, 436)
         '
         'ADICIONARHORARIOToolStripMenuItem
         '
@@ -739,7 +756,7 @@ Partial Class F0_ClasesPracticas3
         Me.Panel6.Location = New System.Drawing.Point(0, 76)
         Me.Panel6.Margin = New System.Windows.Forms.Padding(4)
         Me.Panel6.Name = "Panel6"
-        Me.Panel6.Size = New System.Drawing.Size(1179, 441)
+        Me.Panel6.Size = New System.Drawing.Size(1282, 441)
         Me.Panel6.TabIndex = 39
         '
         'Panel7
@@ -750,7 +767,7 @@ Partial Class F0_ClasesPracticas3
         Me.Panel7.Location = New System.Drawing.Point(431, 0)
         Me.Panel7.Margin = New System.Windows.Forms.Padding(4)
         Me.Panel7.Name = "Panel7"
-        Me.Panel7.Size = New System.Drawing.Size(748, 441)
+        Me.Panel7.Size = New System.Drawing.Size(851, 441)
         Me.Panel7.TabIndex = 2
         '
         'msOpsAlumnos
@@ -834,11 +851,85 @@ Partial Class F0_ClasesPracticas3
         Me.ADICIONARHORARIOToolStripMenuItem1.Size = New System.Drawing.Size(226, 24)
         Me.ADICIONARHORARIOToolStripMenuItem1.Text = "ADICIONAR HORARIO"
         '
+        'PanelAlumno
+        '
+        Me.PanelAlumno.Controls.Add(Me.lbcantidad)
+        Me.PanelAlumno.Controls.Add(Me.lbalumno)
+        Me.PanelAlumno.Controls.Add(Me.LabelX3)
+        Me.PanelAlumno.Controls.Add(Me.LabelX2)
+        Me.PanelAlumno.Dock = System.Windows.Forms.DockStyle.Right
+        Me.PanelAlumno.Location = New System.Drawing.Point(470, 0)
+        Me.PanelAlumno.Name = "PanelAlumno"
+        Me.PanelAlumno.Size = New System.Drawing.Size(461, 101)
+        Me.PanelAlumno.TabIndex = 9
+        '
+        'LabelX2
+        '
+        Me.LabelX2.AutoSize = True
+        '
+        '
+        '
+        Me.LabelX2.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square
+        Me.LabelX2.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LabelX2.Location = New System.Drawing.Point(4, 35)
+        Me.LabelX2.Margin = New System.Windows.Forms.Padding(4)
+        Me.LabelX2.Name = "LabelX2"
+        Me.LabelX2.Size = New System.Drawing.Size(60, 19)
+        Me.LabelX2.TabIndex = 112
+        Me.LabelX2.Text = "Alumno:"
+        '
+        'LabelX3
+        '
+        Me.LabelX3.AutoSize = True
+        '
+        '
+        '
+        Me.LabelX3.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square
+        Me.LabelX3.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LabelX3.Location = New System.Drawing.Point(4, 62)
+        Me.LabelX3.Margin = New System.Windows.Forms.Padding(4)
+        Me.LabelX3.Name = "LabelX3"
+        Me.LabelX3.Size = New System.Drawing.Size(96, 19)
+        Me.LabelX3.TabIndex = 113
+        Me.LabelX3.Text = "Cant. Clases:"
+        '
+        'lbalumno
+        '
+        Me.lbalumno.AutoSize = True
+        '
+        '
+        '
+        Me.lbalumno.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square
+        Me.lbalumno.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lbalumno.ForeColor = System.Drawing.Color.Black
+        Me.lbalumno.Location = New System.Drawing.Point(69, 34)
+        Me.lbalumno.Margin = New System.Windows.Forms.Padding(4)
+        Me.lbalumno.Name = "lbalumno"
+        Me.lbalumno.Size = New System.Drawing.Size(198, 19)
+        Me.lbalumno.TabIndex = 114
+        Me.lbalumno.Text = "Marco Antonio Mamani chura"
+        '
+        'lbcantidad
+        '
+        Me.lbcantidad.AutoSize = True
+        '
+        '
+        '
+        Me.lbcantidad.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square
+        Me.lbcantidad.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lbcantidad.ForeColor = System.Drawing.Color.Black
+        Me.lbcantidad.Location = New System.Drawing.Point(108, 62)
+        Me.lbcantidad.Margin = New System.Windows.Forms.Padding(4)
+        Me.lbcantidad.Name = "lbcantidad"
+        Me.lbcantidad.Size = New System.Drawing.Size(19, 19)
+        Me.lbcantidad.TabIndex = 115
+        Me.lbcantidad.Text = "15"
+        '
         'F0_ClasesPracticas3
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(1179, 690)
+        Me.ClientSize = New System.Drawing.Size(1282, 690)
         Me.Margin = New System.Windows.Forms.Padding(5)
         Me.Name = "F0_ClasesPracticas3"
         Me.Text = "F0_ClasesPracticas2"
@@ -875,6 +966,8 @@ Partial Class F0_ClasesPracticas3
         Me.Panel7.ResumeLayout(False)
         Me.msOpsAlumnos.ResumeLayout(False)
         Me.msOpsVerDisp.ResumeLayout(False)
+        Me.PanelAlumno.ResumeLayout(False)
+        Me.PanelAlumno.PerformLayout()
         Me.ResumeLayout(False)
 
     End Sub
@@ -928,4 +1021,9 @@ Partial Class F0_ClasesPracticas3
     Friend WithEvents AGREGARHORADILIGENCIAToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents AGREGARHORADILIGENCIAToolStripMenuItem1 As ToolStripMenuItem
     Friend WithEvents ELIMINARHORADILIGENCIAToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents PanelAlumno As Panel
+    Friend WithEvents LabelX3 As DevComponents.DotNetBar.LabelX
+    Friend WithEvents LabelX2 As DevComponents.DotNetBar.LabelX
+    Friend WithEvents lbalumno As DevComponents.DotNetBar.LabelX
+    Friend WithEvents lbcantidad As DevComponents.DotNetBar.LabelX
 End Class
