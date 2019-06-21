@@ -4232,26 +4232,20 @@ Public Class AccesoLogica
 
     Public Shared Function L_prPreExamenResportePreExamenAntiguo(_fecha As String, _estado As String, _numiSuc As String, Optional _numiInst As String = "") As DataTable
         Dim _Tabla As DataTable
-
         Dim _listParam As New List(Of Datos.DParametro)
-
         If _numiInst = String.Empty Then
             _listParam.Add(New Datos.DParametro("@tipo", 551))
         Else
             _listParam.Add(New Datos.DParametro("@tipo", 661))
         End If
-
         _listParam.Add(New Datos.DParametro("@ejchof", _numiInst))
         _listParam.Add(New Datos.DParametro("@ejfecha", _fecha))
         _listParam.Add(New Datos.DParametro("@suc", _numiSuc))
         _listParam.Add(New Datos.DParametro("@ejestado", _estado))
         _listParam.Add(New Datos.DParametro("@uact", L_Usuario))
-
         _Tabla = D_ProcedimientoConParam("sp_dg_TCE007", _listParam)
-
         Return _Tabla
     End Function
-
 
     Public Shared Function L_prPreExamenResporteEstadoExamenes(_fecha As String, _estado As String, _numiInst As String, _numiSuc As String) As DataTable
         Dim _Tabla As DataTable

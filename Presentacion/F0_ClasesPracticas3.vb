@@ -74,8 +74,6 @@ Public Class F0_ClasesPracticas3
         ''_cantClasesReforzamiento = dtCantClassTeo.Rows(0).Item("erefor")
         '------------YA NO CARGO DEL NUMERO DE CLASES ESTATICAMENTE-------------------------------------------------
 
-
-
         'cargar colores a la lista
         _prCargarListaColores()
 

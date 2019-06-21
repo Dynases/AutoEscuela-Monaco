@@ -391,22 +391,26 @@ Public Class F1_Alumnos
             End If
 
             ToastNotification.Show(Me, "Codigo de alumno ".ToUpper + tbNumi.Text + " Grabado con Exito.".ToUpper, My.Resources.GRABACION_EXITOSA, 5000, eToastGlowColor.Green, eToastPosition.TopCenter)
-
             Dim info As New TaskDialogInfo("clases practicas".ToUpper, eTaskDialogIcon.Delete, "clases practicas".ToUpper, "¿Desea programar las clases practicas del alumno registrado?".ToUpper, eTaskDialogButton.Yes Or eTaskDialogButton.Cancel, eTaskDialogBackgroundColor.Blue)
             Dim result As eTaskDialogResult = TaskDialog.Show(info)
             If result = eTaskDialogResult.Yes Then
                 'Dim frm As F0_ClasesPracticas2
                 'frm = New F0_ClasesPracticas2
-                Dim frm As F0_ClasesPracticas3
-                frm = New F0_ClasesPracticas3
-                frm._numiAlumInscrito = tbNumi.Text
+                'Dim frm As F0_ClasesPracticas3
+                'frm = New F0_ClasesPracticas3
+                'frm._numiAlumInscrito = tbNumi.Text
+                'frm.Show()
+                Dim frm As F0_VentaServicios
+                frm = New F0_VentaServicios
+                frm._Iniciar = 1 'Inicia directamente para registrar una venta
+                frm._IdCliente = tbNumi.Text
+                frm._NombreCliente = tbNombre.Text.Trim() + " " + tbApellido.Text
+                frm.cbServicio.Value = 1
+                frm._nameButton = "btVentas"
                 frm.Show()
             End If
-
-
         End If
         Return res
-
     End Function
 
     Public Overrides Function _PMOModificarRegistro() As Boolean

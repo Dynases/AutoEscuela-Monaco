@@ -8,8 +8,10 @@ Public Class F0_VentaServicios
 
 #Region "Variables Globales"
     Dim RutaGlobal As String = gs_CarpetaRaiz
-    Public _nameButton As String
+    Public _nameButton, _NombreCliente As String
     Dim _CodCliente As Integer = 0
+    Public _Iniciar As Integer = 0
+    Public _IdCliente As Integer = 0 'Obtiene datos desde FrmAlumnos
 #End Region
 
 #Region "METODOS PRIVADOS"
@@ -23,15 +25,24 @@ Public Class F0_VentaServicios
         Dim ico As Icon = Icon.FromHandle(blah.GetHicon())
         Me.Icon = ico
         _prCargarStyle()
-
         _prCargarVenta()
         _prInhabiliitar()
-
-
-
         _prAsignarPermisos()
+        If _Iniciar = 1 Then 'Inicia
+            _Limpiar()
+            _prHabilitarMenu()
+            _prhabilitar()
+            tbCliente.Text = _NombreCliente
+            _CodCliente = _IdCliente
+        End If
     End Sub
-
+    Private Sub _prHabilitarMenu()
+        btnNuevo.Enabled = False
+        btnModificar.Enabled = False
+        btnEliminar.Enabled = False
+        btnGrabar.Enabled = True
+        PanelNavegacion.Enabled = False
+    End Sub
     Private Sub _prInhabiliitar()
 
         tbCodigo.ReadOnly = True
@@ -121,7 +132,6 @@ Public Class F0_VentaServicios
         End If
 
     End Sub
-
 
     Public Sub _prMostrarRegistro(_N As Integer)
         '        venta.vcnumi , venta.vcsector, a.cedesc2 As sector, venta.vcalm, venta.vcfdoc, venta.vcclie, venta.vcfvcr, venta.vctipo, venta.vcest,
