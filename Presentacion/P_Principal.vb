@@ -727,4 +727,11 @@ Public Class P_Principal
         'frm._nameButton = btconfPersonal.Name
         frm.Show()
     End Sub
+
+    Private Sub btnHistorialAlumno_Click(sender As Object, e As EventArgs) Handles btnHistorialAlumno.Click
+        Dim frm As New Pr_HistorialAlumno
+
+        'frm._nameButton = btconfPersonal.Name
+        frm.Show()
+    End Sub
 End Class
