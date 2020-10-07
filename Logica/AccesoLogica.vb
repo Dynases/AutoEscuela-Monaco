@@ -7060,15 +7060,11 @@ Public Class AccesoLogica
 
         If L_fnbValidarEliminacion(_numi, "TV002", "vcnumi", _mensaje) = True Then
             Dim _Tabla As DataTable
-
             Dim _listParam As New List(Of Datos.DParametro)
-
             _listParam.Add(New Datos.DParametro("@tipo", -1))
             _listParam.Add(New Datos.DParametro("@vcnumi", _numi))
             _listParam.Add(New Datos.DParametro("@vcuact", L_Usuario))
-
             _Tabla = D_ProcedimientoConParam("sp_Mam_TV002", _listParam)
-
             If _Tabla.Rows.Count > 0 Then
                 _numi = _Tabla.Rows(0).Item(0)
                 _resultado = True

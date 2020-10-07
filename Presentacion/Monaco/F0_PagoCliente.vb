@@ -12,13 +12,16 @@ Public Class F0_PagoCliente
     Public _tab As SuperTabItem
     Public _modulo As SideNavItem
     Dim Bin As New MemoryStream
+    Public _inicioDesde As Integer = 0
+    Public _codigoCliente As Integer = 0
+    Public _nombreCliene As String
+    Public _tipoServicio As Integer
+    Public formularioVenta As Integer = 1
 #End Region
 
 #Region "METODOS PRIVADOS"
 
     Private Sub _IniciarTodo()
-
-
         L_prAbrirConexion(gs_Ip, gs_UsuarioSql, gs_ClaveSql, gs_NombreBD)
         Me.WindowState = FormWindowState.Maximized
         _prAsignarPermisos()
@@ -26,7 +29,6 @@ Public Class F0_PagoCliente
         _prCargarComboLibreria(cbServicio, 6, 1)
         _prCargarTablaPagos(-1, -1)
         tbCodigo.ReadOnly = True
-
         tbNombre.ReadOnly = True
         tbFechaVenta.Value = Now.Date
         tbNombre.Focus()
@@ -35,6 +37,13 @@ Public Class F0_PagoCliente
         End If
         btnNuevo.Visible = False
         btnModificar.Visible = False
+        If _inicioDesde = formularioVenta Then  'Inicia desde Venta
+            cbServicio.Value = _tipoServicio
+            tbCodigo.Text = _codigoCliente
+            tbnrocod.Text = _codigoCliente
+            tbNombre.Text = _nombreCliene
+            _prCargarTablaPagos(_codigoCliente, cbServicio.Value)
+        End If
     End Sub
 
     Private Sub _Limpiar()
@@ -404,7 +413,9 @@ Public Class F0_PagoCliente
 
 
             _Limpiar()
-
+            If _inicioDesde = formularioVenta Then
+                Me.Close()
+            End If
         Else
             Dim img As Bitmap = New Bitmap(My.Resources.cancel, 50, 50)
             ToastNotification.Show(Me, "La Compra no pudo ser insertado".ToUpper, img, 2000, eToastGlowColor.Red, eToastPosition.BottomCenter)

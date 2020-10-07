@@ -12,6 +12,7 @@ Public Class F0_VentaServicios
     Dim _CodCliente As Integer = 0
     Public _Iniciar As Integer = 0
     Public _IdCliente As Integer = 0 'Obtiene datos desde FrmAlumnos
+    Dim AlumnoFormulario = 1
 #End Region
 
 #Region "METODOS PRIVADOS"
@@ -19,8 +20,8 @@ Public Class F0_VentaServicios
         L_prAbrirConexion(gs_Ip, gs_UsuarioSql, gs_ClaveSql, gs_NombreBD)
         Me.Text = "S E R V I C I O   V E N T A"
         _prCargarComboLibreria(cbServicio, 6, 1) ''Libreria Vehiculo=1  TamVehiculo=4
-        _prCargarComboLibreria(cbventa, 14, 3) ''Libreria Contado, Credito,ATC
-        _prAsignarPermisos()
+        _prCargarComboLibreria(cbCredito, 14, 3) ''Libreria Contado, Credito,ATC
+
         Dim blah As Bitmap = My.Resources.venta
         Dim ico As Icon = Icon.FromHandle(blah.GetHicon())
         Me.Icon = ico
@@ -28,7 +29,7 @@ Public Class F0_VentaServicios
         _prCargarVenta()
         _prInhabiliitar()
         _prAsignarPermisos()
-        If _Iniciar = 1 Then 'Inicia
+        If _Iniciar = AlumnoFormulario Then 'Inicia
             _Limpiar()
             _prHabilitarMenu()
             _prhabilitar()
@@ -50,7 +51,7 @@ Public Class F0_VentaServicios
         tbObservacion.ReadOnly = True
         cbServicio.ReadOnly = True
         FechaVenta.IsInputReadOnly = True
-        cbventa.ReadOnly = True
+        cbCredito.ReadOnly = True
         tbcredito.IsInputReadOnly = True
         cbmoneda.IsReadOnly = True
         'Datos facturacion
@@ -61,6 +62,7 @@ Public Class F0_VentaServicios
         btnEliminar.Enabled = True
 
         grVentas.Enabled = True
+        grDetalle.Enabled = False
         PanelNavegacion.Enabled = True
 
 
@@ -78,11 +80,11 @@ Public Class F0_VentaServicios
 
         grVentas.Enabled = False
         tbCodigo.ReadOnly = True
-
+        grDetalle.Enabled = True
         tbObservacion.ReadOnly = False
         cbServicio.ReadOnly = False
         FechaVenta.IsInputReadOnly = False
-        cbventa.ReadOnly = False
+        cbCredito.ReadOnly = False
         tbcredito.IsInputReadOnly = False
         cbmoneda.IsReadOnly = False
         btnGrabar.Enabled = True
@@ -124,8 +126,8 @@ Public Class F0_VentaServicios
         Catch ex As Exception
 
         End Try
-        If (CType(cbventa.DataSource, DataTable).Rows.Count > 0) Then
-            cbventa.SelectedIndex = 0
+        If (CType(cbCredito.DataSource, DataTable).Rows.Count > 0) Then
+            cbCredito.SelectedIndex = 0
         End If
         If (CType(cbServicio.DataSource, DataTable).Rows.Count > 0) Then
             cbServicio.SelectedIndex = 0
@@ -147,7 +149,7 @@ Public Class F0_VentaServicios
             tbCliente.Text = .GetValue("alumno")
             tbObservacion.Text = .GetValue("vcobs")
             tbcredito.Value = .GetValue("vcfvcr")
-            cbventa.Value = .GetValue("vctipo")
+            cbCredito.Value = .GetValue("vctipo")
 
 
             'lbFecha.Text = CType(.GetValue("tafact"), Date).ToString("dd/MM/yyyy")
@@ -830,10 +832,10 @@ Public Class F0_VentaServicios
             cbServicio.Focus()
             Return False
         End If
-        If (cbventa.SelectedIndex < 0) Then
+        If (cbCredito.SelectedIndex < 0) Then
             Dim img As Bitmap = New Bitmap(My.Resources.Mensaje, 50, 50)
             ToastNotification.Show(Me, "Por Favor Seleccione un tipo de venta".ToUpper, img, 2000, eToastGlowColor.Red, eToastPosition.BottomCenter)
-            cbventa.Focus()
+            cbCredito.Focus()
             Return False
         End If
         If (grDetalle.RowCount = 0) Then
@@ -850,50 +852,85 @@ Public Class F0_VentaServicios
                 Return False
             End If
         End If
-
-
-
-        'codigo danny
-        'validar detalle si todos los servicios son con factura
-
-
-
         Return True
     End Function
+    Private Sub MP_MostrarMensajeError(mensaje As String)
+        ToastNotification.Show(Me,
+                               mensaje.ToUpper,
+                               My.Resources.WARNING,
+                               5000,
+                               eToastGlowColor.Red,
+                               eToastPosition.TopCenter)
+    End Sub
     Public Sub _GuardarNuevo()
+        Try
+            Dim numi As String = ""
+            Dim res As Boolean = L_fnGrabarVentaAlumno(numi, cbServicio.Value, 1, FechaVenta.Value.ToString("yyyy/MM/dd"),
+                                                       _CodCliente, tbcredito.Value.ToString("yyyy/MM/dd"), cbCredito.Value, 1,
+                                                       tbObservacion.Text, 0, 0, CType(grDetalle.DataSource, DataTable), IIf(cbmoneda.Value = True, 1, 0), 0)
+            If res Then
 
-        Dim numi As String = ""
-        ' @vcnumi  ,@vcsector ,@vcalm ,@vcfdoc ,@vcclie ,@vcfvcr ,@vctipo ,
-        '@vcest ,@vcobs ,@vcdesc ,@vctotal ,@vcmoneda,@vcbanco
-        Dim res As Boolean = L_fnGrabarVentaAlumno(numi, cbServicio.Value, 1, FechaVenta.Value.ToString("yyyy/MM/dd"), _CodCliente, tbcredito.Value.ToString("yyyy/MM/dd"), cbventa.Value, 1, tbObservacion.Text, 0, 0, CType(grDetalle.DataSource, DataTable), IIf(cbmoneda.Value = True, 1, 0), 0)
-        If res Then
+                ToastNotification.Show(Me, "Codigo de Servicio Venta ".ToUpper + tbCodigo.Text + " Grabado con Exito.".ToUpper,
+                                       My.Resources.GRABACION_EXITOSA, 5000, eToastGlowColor.Green, eToastPosition.TopCenter)
 
-            ToastNotification.Show(Me, "Codigo de Servicio Venta ".ToUpper + tbCodigo.Text + " Grabado con Exito.".ToUpper, My.Resources.GRABACION_EXITOSA, 5000, eToastGlowColor.Green, eToastPosition.TopCenter)
-            '_prMesajeImprimi(tbCodigo.Text)
-            _prImprimir(numi)
-            _prCargarVenta()
+                If cbCredito.Value = 0 Then
+                    _prImprimir(numi)
+                Else
+                    RealizarPagoCredito()
+                End If
+                If _Iniciar = AlumnoFormulario Then
+                    Me.Close()
+                End If
+                _Limpiar()
+                _prCargarVenta()
 
-            _Limpiar()
-        Else
-            Dim img As Bitmap = New Bitmap(My.Resources.cancel, 50, 50)
-            ToastNotification.Show(Me, "La Venta no pudo ser insertado.".ToUpper, img, 2000, eToastGlowColor.Red, eToastPosition.BottomCenter)
-        End If
+            Else
+                Dim img As Bitmap = New Bitmap(My.Resources.cancel, 50, 50)
+                ToastNotification.Show(Me, "La Venta no pudo ser insertado.".ToUpper, img, 2000, eToastGlowColor.Red, eToastPosition.BottomCenter)
+            End If
+        Catch ex As Exception
+            MP_MostrarMensajeError(ex.Message)
+        End Try
+
 
     End Sub
 
-    Public Sub _prGuardarModificado()
-        Dim res As Boolean = L_fnModificarVentaAlumno(tbCodigo.Text, cbServicio.Value, 1, FechaVenta.Value.ToString("yyyy/MM/dd"), _CodCliente, tbcredito.Value.ToString("yyyy/MM/dd"), cbventa.Value, 1, tbObservacion.Text, 0, 0, CType(grDetalle.DataSource, DataTable), IIf(cbmoneda.Value = True, 1, 0), 0)
-        If res Then
+    Private Sub RealizarPagoCredito()
+        Dim info As New TaskDialogInfo("Pagos de Cliente ".ToUpper, eTaskDialogIcon.Users, "Pagos de Cliente ".ToUpper, "¿Desea realizar el pago parcial del cliente?".ToUpper, eTaskDialogButton.Yes Or eTaskDialogButton.Cancel, eTaskDialogBackgroundColor.Blue)
+        Dim result As eTaskDialogResult = TaskDialog.Show(info)
+        If result = eTaskDialogResult.Yes Then
+            Dim frmPago As F0_PagoCliente = New F0_PagoCliente()
+            Dim formularioVenta As Integer = 1
+            frmPago._inicioDesde = formularioVenta
+            frmPago._codigoCliente = _CodCliente
+            frmPago._nombreCliene = tbCliente.Text
+            frmPago._tipoServicio = cbServicio.Value
+            frmPago._nameButton = "btVentas"
+            frmPago.Show()
 
-            ToastNotification.Show(Me, "Codigo de Servicio Venta ".ToUpper + tbCodigo.Text + " Grabado con Exito.".ToUpper, My.Resources.GRABACION_EXITOSA, 5000, eToastGlowColor.Green, eToastPosition.TopCenter)
-            _prImprimir(tbCodigo.Text)
-            _prCargarVenta()
-
-            _Limpiar()
-        Else
-            Dim img As Bitmap = New Bitmap(My.Resources.cancel, 50, 50)
-            ToastNotification.Show(Me, "La Venta no pudo ser insertado.".ToUpper, img, 2000, eToastGlowColor.Red, eToastPosition.BottomCenter)
         End If
+    End Sub
+
+    Public Sub _prGuardarModificado()
+        Try
+            Dim res As Boolean = L_fnModificarVentaAlumno(tbCodigo.Text, cbServicio.Value, 1, FechaVenta.Value.ToString("yyyy/MM/dd"), _CodCliente, tbcredito.Value.ToString("yyyy/MM/dd"), cbCredito.Value, 1, tbObservacion.Text, 0, 0, CType(grDetalle.DataSource, DataTable), IIf(cbmoneda.Value = True, 1, 0), 0)
+            If res Then
+                ToastNotification.Show(Me, "Codigo de Servicio Venta ".ToUpper + tbCodigo.Text + " Grabado con Exito.".ToUpper, My.Resources.GRABACION_EXITOSA, 5000, eToastGlowColor.Green, eToastPosition.TopCenter)
+                If cbCredito.Value = 0 Then
+                    _prImprimir(tbCodigo.Text)
+                Else
+                    RealizarPagoCredito()
+                End If
+                _prCargarVenta()
+                _prInhabiliitar()
+            Else
+                Dim img As Bitmap = New Bitmap(My.Resources.cancel, 50, 50)
+                ToastNotification.Show(Me, "La Venta no pudo ser insertado.".ToUpper, img, 2000, eToastGlowColor.Red, eToastPosition.BottomCenter)
+            End If
+        Catch ex As Exception
+            MP_MostrarMensajeError(ex.Message)
+        End Try
+
     End Sub
 
     Private Sub btnGrabar_Click(sender As Object, e As EventArgs) Handles btnGrabar.Click
@@ -1195,10 +1232,7 @@ salirIf:
             PanelInferior.Visible = True
             grDetalle.Select()
             grDetalle.Col = 5
-
-
         End If
-
     End Sub
 
     Private Sub F0_VentaServicios_Load_1(sender As Object, e As EventArgs) Handles MyBase.Load
@@ -1213,8 +1247,8 @@ salirIf:
         End If
     End Sub
 
-    Private Sub cbventa_ValueChanged(sender As Object, e As EventArgs) Handles cbventa.ValueChanged
-        If (cbventa.Value = 1) Then
+    Private Sub cbventa_ValueChanged(sender As Object, e As EventArgs) Handles cbCredito.ValueChanged
+        If (cbCredito.Value = 1) Then
             lbcredito.Visible = True
             tbcredito.Visible = True
 

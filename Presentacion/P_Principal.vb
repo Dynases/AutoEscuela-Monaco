@@ -702,7 +702,7 @@ Public Class P_Principal
 
     Private Sub btVentaPagos_Click(sender As Object, e As EventArgs) Handles btVentaPagos.Click
         Dim frm As New F0_PagoCliente
-        frm._nameButton = btVentas.Name
+        frm._nameButton = btVentaPagos.Name
         frm.Show()
     End Sub
 

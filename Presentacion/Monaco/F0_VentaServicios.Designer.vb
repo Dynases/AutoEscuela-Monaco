@@ -26,7 +26,7 @@ Partial Class F0_VentaServicios
         Dim SuperTabLinearGradientColorTable1 As DevComponents.DotNetBar.Rendering.SuperTabLinearGradientColorTable = New DevComponents.DotNetBar.Rendering.SuperTabLinearGradientColorTable()
         Dim cbServicio_DesignTimeLayout As Janus.Windows.GridEX.GridEXLayout = New Janus.Windows.GridEX.GridEXLayout()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(F0_VentaServicios))
-        Dim cbventa_DesignTimeLayout As Janus.Windows.GridEX.GridEXLayout = New Janus.Windows.GridEX.GridEXLayout()
+        Dim cbCredito_DesignTimeLayout As Janus.Windows.GridEX.GridEXLayout = New Janus.Windows.GridEX.GridEXLayout()
         Me.MSuperTabControl = New DevComponents.DotNetBar.SuperTabControl()
         Me.MSuperTabControlPanel1 = New DevComponents.DotNetBar.SuperTabControlPanel()
         Me.PanelContent = New System.Windows.Forms.Panel()
@@ -46,7 +46,7 @@ Partial Class F0_VentaServicios
         Me.LabelX15 = New DevComponents.DotNetBar.LabelX()
         Me.LabelX14 = New DevComponents.DotNetBar.LabelX()
         Me.cbmoneda = New DevComponents.DotNetBar.Controls.SwitchButton()
-        Me.cbventa = New Janus.Windows.GridEX.EditControls.MultiColumnCombo()
+        Me.cbCredito = New Janus.Windows.GridEX.EditControls.MultiColumnCombo()
         Me.FechaVenta = New DevComponents.Editors.DateTimeAdv.DateTimeInput()
         Me.LabelX8 = New DevComponents.DotNetBar.LabelX()
         Me.tbCliente = New DevComponents.DotNetBar.Controls.TextBoxX()
@@ -86,7 +86,7 @@ Partial Class F0_VentaServicios
         Me.PanelDatos.SuspendLayout()
         CType(Me.cbServicio, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.tbcredito, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.cbventa, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.cbCredito, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.FechaVenta, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuperBuscador.SuspendLayout()
         Me.PanelBuscador.SuspendLayout()
@@ -423,7 +423,7 @@ Partial Class F0_VentaServicios
         Me.PanelDatos.Controls.Add(Me.LabelX15)
         Me.PanelDatos.Controls.Add(Me.LabelX14)
         Me.PanelDatos.Controls.Add(Me.cbmoneda)
-        Me.PanelDatos.Controls.Add(Me.cbventa)
+        Me.PanelDatos.Controls.Add(Me.cbCredito)
         Me.PanelDatos.Controls.Add(Me.FechaVenta)
         Me.PanelDatos.Controls.Add(Me.LabelX8)
         Me.PanelDatos.Controls.Add(Me.tbCliente)
@@ -618,20 +618,20 @@ Partial Class F0_VentaServicios
         Me.cbmoneda.Value = True
         Me.cbmoneda.ValueObject = "Y"
         '
-        'cbventa
+        'cbCredito
         '
-        cbventa_DesignTimeLayout.LayoutString = resources.GetString("cbventa_DesignTimeLayout.LayoutString")
-        Me.cbventa.DesignTimeLayout = cbventa_DesignTimeLayout
-        Me.cbventa.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.cbventa.Location = New System.Drawing.Point(499, 46)
-        Me.cbventa.Name = "cbventa"
-        Me.cbventa.Office2007ColorScheme = Janus.Windows.GridEX.Office2007ColorScheme.Custom
-        Me.cbventa.Office2007CustomColor = System.Drawing.Color.DodgerBlue
-        Me.cbventa.SelectedIndex = -1
-        Me.cbventa.SelectedItem = Nothing
-        Me.cbventa.Size = New System.Drawing.Size(156, 22)
-        Me.cbventa.TabIndex = 4
-        Me.cbventa.VisualStyle = Janus.Windows.GridEX.VisualStyle.Office2007
+        cbCredito_DesignTimeLayout.LayoutString = resources.GetString("cbCredito_DesignTimeLayout.LayoutString")
+        Me.cbCredito.DesignTimeLayout = cbCredito_DesignTimeLayout
+        Me.cbCredito.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.cbCredito.Location = New System.Drawing.Point(499, 46)
+        Me.cbCredito.Name = "cbCredito"
+        Me.cbCredito.Office2007ColorScheme = Janus.Windows.GridEX.Office2007ColorScheme.Custom
+        Me.cbCredito.Office2007CustomColor = System.Drawing.Color.DodgerBlue
+        Me.cbCredito.SelectedIndex = -1
+        Me.cbCredito.SelectedItem = Nothing
+        Me.cbCredito.Size = New System.Drawing.Size(156, 22)
+        Me.cbCredito.TabIndex = 4
+        Me.cbCredito.VisualStyle = Janus.Windows.GridEX.VisualStyle.Office2007
         '
         'FechaVenta
         '
@@ -910,7 +910,7 @@ Partial Class F0_VentaServicios
         Me.PanelDatos.PerformLayout()
         CType(Me.cbServicio, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.tbcredito, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.cbventa, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.cbCredito, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.FechaVenta, System.ComponentModel.ISupportInitialize).EndInit()
         Me.SuperBuscador.ResumeLayout(False)
         Me.PanelBuscador.ResumeLayout(False)
@@ -937,7 +937,7 @@ Partial Class F0_VentaServicios
     Friend WithEvents LabelX15 As DevComponents.DotNetBar.LabelX
     Friend WithEvents LabelX14 As DevComponents.DotNetBar.LabelX
     Friend WithEvents cbmoneda As DevComponents.DotNetBar.Controls.SwitchButton
-    Friend WithEvents cbventa As Janus.Windows.GridEX.EditControls.MultiColumnCombo
+    Friend WithEvents cbCredito As Janus.Windows.GridEX.EditControls.MultiColumnCombo
     Friend WithEvents FechaVenta As DevComponents.Editors.DateTimeAdv.DateTimeInput
     Friend WithEvents LabelX8 As DevComponents.DotNetBar.LabelX
     Friend WithEvents tbCliente As DevComponents.DotNetBar.Controls.TextBoxX
