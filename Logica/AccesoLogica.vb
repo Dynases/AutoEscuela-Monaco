@@ -12221,4 +12221,77 @@ Public Class AccesoLogica
     End Function
 #End Region
 
+#Region "Reporte clientes horario disponible por dia"
+    Public Shared Function L_prDatosGenetalesPorAlumno(fecha As String, personalId As String, hora As String, ByRef claseId As String) As String
+        Dim _Tabla As DataTable
+        Dim resultado As String = ""
+        Dim _listParam As New List(Of Datos.DParametro)
+        _listParam.Add(New Datos.DParametro("@tipo", 1))
+        _listParam.Add(New Datos.DParametro("@personalId", personalId))
+        _listParam.Add(New Datos.DParametro("@fecha", fecha))
+        _listParam.Add(New Datos.DParametro("@hora", hora))
+        _listParam.Add(New Datos.DParametro("@cauact", L_Usuario))
+        _Tabla = D_ProcedimientoConParam("sp_HorarioDisponibleAlumno", _listParam)
+        If _Tabla.Rows.Count() = 0 Then
+            _Tabla = L_prFechaSiguiente(personalId, hora, claseId)
+            resultado = "LIBRE " + _Tabla.Rows(0).Item("FechaSiguiente").ToString()
+
+        Else
+            resultado = String.Join(Environment.NewLine, _Tabla.Rows(0).Item("alumno").ToString().Split("|".ToCharArray()))
+            claseId = _Tabla.Rows(0).Item("claseId").ToString()
+        End If
+
+        Return resultado
+    End Function
+    Public Shared Function L_prPersonal() As DataTable
+        Dim _Tabla As DataTable
+        Dim _listParam As New List(Of Datos.DParametro)
+        _listParam.Add(New Datos.DParametro("@tipo", 2))
+        _listParam.Add(New Datos.DParametro("@cauact", L_Usuario))
+        _Tabla = D_ProcedimientoConParam("sp_HorarioDisponibleAlumno", _listParam)
+        Return _Tabla
+    End Function
+    Public Shared Function L_prFechaLibreAlumno(personalId As String) As DataTable
+        Dim _Tabla As DataTable
+        Dim _listParam As New List(Of Datos.DParametro)
+        _listParam.Add(New Datos.DParametro("@tipo", 5))
+        _listParam.Add(New Datos.DParametro("@personalId", personalId))
+        _listParam.Add(New Datos.DParametro("@cauact", L_Usuario))
+        _Tabla = D_ProcedimientoConParam("sp_HorarioDisponibleAlumno", _listParam)
+        Return _Tabla
+    End Function
+    Public Shared Function L_prFechaSiguiente(personalId As String, hora As String, claseId As String) As DataTable
+        Dim _Tabla As DataTable
+        Dim _listParam As New List(Of Datos.DParametro)
+        _listParam.Add(New Datos.DParametro("@tipo", 6))
+        _listParam.Add(New Datos.DParametro("@personalId", personalId))
+        _listParam.Add(New Datos.DParametro("@hora", hora))
+        _listParam.Add(New Datos.DParametro("@claseId", claseId))
+        _listParam.Add(New Datos.DParametro("@cauact", L_Usuario))
+        _Tabla = D_ProcedimientoConParam("sp_HorarioDisponibleAlumno", _listParam)
+        Return _Tabla
+    End Function
+    Public Shared Function L_prHorario() As DataTable
+        Dim _Tabla As DataTable
+        Dim _listParam As New List(Of Datos.DParametro)
+        _listParam.Add(New Datos.DParametro("@tipo", 3))
+        _listParam.Add(New Datos.DParametro("@cauact", L_Usuario))
+        _Tabla = D_ProcedimientoConParam("sp_HorarioDisponibleAlumno", _listParam)
+        Return _Tabla
+    End Function
+    Public Shared Function L_prHorarioPorPersonal(fecha As String, horarioId As Integer, personalId As Integer) As DataTable
+        Dim _Tabla As DataTable
+        Dim _listParam As New List(Of Datos.DParametro)
+        _listParam.Add(New Datos.DParametro("@tipo", 4))
+        _listParam.Add(New Datos.DParametro("@horarioId", horarioId))
+        _listParam.Add(New Datos.DParametro("@fecha", fecha))
+        _listParam.Add(New Datos.DParametro("@personalId", personalId))
+        _listParam.Add(New Datos.DParametro("@cauact", L_Usuario))
+        _Tabla = D_ProcedimientoConParam("sp_HorarioDisponibleAlumno", _listParam)
+        Return _Tabla
+    End Function
+
+#End Region
+
+
 End Class

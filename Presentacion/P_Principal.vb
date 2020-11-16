@@ -734,4 +734,11 @@ Public Class P_Principal
         'frm._nameButton = btconfPersonal.Name
         frm.Show()
     End Sub
+
+    Private Sub btnAlumnosDatosGenerales_Click(sender As Object, e As EventArgs) Handles btnAlumnosDatosGenerales.Click
+        Dim frm As New HorarioDisponibleAlumnos
+
+        'frm._nameButton = btconfPersonal.Name
+        frm.Show()
+    End Sub
 End Class

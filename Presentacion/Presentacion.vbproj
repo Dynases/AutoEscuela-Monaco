@@ -859,6 +859,12 @@
     <Compile Include="P_Principal.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="ReporteAdicional\HorarioDisponibleAlumnos.Designer.vb">
+      <DependentUpon>HorarioDisponibleAlumnos.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ReporteAdicional\HorarioDisponibleAlumnos.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Reportes\R_CertAlumnosPractico.vb">
       <DependentUpon>R_CertAlumnosPractico.rpt</DependentUpon>
       <AutoGen>True</AutoGen>
@@ -1660,6 +1666,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="P_Principal.resx">
       <DependentUpon>P_Principal.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ReporteAdicional\HorarioDisponibleAlumnos.resx">
+      <DependentUpon>HorarioDisponibleAlumnos.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Reportes\R_CertAlumnosPractico.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
