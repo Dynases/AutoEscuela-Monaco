@@ -44,6 +44,7 @@ Partial Class HorarioDisponibleAlumnos
         Me.btnSalir = New DevComponents.DotNetBar.ButtonX()
         Me.btnGrabar = New DevComponents.DotNetBar.ButtonX()
         Me.btnNuevo = New DevComponents.DotNetBar.ButtonX()
+        Me.tbFechaH = New System.Windows.Forms.DateTimePicker()
         Me.SuperTabControlPanelRegistro.SuspendLayout()
         Me.PanelPrincipal.SuspendLayout()
         Me.PanelFondo.SuspendLayout()
@@ -93,6 +94,7 @@ Partial Class HorarioDisponibleAlumnos
         '
         Me.PanelFondo.Controls.Add(Me.PanelGrilla)
         Me.PanelFondo.Controls.Add(Me.PanelFiltro)
+        Me.PanelFondo.Dock = System.Windows.Forms.DockStyle.Fill
         Me.PanelFondo.Location = New System.Drawing.Point(0, 0)
         Me.PanelFondo.Name = "PanelFondo"
         Me.PanelFondo.Size = New System.Drawing.Size(1013, 385)
@@ -182,6 +184,7 @@ Partial Class HorarioDisponibleAlumnos
         '
         Me.GroupPanel2.CanvasColor = System.Drawing.SystemColors.Control
         Me.GroupPanel2.ColorSchemeStyle = DevComponents.DotNetBar.eDotNetBarStyle.Office2007
+        Me.GroupPanel2.Controls.Add(Me.tbFechaH)
         Me.GroupPanel2.Controls.Add(Me.tbFecha)
         Me.GroupPanel2.Controls.Add(Me.LabelX9)
         Me.GroupPanel2.DisabledBackColor = System.Drawing.Color.Empty
@@ -396,6 +399,15 @@ Partial Class HorarioDisponibleAlumnos
         Me.btnNuevo.Text = "BUSCAR"
         Me.btnNuevo.TextColor = System.Drawing.Color.Black
         '
+        'tbFechaH
+        '
+        Me.tbFechaH.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.tbFechaH.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
+        Me.tbFechaH.Location = New System.Drawing.Point(277, 3)
+        Me.tbFechaH.Name = "tbFechaH"
+        Me.tbFechaH.Size = New System.Drawing.Size(118, 22)
+        Me.tbFechaH.TabIndex = 45
+        '
         'HorarioDisponibleAlumnos
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -443,4 +455,5 @@ Partial Class HorarioDisponibleAlumnos
     Friend WithEvents GroupPanel1 As DevComponents.DotNetBar.Controls.GroupPanel
     Friend WithEvents grDatos As Janus.Windows.GridEX.GridEX
     Friend WithEvents grPersonal As Janus.Windows.GridEX.GridEX
+    Friend WithEvents tbFechaH As DateTimePicker
 End Class

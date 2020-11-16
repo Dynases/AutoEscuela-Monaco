@@ -24,34 +24,6 @@ Public Class HorarioDisponibleAlumnos
                                eToastPosition.TopCenter)
 
     End Sub
-    Public Sub aplicarCondicionJanues()
-        Dim fc As GridEXFormatCondition
-        fc = New GridEXFormatCondition(grDatos.RootTable.Columns("tipo"), ConditionOperator.Equal, 1)
-        fc.FormatStyle.FontBold = TriState.True
-        fc.FormatStyle.BackColor = Color.DarkGray
-        grDatos.RootTable.FormatConditions.Add(fc)
-
-        fc = New GridEXFormatCondition(grDatos.RootTable.Columns("tipo"), ConditionOperator.Equal, 2)
-        fc.FormatStyle.FontBold = TriState.True
-        fc.FormatStyle.BackColor = Color.Silver
-        grDatos.RootTable.FormatConditions.Add(fc)
-
-        fc = New GridEXFormatCondition(grDatos.RootTable.Columns("tipo"), ConditionOperator.Equal, 3)
-        fc.FormatStyle.FontBold = TriState.True
-        fc.FormatStyle.BackColor = Color.LightGray
-        grDatos.RootTable.FormatConditions.Add(fc)
-
-        fc = New GridEXFormatCondition(grDatos.RootTable.Columns("tipo"), ConditionOperator.Equal, 4)
-        fc.FormatStyle.FontBold = TriState.True
-        fc.FormatStyle.BackColor = Color.Gainsboro
-        grDatos.RootTable.FormatConditions.Add(fc)
-
-        fc = New GridEXFormatCondition(grDatos.RootTable.Columns("tipo"), ConditionOperator.Equal, 5)
-        'fc.FormatStyle.BackColor = Color.LightSlateGray
-
-        grDatos.RootTable.FormatConditions.Add(fc)
-    End Sub
-
     Private Sub btnNuevo_Click(sender As Object, e As EventArgs) Handles btnNuevo.Click
         Dim dt As DataTable = ArmarEstructura()
         '  filtrar(dt)
@@ -59,59 +31,42 @@ Public Class HorarioDisponibleAlumnos
             grDatos.DataSource = dt
             grDatos.RetrieveStructure()
             grDatos.AlternatingColors = True
-
-            With grDatos.RootTable.Columns("codigo")
-                .Caption = "codigo"
+            Dim numero As Integer = 0
+            With grDatos.RootTable.Columns("Horario")
+                .Caption = "Horario"
                 .Width = 120
                 .HeaderAlignment = TextAlignment.Center
                 .TextAlignment = TextAlignment.Center
                 .FormatString = ""
                 .Visible = True
             End With
-            With grDatos.RootTable.Columns("descripcion")
-                .Caption = "empresa/categoria/marca/atributo/producto"
-                .HeaderAlignment = TextAlignment.Center
-                .TextAlignment = TextAlignment.Near
-                .FormatString = ""
-                .Width = 500
-                .Visible = True
-            End With
-            With grDatos.RootTable.Columns("cajas")
-                .HeaderAlignment = TextAlignment.Center
-                .TextAlignment = TextAlignment.Far
-                .Caption = "cajas"
-                .FormatString = "0.00"
-                .Width = 160
-                .Visible = True
-            End With
-
-            With grDatos.RootTable.Columns("importe")
-                .HeaderAlignment = TextAlignment.Center
-                .TextAlignment = TextAlignment.Far
-                .Caption = "importe"
-                .FormatString = "0.00"
-                .Width = 160
-                .Visible = True
-            End With
-            With grDatos.RootTable.Columns("nroclientes")
-                .HeaderAlignment = TextAlignment.Center
-                .TextAlignment = TextAlignment.Far
-                .Caption = "nroclientes"
-                .FormatString = "0.00"
-                .Width = 160
-                .Visible = True
-            End With
-            With grDatos.RootTable.Columns("porcentaje")
-                .HeaderAlignment = TextAlignment.Center
-                .TextAlignment = TextAlignment.Far
-                .Caption = "porcentaje"
-                .FormatString = "0.00"
-                .Width = 160
-                .Visible = True
-            End With
-            With grDatos.RootTable.Columns("tipo")
-                .Visible = False
-            End With
+            Dim personal As DataTable = L_prPersonal()
+            For Each fila As DataRow In personal.Rows
+                With grDatos.RootTable.Columns("ACTUAL" + numero.ToString)
+                    .Caption = "ACTUAL"
+                    .Width = 120
+                    .HeaderAlignment = TextAlignment.Center
+                    .TextAlignment = TextAlignment.Center
+                    .FormatString = ""
+                    .Visible = True
+                End With
+                With grDatos.RootTable.Columns("SIGUIENTE" + numero.ToString)
+                    .Caption = "SIGUIENTE"
+                    .Width = 120
+                    .HeaderAlignment = TextAlignment.Center
+                    .TextAlignment = TextAlignment.Center
+                    .FormatString = ""
+                    .Visible = True
+                End With
+                With grDatos.RootTable.Columns("RESERVA" + numero.ToString)
+                    .Caption = "RESERVA"
+                    .Width = 120
+                    .HeaderAlignment = TextAlignment.Center
+                    .TextAlignment = TextAlignment.Center
+                    .FormatString = ""
+                    .Visible = True
+                End With
+            Next
             With grDatos
                 .DefaultFilterRowComparison = FilterConditionOperator.Contains
                 .FilterMode = FilterMode.Automatic
@@ -120,7 +75,6 @@ Public Class HorarioDisponibleAlumnos
                 'diseño de la grilla
                 .VisualStyle = VisualStyle.Office2007
             End With
-            aplicarCondicionJanues()
         Else
             If (Not IsNothing(grDatos) And Not IsNothing(grDatos.DataSource)) Then
 
@@ -134,7 +88,7 @@ Public Class HorarioDisponibleAlumnos
                                     eToastPosition.TopCenter)
         End If
     End Sub
-    Private Shared Function ArmarEstructura() As DataTable
+    Private Function ArmarEstructura() As DataTable
         Dim estructura As DataTable = New DataTable
         Dim fecha As DateTime = tbFecha.Value
         Dim personal As DataTable = L_prPersonal()
@@ -185,6 +139,6 @@ Public Class HorarioDisponibleAlumnos
     End Function
 
     Private Sub HorarioDisponibleAlumnos_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        ArmarEstructura()
+        'ArmarEstructura()
     End Sub
 End Class
